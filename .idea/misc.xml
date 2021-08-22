@@ -4,13 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/MVP FITNESS APP/app/src/main/res/layout/activity_main.xml" value="0.2453125" />
+        <entry key="..\:/MVP FITNESS APP/app/src/main/res/layout/activity_registration.xml" value="0.2536231884057971" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_registration.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_second.xml" value="0.14130434782608695" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
