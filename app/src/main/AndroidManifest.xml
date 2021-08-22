@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MVPFITNESSAPP">
         <activity
+            android:name=".PasswordActivity"
+            android:exported="true" />
+        <activity
             android:name=".SecondActivity"
             android:exported="true" />
         <activity
