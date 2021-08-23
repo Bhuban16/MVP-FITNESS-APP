@@ -73,7 +73,7 @@ public void onClick(View v) {
 
     private void validate(String userName, String userPassword) {
 
-        progressDialog.setMessage("You can subscribe to my channel until you are verified!");
+        progressDialog.setMessage(" Wait until you are verified!");
         progressDialog.show();
 
         firebaseAuth.signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
