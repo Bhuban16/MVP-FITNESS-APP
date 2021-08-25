@@ -172,7 +172,7 @@ public class RegistrationActivity extends AppCompatActivity {
     }
     private void sendUserData(){
 
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app");
         DatabaseReference myRef = firebaseDatabase.getReference("User Info").child(firebaseAuth.getUid());
 
         StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Picture"); //User Id/Images/Profile_pic

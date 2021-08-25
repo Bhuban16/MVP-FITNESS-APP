@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "1021544688294",
-    "project_id": "mvp-workout",
-    "storage_bucket": "mvp-workout.appspot.com"
+    "project_number": "454147585669",
+    "firebase_url": "https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mvp-fitness",
+    "storage_bucket": "mvp-fitness.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1021544688294:android:03693947d550309eb06267",
+        "mobilesdk_app_id": "1:454147585669:android:8868254c837854ac3fdbec",
         "android_client_info": {
           "package_name": "com.example.mvpfitnessapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1021544688294-gvdnsfr5hso9v4c2s2lsi8023tkcgak0.apps.googleusercontent.com",
+          "client_id": "454147585669-b5l08mvqteu1a5j3h9lhjjbo54n17qng.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBM2a2HZ5G0BIuaK9H-eYh6L9CrBEMnQHE"
+          "current_key": "AIzaSyAChpBFzpWTULdLoYQWWV2kLX8W_xhcvQA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1021544688294-gvdnsfr5hso9v4c2s2lsi8023tkcgak0.apps.googleusercontent.com",
+              "client_id": "454147585669-b5l08mvqteu1a5j3h9lhjjbo54n17qng.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
