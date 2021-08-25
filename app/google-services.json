@@ -1,21 +1,14 @@
 {
   "project_info": {
     "project_number": "454147585669",
-<<<<<<< HEAD
     "firebase_url": "https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app",
-=======
->>>>>>> parent of b0645ea... backlog 2
     "project_id": "mvp-fitness",
     "storage_bucket": "mvp-fitness.appspot.com"
   },
   "client": [
     {
       "client_info": {
-<<<<<<< HEAD
         "mobilesdk_app_id": "1:454147585669:android:8868254c837854ac3fdbec",
-=======
-        "mobilesdk_app_id": "1:454147585669:android:d124868937a24dcb3fdbec",
->>>>>>> parent of b0645ea... backlog 2
         "android_client_info": {
           "package_name": "com.example.mvpfitnessapp"
         }
