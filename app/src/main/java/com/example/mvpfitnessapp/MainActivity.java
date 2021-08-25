@@ -34,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Name = (EditText)findViewById(R.id.etName);
-        Password = (EditText)findViewById(R.id.etPassword);
-        Login = (Button)findViewById(R.id.btnLogin);
+        Name = (EditText) findViewById(R.id.etName);
+        Password = (EditText) findViewById(R.id.etPassword);
+        Login = (Button) findViewById(R.id.btnLogin);
         userRegistration = (TextView) findViewById(R.id.tvRegister);
-        forgotPassword = (TextView)findViewById(R.id.tvForgotPassword);
+        forgotPassword = (TextView) findViewById(R.id.tvForgotPassword);
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
@@ -79,35 +79,17 @@ public void onClick(View v) {
         firebaseAuth.signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
 
                     progressDialog.dismiss();
-                    //Toast.makeText(MainActivity.this,"Login Successful", Toast.LENGTH_SHORT).show();
-                    checkEmailVerification();
-                }else{
-                    Toast.makeText(MainActivity.this,"Login Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, SecondActivity.class));
+                } else {
                     progressDialog.dismiss();
-
+                    Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
     }
-    private void checkEmailVerification() {
-        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        Boolean emailflag = firebaseUser.isEmailVerified();
-
-        if(emailflag) {
-            finish();
-            startActivity(new Intent(MainActivity.this, SecondActivity.class));
-        }else{
-            Toast.makeText(this, "Verify your email", Toast.LENGTH_SHORT).show();
-            firebaseAuth.signOut();
-
-
-        }
-    }
-
-    private void startActivity(MainActivity mainActivity, String verify_your_email, int lengthShort) {
-    }
-}
+                }
