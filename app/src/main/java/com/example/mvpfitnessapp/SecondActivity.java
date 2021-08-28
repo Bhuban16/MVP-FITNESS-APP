@@ -29,6 +29,8 @@ public class SecondActivity extends AppCompatActivity {
     private ImageView profileMenu;
     private FirebaseDatabase firebaseDatabase;
     private TextView profileName;
+    private TextView feedback;
+    private TextView contactus;
 
 
     @Override
@@ -40,6 +42,8 @@ public class SecondActivity extends AppCompatActivity {
         profileMenu = findViewById(R.id.profileMenu);
         firebaseDatabase = FirebaseDatabase.getInstance();
         profileName = findViewById(R.id.tvProfileName);
+        feedback = findViewById(R.id.feedback);
+        contactus = findViewById(R.id.contactus);
 
         final DatabaseReference databaseReference = firebaseDatabase.getReference("User Info").child(firebaseAuth.getUid());
 
@@ -53,6 +57,7 @@ public class SecondActivity extends AppCompatActivity {
                 //}
 
             }
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -88,6 +93,14 @@ public class SecondActivity extends AppCompatActivity {
             }
            case R.id.profileMenu:
                 startActivity(new Intent(SecondActivity.this, ProfileActivity.class));
+                break;
+
+            case R.id.feedback:
+                startActivity(new Intent(SecondActivity.this, Feedback.class));
+                break;
+
+            case R.id.contactus:
+                startActivity(new Intent(SecondActivity.this, ContactUs.class));
                 break;
         }
         return super.onOptionsItemSelected(item);
