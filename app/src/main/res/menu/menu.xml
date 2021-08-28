@@ -1,32 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/logoutMenu"
-        android:orderInCategory="400"
-        app:showAsAction="never"
-        android:title="Logout">
-    </item>
 
+    <group>
     <item
-        android:id="@+id/profileMenu"
-        android:orderInCategory="100"
-        app:showAsAction="never"
-        android:title="Profile">
-    </item>
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home" />
+    </group>
 
-    <item
-        android:id="@+id/contactus"
-        android:orderInCategory="200"
-        app:showAsAction="never"
-        android:title="Contact Us">
-    </item>
+        <item android:title="Profile">
 
-    <item
-        android:id="@+id/feedback"
-        android:orderInCategory="300"
-        app:showAsAction="never"
-        android:title="Feedback">
-    </item>
+        <menu>
+            <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/profileMenu"
+                android:icon="@drawable/ic_baseline_account_circle_24"
+                android:title="Account" />
+
+            <item
+                android:id="@+id/logoutMenu"
+                android:icon="@drawable/ic_baseline_exit_to_app_24"
+                android:title="Logout"/>
+
+            </group>
+
+        </menu>
+        </item>
+
+
+
+
+
+        <item android:title="Communication">
+
+            <menu>
+                <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/contactus"
+                    android:icon="@drawable/ic_baseline_chat_24"
+                    android:title="Contact Us"/>
+
+
+                <item
+                    android:id="@+id/feedback"
+                    android:icon="@drawable/ic_feedback"
+                    android:title="Feedback"/>
+                </group>
+            </menu>
+        </item>
+
+
+
 
 </menu>

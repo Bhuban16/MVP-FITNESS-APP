@@ -1,15 +1,14 @@
 package com.example.mvpfitnessapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.annotation.NonNull;
-
-
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -30,7 +29,7 @@ public class UpdatePassword extends AppCompatActivity {
         update = findViewById(R.id.btnUpdatePassword);
         newPassword = findViewById(R.id.etNewPassword);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 

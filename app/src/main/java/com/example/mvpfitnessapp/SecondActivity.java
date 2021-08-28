@@ -1,21 +1,23 @@
 package com.example.mvpfitnessapp;
 
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,7 +25,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class SecondActivity extends AppCompatActivity {
+public class SecondActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
+    Menu menu;
 
     private FirebaseAuth firebaseAuth;
     private ImageView profileMenu;
@@ -37,6 +44,22 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle=new
+        ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_home);
+
+
 
         firebaseAuth = FirebaseAuth.getInstance();
         profileMenu = findViewById(R.id.profileMenu);
@@ -65,46 +88,56 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
 
-        profileMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this, ProfileActivity.class));
-            }
-        });
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
+
     }
 
-    private void Logout(){
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    private void Logout() {
         firebaseAuth.signOut();
         finish();
         startActivity(new Intent(SecondActivity.this, MainActivity.class));
     }
 
+
+
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.logoutMenu: {
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+
+            case R.id.nav_home: break;
+
+            case R.id.profileMenu:
+                Intent intent = new Intent(SecondActivity.this, ProfileActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.logoutMenu:{
                 Logout();
                 break;
             }
-           case R.id.profileMenu:
-                startActivity(new Intent(SecondActivity.this, ProfileActivity.class));
-                break;
 
-            case R.id.feedback:
-                startActivity(new Intent(SecondActivity.this, Feedback.class));
+            case R.id.contactus: {
+                startActivity( new Intent(SecondActivity.this, ContactUs.class));
                 break;
+            }
 
-            case R.id.contactus:
-                startActivity(new Intent(SecondActivity.this, ContactUs.class));
+            case R.id.feedback: {
+                startActivity( new Intent(SecondActivity.this, Feedback.class));
                 break;
+            }
         }
-        return super.onOptionsItemSelected(item);
-    }}
+        drawerLayout.closeDrawer(GravityCompat.START); return true;
+    }
+
+}
 
 
 
