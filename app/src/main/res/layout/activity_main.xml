@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B5643AAF"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#000000">
 
     <EditText
         android:id="@+id/etName"
-        android:layout_width="281dp"
-        android:layout_height="61dp"
+        android:layout_width="303dp"
+        android:layout_height="69dp"
+        android:background="@drawable/rectangle_2"
         android:ems="10"
         android:hint="Email"
-        android:textAlignment="textStart"
         android:inputType="textEmailAddress"
+        android:textAlignment="textStart"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,7 +38,8 @@
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etName"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintVertical_bias="0.059"
+        android:background="@drawable/rectangle_3"/>
 
     <Button
         android:id="@+id/btnLogin"
@@ -49,7 +51,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPassword"
-        app:layout_constraintVertical_bias="0.085" />
+        app:layout_constraintVertical_bias="0.085"
+        android:background="@drawable/path_1"/>
 
     <TextView
         android:id="@+id/tvRegister"
@@ -57,13 +60,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="New User ? Sign Up!"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.604"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvForgotPassword"
-        app:layout_constraintVertical_bias="0.463" />
+        app:layout_constraintVertical_bias="0.17" />
 
     <TextView
         android:id="@+id/tvForgotPassword"
@@ -75,7 +79,8 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin"
-        app:layout_constraintVertical_bias="0.126" />
+        app:layout_constraintVertical_bias="0.126"
+        android:textColor="#FFFFFF"/>
 
     <ImageView
         android:id="@+id/ivProfile"
@@ -85,9 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_round" />
-
-
+        app:srcCompat="@drawable/screenshot_2021_08_23_104900" />
 
 
 
