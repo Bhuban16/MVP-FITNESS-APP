@@ -8,15 +8,6 @@
     tools:context=".UpdateProfile">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="501dp"
-        android:layout_height="302dp"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/etNameUpdate"
-        app:srcCompat="@drawable/ellipse"
-        tools:layout_editor_absoluteX="-46dp" />
-
-    <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
