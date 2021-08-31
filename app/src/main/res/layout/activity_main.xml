@@ -10,8 +10,8 @@
 
     <EditText
         android:id="@+id/etName"
-        android:layout_width="303dp"
-        android:layout_height="69dp"
+        android:layout_width="307dp"
+        android:layout_height="64dp"
         android:background="@drawable/rectangle_2"
         android:ems="10"
         android:hint="Email"

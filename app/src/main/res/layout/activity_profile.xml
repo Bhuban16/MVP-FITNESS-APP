@@ -30,7 +30,7 @@
     <Button
         android:id="@+id/btnChangePassword"
         android:layout_width="187dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:background="@drawable/rectangle_2"
         android:backgroundTint="#FFFFFF"
         android:text="change password"
@@ -57,17 +57,16 @@
 
     <TextView
         android:id="@+id/tvProfileName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="307dp"
+        android:layout_height="38dp"
         android:background="@drawable/rectangle_2"
         android:text="Name:"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.608"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivProfilePic"
-        app:layout_constraintVertical_bias="0.087" />
+        app:layout_constraintVertical_bias="0.077" />
 
     <TextView
         android:id="@+id/tvProfileEmail"
@@ -86,7 +85,7 @@
     <Button
         android:id="@+id/btnProfileUpdate"
         android:layout_width="201dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:background="@drawable/rectangle_2"
         android:backgroundTint="#FFFFFF"
         android:text="Edit"
@@ -99,16 +98,15 @@
 
     <TextView
         android:id="@+id/tvProfilePhoneNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="321dp"
+        android:layout_height="47dp"
         android:background="@drawable/rectangle_2"
         android:text="Phone Number:"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/tvProfileEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvProfileName"
-        app:layout_constraintVertical_bias="0.48" />
+        app:layout_constraintVertical_bias="0.673" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
