@@ -10,12 +10,15 @@
 
     <EditText
         android:id="@+id/etName"
-        android:layout_width="307dp"
-        android:layout_height="64dp"
+        android:layout_width="323dp"
+        android:layout_height="53dp"
         android:background="@drawable/rectangle_2"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:paddingLeft="10dp"
         android:textAlignment="textStart"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -27,33 +30,36 @@
 
     <EditText
         android:id="@+id/etPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="323dp"
+        android:layout_height="53dp"
+        android:background="@drawable/rectangle_3"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Password"
-        android:textAlignment="textStart"
         android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:textAlignment="textStart"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etName"
-        app:layout_constraintVertical_bias="0.059"
-        android:background="@drawable/rectangle_3"/>
+        app:layout_constraintVertical_bias="0.132" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="131dp"
-        android:layout_height="88dp"
+        android:layout_width="141dp"
+        android:layout_height="60dp"
+        android:background="@drawable/path_1"
         android:text="Login"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPassword"
-        app:layout_constraintVertical_bias="0.085"
-        android:background="@drawable/path_1"/>
+        app:layout_constraintVertical_bias="0.144" />
 
     <TextView
         android:id="@+id/tvRegister"
@@ -68,20 +74,21 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvForgotPassword"
-        app:layout_constraintVertical_bias="0.17" />
+        app:layout_constraintVertical_bias="0.369" />
 
     <TextView
         android:id="@+id/tvForgotPassword"
-        android:layout_width="130dp"
-        android:layout_height="28dp"
+        android:layout_width="217dp"
+        android:layout_height="33dp"
         android:text="Forgot Password?"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.623"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin"
-        app:layout_constraintVertical_bias="0.126"
-        android:textColor="#FFFFFF"/>
+        app:layout_constraintVertical_bias="0.198" />
 
     <ImageView
         android:id="@+id/ivProfile"

@@ -14,13 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".rounded_corner"
+            android:exported="true" />
+        <activity
             android:name=".Feedback"
             android:exported="true" />
         <activity
             android:name=".ContactUs"
             android:exported="true" />
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
