@@ -75,7 +75,7 @@ public class SecondAdminActivity extends AppCompatActivity implements Navigation
             case R.id.nav_home1:
                 break;
 
-           
+
             case R.id.logoutMenu1: {
                 Logout();
                 break;

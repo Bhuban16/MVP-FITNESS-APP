@@ -54,7 +54,7 @@ public class Upload extends AppCompatActivity {
 
         mediaController= new MediaController(this);
         storageReference= FirebaseStorage.getInstance().getReference("videos");
-        databaseReference = FirebaseDatabase.getInstance().getReference("videos");
+        databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("videos");
 
         videoView.setMediaController(mediaController);
         mediaController.setAnchorView(videoView);
