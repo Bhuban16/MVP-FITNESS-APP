@@ -29,14 +29,14 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
     private TextView forgotPassword;
-
+    private TextView Admin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        Admin = (TextView)findViewById(R.id.btnAdmin) ;
         Name = (EditText)findViewById(R.id.etName);
         Password = (EditText)findViewById(R.id.etPassword);
         Login = (Button)findViewById(R.id.btnLogin);
@@ -72,7 +72,14 @@ public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, PasswordActivity.class));
             }
         });
-    }
+
+    Admin.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            startActivity(new Intent(MainActivity.this, AdminActivity.class));
+        }
+    });
+}
 
     private void validate(String userName, String userPassword) {
 
