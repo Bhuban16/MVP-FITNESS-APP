@@ -14,6 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".Member"
+            android:exported="true" />
+        <activity
+            android:name=".Upload"
+            android:exported="true" />
+        <activity
+            android:name=".Workout"
+            android:exported="true" />
+        <activity
             android:name=".SecondAdminActivity"
             android:exported="true" />
         <activity

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +39,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
     private TextView profileName;
     private TextView feedback;
     private TextView contactus;
+    private ImageView Imgworkout;
 
 
     @Override
@@ -67,6 +69,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         profileName = findViewById(R.id.tvProfileName);
         feedback = findViewById(R.id.feedback);
         contactus = findViewById(R.id.contactus);
+        Imgworkout = findViewById(R.id.imgworkout);
 
         final DatabaseReference databaseReference = firebaseDatabase.getReference("User Info").child(firebaseAuth.getUid());
 
@@ -86,6 +89,12 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
             }
         });
 
+        Imgworkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this, Workout.class));
+            }
+        });
 
     }
 

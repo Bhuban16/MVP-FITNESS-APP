@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -21,6 +23,8 @@ public class SecondAdminActivity extends AppCompatActivity implements Navigation
     NavigationView navigationView;
     Toolbar toolbar;
     Menu menu;
+    private Button Upload;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,7 @@ public class SecondAdminActivity extends AppCompatActivity implements Navigation
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        Upload = findViewById(R.id.btnUpload);
 
         setSupportActionBar(toolbar);
         navigationView.bringToFront();
@@ -38,7 +43,16 @@ public class SecondAdminActivity extends AppCompatActivity implements Navigation
         toggle.syncState();
 
         navigationView.setCheckedItem(R.id.nav_home1);
+
+        Upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondAdminActivity.this, Upload.class));
+            }
+        });
+
     }
+
 
     @Override
     public void onBackPressed() {
@@ -61,11 +75,14 @@ public class SecondAdminActivity extends AppCompatActivity implements Navigation
             case R.id.nav_home1:
                 break;
 
+           
             case R.id.logoutMenu1: {
                 Logout();
                 break;
             }
+
         }
+
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }

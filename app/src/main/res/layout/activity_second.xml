@@ -7,8 +7,8 @@
     android:layout_height="match_parent"
     android:background="#B5643AAF"
     tools:context=".MainActivity"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    android:fitsSystemWindows="true">
+    //tools:openDrawer="start">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
@@ -37,6 +37,27 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:navigationIcon="@drawable/ic_baseline_menu_24" />
+
+            <ImageView
+                android:id="@+id/imgworkout"
+                android:layout_width="123dp"
+                android:layout_height="131dp"
+                android:layout_marginTop="132dp"
+                android:background="@drawable/ic_baseline_fitness_center_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.222"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="140dp"
+                android:text="Workout"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="82dp"
+                tools:layout_editor_absoluteY="271dp"></TextView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

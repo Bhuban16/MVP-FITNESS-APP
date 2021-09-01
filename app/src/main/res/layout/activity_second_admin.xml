@@ -50,13 +50,24 @@
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar"></TextView>
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
 
+            <Button
+                android:id="@+id/btnUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Upload"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/main" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
     </ScrollView>
+
+
 </androidx.drawerlayout.widget.DrawerLayout>
+
