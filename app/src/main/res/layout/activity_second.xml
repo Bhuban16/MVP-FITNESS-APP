@@ -7,8 +7,8 @@
     android:layout_height="match_parent"
     android:background="#B5643AAF"
     tools:context=".MainActivity"
-    android:fitsSystemWindows="true">
-    //tools:openDrawer="start">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
@@ -30,10 +30,12 @@
                 android:id="@+id/toolbar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:background="#00008577"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:navigationIcon="@drawable/ic_baseline_menu_24" />
@@ -45,18 +47,28 @@
                 android:layout_marginTop="132dp"
                 android:background="@drawable/ic_baseline_fitness_center_24"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:backgroundTintMode="multiply"
                 app:layout_constraintHorizontal_bias="0.222"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"></ImageView>
+                app:layout_constraintTop_toTopOf="parent"
+                android:backgroundTint="@color/black">
+
+            </ImageView>
 
             <TextView
                 android:layout_width="130dp"
                 android:layout_height="140dp"
                 android:text="Workout"
+                android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                tools:layout_editor_absoluteX="82dp"
-                tools:layout_editor_absoluteY="271dp"></TextView>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.277"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgworkout"
+                tools:ignore="MissingConstraints">
+
+            </TextView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

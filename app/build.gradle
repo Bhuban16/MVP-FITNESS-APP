@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.mvpfitnessapp"
-        minSdk 21
+        minSdk 26
         targetSdk 30
         versionCode 1
         versionName "1.0"
@@ -63,6 +63,7 @@ dependencies {
     implementation'com.google.android.exoplayer:exoplayer-hls:2.10.8'
     implementation'com.google.android.exoplayer:exoplayer-smoothstreaming:2.10.8'
     implementation'com.google.android.exoplayer:exoplayer-ui:2.10.8'
-    implementation'com.firebaseui:firebase-ui-database:2.2.0'
+    implementation'com.firebaseui:firebase-ui-database:6.2.0'
+
 
 }

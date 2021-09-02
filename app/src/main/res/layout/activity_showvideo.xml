@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/black"
-    tools:context=".Workout">
-
+    tools:context=".ShowVideo">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_ShowVideo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recyclerview_video">
+        android:layout_height="match_parent" />
 
-    </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>

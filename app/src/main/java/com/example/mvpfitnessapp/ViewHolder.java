@@ -25,33 +25,39 @@ import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 
 public class ViewHolder extends RecyclerView.ViewHolder {
 
-    View mView;
     SimpleExoPlayer exoPlayer;
-    private PlayerView mExoplayerView;
+    PlayerView playerView;
 
-
-    public ViewHolder(@NonNull View itemView) {
+    public ViewHolder(@NonNull View itemView){
         super(itemView);
-        mView = itemView;
     }
-    public void setVideo (final Application ctx,String videoName ,final String videoUri){
-        TextView mtextView = mView.findViewById(R.id.Titletv);
-        mExoplayerView = mView.findViewById(R.id.exoplayer_view);
 
-        mtextView.setText(videoName);
+    //View mView;
+
+
+
+
+    public void setExoPlayer (Application application,String name ,String Videourl , String description){
+
+        TextView textView = itemView.findViewById(R.id.tv_item_name);
+        TextView textView1 = itemView.findViewById(R.id.tv_item_description);
+        playerView = itemView.findViewById(R.id.exoplayer_item);
+
+        textView.setText(name);
+        textView1.setText(description);
         try {
-            BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter.Builder(ctx).build();
+            BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter.Builder(application).build();
             TrackSelector trackSelector = new DefaultTrackSelector(new AdaptiveTrackSelection.Factory(bandwidthMeter));
-            exoPlayer = (SimpleExoPlayer) ExoPlayerFactory.newSimpleInstance(ctx);
-            Uri video = Uri.parse(videoUri);
-            DefaultHttpDataSourceFactory dataSourceFactory = new DefaultHttpDataSourceFactory("videos");
+            exoPlayer = (SimpleExoPlayer) ExoPlayerFactory.newSimpleInstance(application);
+            Uri video = Uri.parse(Videourl);
+            DefaultHttpDataSourceFactory dataSourceFactory = new DefaultHttpDataSourceFactory("video");
             ExtractorsFactory extractorsFactory = new DefaultExtractorsFactory();
             MediaSource mediaSource = new ExtractorMediaSource(video,dataSourceFactory,extractorsFactory,null,null);
-            mExoplayerView.setPlayer(exoPlayer);
+            playerView.setPlayer(exoPlayer);
             exoPlayer.prepare(mediaSource);
             exoPlayer.setPlayWhenReady(false);
         }catch (Exception e){
-            Log.e("ViewHolder","exoplayer error" + e.toString());
+            Log.e("ViewHolder","exoplayer error" +e.toString());
         }
     }
 }

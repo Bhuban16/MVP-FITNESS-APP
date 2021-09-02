@@ -6,8 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.firebase.client.Firebase;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -27,25 +25,26 @@ public class Workout extends AppCompatActivity {
         Mrecyclerview.setLayoutManager(new LinearLayoutManager(this));
         database = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app");
         reference = database.getReference("videos");
+
     }
 
-    @Override
+   // @Override
     protected void onStart() {
         super.onStart();
 
-        FirebaseRecyclerAdapter<User,ViewHolder>firebaseRecyclerAdapter=
-                new FirebaseRecyclerAdapter<User, ViewHolder>(
-                        User.class,
-                        R.layout.row,
-                        ViewHolder.class,
-                        reference
-                ) {
-                    @Override
-                    protected void populateViewHolder(ViewHolder viewHolder, User user, int i) {
-                        viewHolder.setVideo(getApplication(),user.getVideoName(),user.getVideoUri());
+       // FirebaseRecyclerAdapter<User,ViewHolder>firebaseRecyclerAdapter=
+                //new FirebaseRecyclerAdapter<User, ViewHolder//>(
+                       // User.class,
+                       // R.layout.row,
+                        //ViewHolder//.class,
+                       // reference
+              //  ) {
+                    //@Override
+                   // protected void populateViewHolder(ViewHolder viewHolder, User user, int i) {
+                        //viewHolder.setVideo(getApplication(),user.getVideoName(),user.getVideoUri());
                     }
-                };
+                //};
 
-        Mrecyclerview.setAdapter(firebaseRecyclerAdapter);
+       // Mrecyclerview.setAdapter(firebaseRecyclerAdapter);
     }
-}
+//}

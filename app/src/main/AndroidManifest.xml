@@ -14,6 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".UserShowVideo"
+            android:exported="true" />
+        <activity
+            android:name=".ShowVideo"
+            android:exported="true" />
+        <activity
             android:name=".Member"
             android:exported="true" />
         <activity

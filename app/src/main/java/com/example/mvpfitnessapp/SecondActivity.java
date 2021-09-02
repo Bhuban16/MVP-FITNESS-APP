@@ -92,7 +92,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         Imgworkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this, Workout.class));
+                startActivity(new Intent(SecondActivity.this, UserShowVideo.class));
             }
         });
 
