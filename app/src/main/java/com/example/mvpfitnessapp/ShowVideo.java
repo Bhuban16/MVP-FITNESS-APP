@@ -1,13 +1,16 @@
 package com.example.mvpfitnessapp;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
@@ -17,15 +20,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class ShowVideo extends AppCompatActivity {
 
     DatabaseReference databaseReference;
     RecyclerView recyclerView;
     FirebaseDatabase database;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +68,19 @@ public class ShowVideo extends AppCompatActivity {
                     protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Member model) {
 
                         holder.setExoPlayer(getApplication(),model.getName(),model.getVideourl(), model.getDescription());
+                        holder.setOnClicklistener(new ViewHolder.Clicklistener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
 
+                            }
+
+                            @Override
+                            public void onItemLongClick(View view, int position) {
+                                name = getItem(position).getName();
+                                showDeleteDialog(name);
+
+                            }
+                        });
                     }
 
                     @NonNull
@@ -97,7 +116,21 @@ public class ShowVideo extends AppCompatActivity {
 
                         holder.setExoPlayer(getApplication(),model.getName(),model.getVideourl(),model.getDescription());
 
+                        holder.setOnClicklistener(new ViewHolder.Clicklistener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+
+                            }
+
+                            @Override
+                            public void onItemLongClick(View view, int position) {
+                                name = getItem(position).getName();
+                                showDeleteDialog(name);
+
+                            }
+                        });
                     }
+
 
                     @NonNull
                     @Override
@@ -133,5 +166,39 @@ public class ShowVideo extends AppCompatActivity {
             }
         });
         return super.onCreateOptionsMenu(menu);
+    }
+
+    private void  showDeleteDialog(String name){
+        AlertDialog.Builder builder = new AlertDialog.Builder(ShowVideo.this);
+        builder.setTitle("Delete");
+        builder.setMessage("Are you sure to delete this data");
+        builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Query query = databaseReference.orderByChild("name").equalTo(name);
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+                        for (DataSnapshot dataSnapshot1 : datasnapshot.getChildren()){
+                            dataSnapshot1.getRef().removeValue();
+                        }
+                        Toast.makeText(ShowVideo.this, "Video Deleted", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+                dialogInterface.dismiss();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

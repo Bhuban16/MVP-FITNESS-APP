@@ -55,10 +55,10 @@ public class UserShowVideo extends AppCompatActivity {
                         .setQuery(firebaseQuery,Member.class)
                         .build();
 
-        FirebaseRecyclerAdapter<Member, ViewHolder> firebaseRecyclerAdapter =
-                new FirebaseRecyclerAdapter<Member, ViewHolder>(options) {
+        FirebaseRecyclerAdapter<Member, UserViewHolder> firebaseRecyclerAdapter =
+                new FirebaseRecyclerAdapter<Member, UserViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Member model) {
+                    protected void onBindViewHolder(@NonNull UserViewHolder holder, int position, @NonNull Member model) {
 
                         holder.setExoPlayer(getApplication(),model.getName(),model.getVideourl(), model.getDescription());
 
@@ -66,10 +66,10 @@ public class UserShowVideo extends AppCompatActivity {
 
                     @NonNull
                     @Override
-                    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                    public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                         View view = LayoutInflater.from(parent.getContext())
                                 .inflate(R.layout.row,parent, false);
-                        return new ViewHolder(view);
+                        return new UserViewHolder(view);
                     }
 
 
@@ -90,10 +90,10 @@ public class UserShowVideo extends AppCompatActivity {
                         .setQuery(databaseReference,Member.class)
                         .build();
 
-        FirebaseRecyclerAdapter<Member, ViewHolder> firebaseRecyclerAdapter =
-                new FirebaseRecyclerAdapter<Member, ViewHolder>(options) {
+        FirebaseRecyclerAdapter<Member, UserViewHolder> firebaseRecyclerAdapter =
+                new FirebaseRecyclerAdapter<Member, UserViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Member model) {
+                    protected void onBindViewHolder(@NonNull UserViewHolder holder, int position, @NonNull Member model) {
 
                         holder.setExoPlayer(getApplication(),model.getName(),model.getVideourl(), model.getDescription());
 
@@ -101,10 +101,10 @@ public class UserShowVideo extends AppCompatActivity {
 
                     @NonNull
                     @Override
-                    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                    public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                         View view = LayoutInflater.from(parent.getContext())
                                 .inflate(R.layout.row,parent, false);
-                        return new ViewHolder(view);
+                        return new UserViewHolder(view);
                     }
 
 

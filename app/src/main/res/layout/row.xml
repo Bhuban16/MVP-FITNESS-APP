@@ -28,7 +28,7 @@
 
         <com.google.android.exoplayer2.ui.PlayerView
             android:id="@+id/exoplayer_item"
-            android:layout_width="377dp"
+            android:layout_width="318dp"
             android:layout_height="133dp"
             android:layout_gravity="left"
             android:layout_margin="10dp"
@@ -53,6 +53,18 @@
 
 
     </LinearLayout>
+
+    <TextView
+
+        android:layout_width="380dp"
+        android:textColor="@color/black"
+        android:gravity="right"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_height="match_parent"
+        android:text="Delete">
+
+    </TextView>
 
 
 </androidx.cardview.widget.CardView>

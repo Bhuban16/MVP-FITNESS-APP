@@ -23,30 +23,13 @@ import com.google.android.exoplayer2.upstream.BandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 
-public class ViewHolder extends RecyclerView.ViewHolder {
+public class UserViewHolder extends RecyclerView.ViewHolder {
 
     SimpleExoPlayer exoPlayer;
     PlayerView playerView;
 
-    public ViewHolder(@NonNull View itemView){
-
+    public UserViewHolder(@NonNull View itemView){
         super(itemView);
-        itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                mClickListener.onItemClick(view,getAdapterPosition());
-
-            }
-        });
-        itemView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                mClickListener.onItemLongClick(view,getAdapterPosition());
-                return false;
-            }
-        });
-
     }
 
     //View mView;
@@ -74,16 +57,9 @@ public class ViewHolder extends RecyclerView.ViewHolder {
             exoPlayer.prepare(mediaSource);
             exoPlayer.setPlayWhenReady(false);
         }catch (Exception e){
-            Log.e("ViewHolder","exoplayer error" +e.toString());
+            Log.e("UserViewHolder","exoplayer error" +e.toString());
         }
     }
 
-    private ViewHolder.Clicklistener mClickListener;
-    public interface Clicklistener {
-                  void onItemClick(View view, int position);
-                  void onItemLongClick(View view , int position);}
-
-    public void  setOnClicklistener(ViewHolder.Clicklistener clicklistener){
-        mClickListener = clicklistener;
-    }
 }
+
