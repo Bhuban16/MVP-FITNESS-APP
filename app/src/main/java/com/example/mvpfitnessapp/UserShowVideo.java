@@ -68,7 +68,7 @@ public class UserShowVideo extends AppCompatActivity {
                     @Override
                     public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                         View view = LayoutInflater.from(parent.getContext())
-                                .inflate(R.layout.row,parent, false);
+                                .inflate(R.layout.userrow,parent, false);
                         return new UserViewHolder(view);
                     }
 
@@ -103,7 +103,7 @@ public class UserShowVideo extends AppCompatActivity {
                     @Override
                     public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                         View view = LayoutInflater.from(parent.getContext())
-                                .inflate(R.layout.row,parent, false);
+                                .inflate(R.layout.userrow,parent, false);
                         return new UserViewHolder(view);
                     }
 

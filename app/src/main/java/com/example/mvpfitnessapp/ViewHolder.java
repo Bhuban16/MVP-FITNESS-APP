@@ -14,6 +14,7 @@ import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory;
 import com.google.android.exoplayer2.extractor.ExtractorsFactory;
 import com.google.android.exoplayer2.source.ExtractorMediaSource;
+import com.google.android.exoplayer2.source.LoopingMediaSource;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
@@ -27,6 +28,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
 
     SimpleExoPlayer exoPlayer;
     PlayerView playerView;
+
 
     public ViewHolder(@NonNull View itemView){
 
@@ -70,13 +72,17 @@ public class ViewHolder extends RecyclerView.ViewHolder {
             DefaultHttpDataSourceFactory dataSourceFactory = new DefaultHttpDataSourceFactory("video");
             ExtractorsFactory extractorsFactory = new DefaultExtractorsFactory();
             MediaSource mediaSource = new ExtractorMediaSource(video,dataSourceFactory,extractorsFactory,null,null);
+            LoopingMediaSource loopingMediaSource = new LoopingMediaSource(mediaSource , 50);
+
+           exoPlayer.prepare(loopingMediaSource);
             playerView.setPlayer(exoPlayer);
-            exoPlayer.prepare(mediaSource);
-            exoPlayer.setPlayWhenReady(false);
+
+            exoPlayer.setPlayWhenReady(true);
         }catch (Exception e){
             Log.e("ViewHolder","exoplayer error" +e.toString());
         }
     }
+
 
     private ViewHolder.Clicklistener mClickListener;
     public interface Clicklistener {
