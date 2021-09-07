@@ -30,7 +30,7 @@ class StepDetectorService : Service(), SensorEventListener {
 
         if(countSensor != null){
             Toast.makeText(this, "Step Detecting Start", Toast.LENGTH_SHORT).show()
-            sensorManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_NORMAL)
+            sensorManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_FASTEST)
 
             GeneralHelper.updateNotification(this, this, PrefsHelper.getInt("FSteps"))
             callback.subscribeSteps(PrefsHelper.getInt("FSteps"))
