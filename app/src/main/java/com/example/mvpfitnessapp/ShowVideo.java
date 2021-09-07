@@ -1,6 +1,7 @@
 package com.example.mvpfitnessapp;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -32,7 +33,7 @@ public class ShowVideo extends AppCompatActivity {
     DatabaseReference databaseReference;
     RecyclerView recyclerView;
     FirebaseDatabase database;
-    String name;
+    String name,url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +72,11 @@ public class ShowVideo extends AppCompatActivity {
                         holder.setOnClicklistener(new ViewHolder.Clicklistener() {
                             @Override
                             public void onItemClick(View view, int position) {
+                                name = getItem(position).getName();
+                                url = getItem(position).getVideourl();
+                                Intent intent = new Intent(ShowVideo.this,Fullscreen.class);
+                                intent.putExtra("ur",url);
+                                startActivity(intent);
 
                             }
 
@@ -119,6 +125,11 @@ public class ShowVideo extends AppCompatActivity {
                         holder.setOnClicklistener(new ViewHolder.Clicklistener() {
                             @Override
                             public void onItemClick(View view, int position) {
+                                name = getItem(position).getName();
+                                url = getItem(position).getVideourl();
+                                Intent intent = new Intent(ShowVideo.this,Fullscreen.class);
+                                intent.putExtra("ur",url);
+                                startActivity(intent);
 
                             }
 

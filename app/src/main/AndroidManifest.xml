@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".Fullscreen"
+            android:exported="true" />
+        <activity
             android:name=".UserShowVideo"
             android:exported="true" />
         <activity
