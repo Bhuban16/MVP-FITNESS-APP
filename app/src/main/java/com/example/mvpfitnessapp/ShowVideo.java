@@ -75,6 +75,7 @@ public class ShowVideo extends AppCompatActivity {
                                 name = getItem(position).getName();
                                 url = getItem(position).getVideourl();
                                 Intent intent = new Intent(ShowVideo.this,Fullscreen.class);
+                                intent.putExtra("nam",name);
                                 intent.putExtra("ur",url);
                                 startActivity(intent);
 
@@ -128,6 +129,7 @@ public class ShowVideo extends AppCompatActivity {
                                 name = getItem(position).getName();
                                 url = getItem(position).getVideourl();
                                 Intent intent = new Intent(ShowVideo.this,Fullscreen.class);
+                                intent.putExtra("nam",name);
                                 intent.putExtra("ur",url);
                                 startActivity(intent);
 

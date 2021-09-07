@@ -1,12 +1,11 @@
 package com.example.mvpfitnessapp;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
@@ -23,10 +22,9 @@ public class Fullscreen extends AppCompatActivity {
     private PlayerView playerView;
     TextView textView;
     private String url;
-    private boolean playwhenready = false;
+    private boolean playwhenready = true;
     private int currentWindow = 0;
     private long playbackposition = 0;
-    private int Title;
 
 
     @Override
@@ -34,11 +32,8 @@ public class Fullscreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fullscreen);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Fullscreen");
 
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(true);
+
 
 
         playerView = findViewById(R.id.exoplayer_fullscreen);
@@ -46,47 +41,52 @@ public class Fullscreen extends AppCompatActivity {
 
         Intent intent = getIntent();
         url = intent.getExtras().getString("ur");
+        String title = intent.getExtras().getString("nam");
 
-        textView.setText(Title);
+
+        textView.setText(title);
     }
 
-    private ProgressiveMediaSource.Factory buildMediaSource(Uri uri){
+    private MediaSource buildMediaSource(Uri uri){
         DataSource.Factory datasourcefactory =
                 new DefaultHttpDataSourceFactory("video");
-        return new ProgressiveMediaSource.Factory(datasourcefactory);
-               .createMediaSource(Uri);
+        return new ProgressiveMediaSource.Factory(datasourcefactory)
+               .createMediaSource(uri);
     }
 
-    private void createMediaSource(Uri uri) {
-    }
 
     private void initializeplayer(){
         player = ExoPlayerFactory.newSimpleInstance(this);
         playerView.setPlayer(player);
-        Uri uri = null;
-        uri = Uri.parse(String.valueOf(uri));
-        ProgressiveMediaSource.Factory mediasource = buildMediaSource(uri);
+        Uri uri = Uri.parse(url);
+        MediaSource mediasource = buildMediaSource(uri);
         player.setPlayWhenReady(playwhenready);
         player.seekTo(currentWindow,playbackposition);
         player.prepare(mediasource, false, false);
 
     }
 
-    protected void OnStart(){
+    @Override
+    protected void onStart() {
         super.onStart();
 
-        if(Util.SDK_INT >= 26 ){
-            initializeplayer();
+        if (Util.SDK_INT >= 26 ) {
+           initializeplayer();
         }
+
     }
 
-    protected void OnResume() {
+
+    @Override
+    protected void onResume() {
         super.onResume();
 
-        if (Util.SDK_INT >= 26 || player == null);{
-         // initializeplayer();
+        if (Util.SDK_INT >= 26 || player == null ) {
+            //initializeplayer();
         }
+
     }
+
 
     @Override
     protected void onPause() {
@@ -109,8 +109,8 @@ public class Fullscreen extends AppCompatActivity {
 
     private void releasePlayer(){
         if (player !=null){
-            boolean playerwhenready = player.getPlayWhenReady();
-            long playerbackposition = player.getCurrentPosition();
+             playwhenready = player.getPlayWhenReady();
+             playbackposition = player.getCurrentPosition();
             currentWindow = player.getCurrentWindowIndex();
             player = null;
         }
