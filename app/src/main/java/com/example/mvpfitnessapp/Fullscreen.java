@@ -1,11 +1,17 @@
 package com.example.mvpfitnessapp;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
@@ -21,6 +27,8 @@ public class Fullscreen extends AppCompatActivity {
     private SimpleExoPlayer player;
     private PlayerView playerView;
     TextView textView;
+    boolean fullscreen = false;
+    ImageView fullscreenButton;
     private String url;
     private boolean playwhenready = true;
     private int currentWindow = 0;
@@ -32,12 +40,17 @@ public class Fullscreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fullscreen);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Fullscreen");
 
-
-
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         playerView = findViewById(R.id.exoplayer_fullscreen);
         textView = findViewById(R.id.tv_fullscreen);
+
+
+        fullscreenButton = playerView.findViewById(R.id.exoplayer_fullscreen_icon);
 
         Intent intent = getIntent();
         url = intent.getExtras().getString("ur");
@@ -45,6 +58,41 @@ public class Fullscreen extends AppCompatActivity {
 
 
         textView.setText(title);
+
+        fullscreenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (fullscreen){
+                    fullscreenButton.setImageDrawable(ContextCompat.getDrawable(Fullscreen.this,R.drawable.ic_fullscreen_expand));
+                    getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+                    if(getSupportActionBar() !=null){
+                        getSupportActionBar() .show();
+                    }
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                    LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)playerView.getLayoutParams();
+                    params.width = params.MATCH_PARENT;
+                    params.height = (int) (200 * getApplicationContext().getResources().getDisplayMetrics().density);
+                    playerView.setLayoutParams(params);
+                    fullscreen = false;
+                }else {
+                    fullscreenButton.setImageDrawable(ContextCompat.getDrawable(Fullscreen.this,R.drawable.ic_fullscreen_skrink));
+                    getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+                    if(getSupportActionBar() !=null){
+                        getSupportActionBar() .hide();
+                    }
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+                    LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)playerView.getLayoutParams();
+                    params.width = params.MATCH_PARENT;
+                    params.height = params.MATCH_PARENT;
+                    playerView.setLayoutParams(params);
+                    fullscreen = true;
+                }
+
+            }
+        });
     }
 
     private MediaSource buildMediaSource(Uri uri){
