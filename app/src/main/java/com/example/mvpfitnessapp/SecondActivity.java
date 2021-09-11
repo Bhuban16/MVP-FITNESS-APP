@@ -42,6 +42,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
     private TextView contactus;
     private ImageView Imgworkout;
     private ImageView track;
+    private ImageView reminder;
 
 
     @Override
@@ -73,6 +74,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         contactus = findViewById(R.id.contactus);
         Imgworkout = findViewById(R.id.imgworkout);
         track = findViewById(R.id.track);
+        reminder = findViewById(R.id.reminder);
 
         final DatabaseReference databaseReference = firebaseDatabase.getReference("User Info").child(firebaseAuth.getUid());
 
@@ -103,6 +105,13 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SecondActivity.this, tracker.class));
+            }
+        });
+
+        reminder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this, Reminder.class));
             }
         });
 

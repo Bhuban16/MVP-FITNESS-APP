@@ -76,12 +76,27 @@
                 android:id="@+id/track"
                 android:layout_width="153dp"
                 android:layout_height="131dp"
+                android:layout_marginTop="132dp"
                 android:background="@drawable/run"
                 android:backgroundTint="@color/black"
                 android:backgroundTintMode="multiply"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.937"
+                app:layout_constraintHorizontal_bias="0.879"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/reminder"
+                android:layout_width="153dp"
+                android:layout_height="131dp"
+                android:layout_marginTop="356dp"
+                android:background="@drawable/ic_alarm_on_white_24dp"
+                android:backgroundTint="@color/black"
+                android:backgroundTintMode="multiply"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.569"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 

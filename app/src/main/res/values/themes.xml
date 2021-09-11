@@ -13,6 +13,12 @@
         <item name="android:statusBarColor">#00000000</item>
         <!-- Customize your theme here. -->
 
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionModeBackground">@color/purple_500</item>
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionModeOverlay">true</item>
 
     </style>
 

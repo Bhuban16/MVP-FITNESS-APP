@@ -60,7 +60,7 @@
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
         android:includeFontPadding="false"
-        android:textColor="=@android:color/white"/>
+        android:textColor="@android:color/white"/>
 
     <FrameLayout
         android:id="@+id/exoplayer_fullscreen_button"
