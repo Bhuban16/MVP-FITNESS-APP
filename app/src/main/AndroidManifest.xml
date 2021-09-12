@@ -27,7 +27,8 @@
         <activity
             android:name=".Fullscreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:exported="true" >
+            android:exported="true"
+            android:theme="@style/Theme.Design.NoActionBar">
 
         </activity>
 

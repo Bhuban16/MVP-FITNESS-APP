@@ -81,8 +81,14 @@ public class Upload extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == PICK_VIDEO || resultCode == RESULT_OK || data != null || data.getData()  !=null){
-            videoUri = data.getData();
-            videoView.setVideoURI(videoUri);
+
+            try {
+                videoUri = data.getData();
+                videoView.setVideoURI(videoUri);
+            }catch (Exception e){
+                Toast.makeText(this,"No file selected",Toast.LENGTH_SHORT).show();
+            }
+
         }
 
 
