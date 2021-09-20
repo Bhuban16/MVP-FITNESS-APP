@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,25 +9,28 @@
     tools:ignore="MissingClass">
 
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="name"
-        android:textSize="15sp"
-        android:background="#80000000"
-        android:id="@+id/tv_fullscreen"
-        android:textColor="@android:color/white"/>
-
     <com.google.android.exoplayer2.ui.PlayerView
         android:id="@+id/exoplayer_fullscreen"
         android:layout_width="match_parent"
         android:layout_height="230dp"
-        android:layout_margin="3dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="3dp"
         app:controller_layout_id="@layout/exoplayer_custom_controls"
         app:resize_mode="fill"
+        app:use_controller="true" >
 
-        app:use_controller="true" />
+        <TextView
+            android:id="@+id/tv_fullscreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#CC000000"
+            android:text="name"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+    </com.google.android.exoplayer2.ui.PlayerView>
 
-</LinearLayout>
+</RelativeLayout>
 

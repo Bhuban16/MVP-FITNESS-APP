@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
@@ -40,11 +41,11 @@ public class Fullscreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fullscreen);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Fullscreen");
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.setTitle("Fullscreen");
 
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(true);
+        //actionBar.setDisplayHomeAsUpEnabled(true);
+        //actionBar.setDisplayShowHomeEnabled(true);
 
         playerView = findViewById(R.id.exoplayer_fullscreen);
         textView = findViewById(R.id.tv_fullscreen);
@@ -70,11 +71,12 @@ public class Fullscreen extends AppCompatActivity {
                         getSupportActionBar() .show();
                     }
                     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-                    LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)playerView.getLayoutParams();
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)playerView.getLayoutParams();
                     params.width = params.MATCH_PARENT;
                     params.height = (int) (200 * getApplicationContext().getResources().getDisplayMetrics().density);
                     playerView.setLayoutParams(params);
                     fullscreen = false;
+                    textView.setVisibility(View.VISIBLE);
                 }else {
                     fullscreenButton.setImageDrawable(ContextCompat.getDrawable(Fullscreen.this,R.drawable.ic_fullscreen_skrink));
                     getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN
@@ -84,11 +86,12 @@ public class Fullscreen extends AppCompatActivity {
                         getSupportActionBar() .hide();
                     }
                     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-                    LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)playerView.getLayoutParams();
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)playerView.getLayoutParams();
                     params.width = params.MATCH_PARENT;
                     params.height = params.MATCH_PARENT;
                     playerView.setLayoutParams(params);
                     fullscreen = true;
+                    textView.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -164,4 +167,16 @@ public class Fullscreen extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        player.stop();
+        releasePlayer();
+
+        final Intent intent = new Intent();
+        setResult(RESULT_OK,intent);
+        finish();
+
+    }
 }
