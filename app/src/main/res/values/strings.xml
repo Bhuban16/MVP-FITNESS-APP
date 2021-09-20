@@ -62,4 +62,13 @@
     <string name="editor_update_reminder_failed">Error with updating reminder</string>
 
     <string name="reminder_title">Alarm Reminder</string>
+
+    <string name="font_bold">fonts/proximanova_bold.otf</string>
+    <string name="font_light">fonts/proximanova_light.otf</string>
+    <string name="lbs">lbs</string>
+    <string name="kg">kg</string>
+    <string name="Enter_Weight">Enter Weight</string>
+    <string name="Daily_Water_Intake">Your Daily Water Intake is</string>
+    <string name="Water_IntakeCalculator">Water IntakeCalculator</string>
+    <string name="Calculate_water_intake">Calculate water intake</string>
 </resources>

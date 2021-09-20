@@ -96,11 +96,27 @@
                 android:backgroundTint="@color/black"
                 android:backgroundTintMode="multiply"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.569"
+                app:layout_constraintHorizontal_bias="0.17"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
             </ImageView>
+
+            <ImageView
+                android:id="@+id/water"
+                android:layout_width="153dp"
+                android:layout_height="131dp"
+                android:layout_marginTop="364dp"
+                android:background="@drawable/img_daily_water_intake1"
+                android:backgroundTint="@color/black"
+                android:backgroundTintMode="multiply"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.879"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

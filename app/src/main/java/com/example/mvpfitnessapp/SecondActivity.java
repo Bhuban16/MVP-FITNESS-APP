@@ -17,6 +17,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.mvpfitnessapp.daily_water.Daily_WaterIntake_Calculator;
 import com.example.mvpfitnessapp.ui.tracker;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,6 +44,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
     private ImageView Imgworkout;
     private ImageView track;
     private ImageView reminder;
+    private ImageView water;
 
 
     @Override
@@ -75,6 +77,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         Imgworkout = findViewById(R.id.imgworkout);
         track = findViewById(R.id.track);
         reminder = findViewById(R.id.reminder);
+        water = findViewById(R.id.water);
 
         final DatabaseReference databaseReference = firebaseDatabase.getReference("User Info").child(firebaseAuth.getUid());
 
@@ -112,6 +115,12 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SecondActivity.this, Reminder.class));
+            }
+        });
+        water.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this, Daily_WaterIntake_Calculator.class));
             }
         });
 
