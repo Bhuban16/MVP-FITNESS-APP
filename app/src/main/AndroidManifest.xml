@@ -39,6 +39,13 @@
             android:name=".daily_water.Daily_WaterIntake_Result"
             android:exported="true" />
 
+        <activity
+            android:name=".lean_body_mass.Lean_Body_Mass_Calculator"
+            android:exported="true" />
+        <activity
+            android:name=".lean_body_mass.Lean_Body_Mass_Result"
+            android:exported="true" />
+
 
         <activity
             android:name=".UserShowVideo"

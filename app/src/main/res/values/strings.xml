@@ -71,4 +71,12 @@
     <string name="Daily_Water_Intake">Your Daily Water Intake is</string>
     <string name="Water_IntakeCalculator">Water IntakeCalculator</string>
     <string name="Calculate_water_intake">Calculate water intake</string>
+    <string name="lean_body_mass">Lean Body Mass</string>
+    <string name="Enter_Height">Enter Height</string>
+    <string name="calculate_lean_body_mass">Calculate Lean Body Mass</string>
+    <string name="your_lean_body_mass">Your Lean Body Mass is</string>
+    <string name="Female">Female</string>
+    <string name="Male">Male</string>
+    <string name="feet">feet</string>
+    <string name="cm">cm</string>
 </resources>

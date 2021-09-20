@@ -117,6 +117,21 @@
 
             </ImageView>
 
+            <ImageView
+                android:id="@+id/lean_body_mass"
+                android:layout_width="153dp"
+                android:layout_height="131dp"
+                android:layout_marginTop="512dp"
+                android:background="@drawable/img_lean_body_mass"
+                android:backgroundTint="@color/black"
+                android:backgroundTintMode="multiply"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.131"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
