@@ -1,5 +1,6 @@
 package com.example.mvpfitnessapp.daily_water;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -128,6 +129,7 @@ public class Daily_WaterIntake_Calculator extends Activity {
 
 
 
+    @SuppressLint("ResourceType")
     public PopupWindow popupWindowWeight() {
         this.popupWindowWeight = new PopupWindow(this);
         this.listViewWeight = new ListView(this);

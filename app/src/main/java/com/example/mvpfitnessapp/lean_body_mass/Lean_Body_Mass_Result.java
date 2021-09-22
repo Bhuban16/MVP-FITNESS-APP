@@ -38,7 +38,7 @@ public class Lean_Body_Mass_Result extends Activity {
     public void onCreate(@Nullable Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.popup_bmr);
-        this.typefaceManager = new TypefaceManager(getAssets(), this);
+      //  this.typefaceManager = new TypefaceManager(getAssets(), this);
 
         this.iv_close = (ImageView) findViewById(R.id.iv_close);
         this.rl_main = (LinearLayout) findViewById(R.id.rl_main);
@@ -47,7 +47,7 @@ public class Lean_Body_Mass_Result extends Activity {
         this.extras = getIntent().getExtras();
         this.lean_body_mass = this.extras.getDouble("lean_body_mass");
         this.tv_ans_bmr = (TextView) findViewById(R.id.tv_ans_bmr);
-        this.tv_ans_bmr.setTypeface(this.typefaceManager.getLight());
+       // this.tv_ans_bmr.setTypeface(this.typefaceManager.getLight());
         if (VERSION.SDK_INT >= 21) {
             getWindow().addFlags(67108864);
         }

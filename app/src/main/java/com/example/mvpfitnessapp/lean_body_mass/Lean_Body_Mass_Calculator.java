@@ -83,14 +83,14 @@ public class Lean_Body_Mass_Calculator extends Activity {
         this.tv_search_bmr = (TextView) findViewById(R.id.tv_search_bmr);
         this.tv_genderunit = (TextView) findViewById(R.id.tv_genderunit);
         this.tv_gender = (TextView) findViewById(R.id.tv_gender);
-        this.tv_lean_body_mass.setTypeface(this.typefaceManager.getBold());
-        this.et_height.setTypeface(this.typefaceManager.getLight());
-        this.et_weight.setTypeface(this.typefaceManager.getLight());
-        this.tv_heightunit.setTypeface(this.typefaceManager.getLight());
-        this.tv_weightunit.setTypeface(this.typefaceManager.getLight());
-        this.tv_gender.setTypeface(this.typefaceManager.getLight());
-        this.tv_genderunit.setTypeface(this.typefaceManager.getLight());
-        this.tv_search_bmr.setTypeface(this.typefaceManager.getBold());
+       // this.tv_lean_body_mass.setTypeface(this.typefaceManager.getBold());
+      //  this.et_height.setTypeface(this.typefaceManager.getLight());
+      //  this.et_weight.setTypeface(this.typefaceManager.getLight());
+       // this.tv_heightunit.setTypeface(this.typefaceManager.getLight());
+       // this.tv_weightunit.setTypeface(this.typefaceManager.getLight());
+       // this.tv_gender.setTypeface(this.typefaceManager.getLight());
+       // this.tv_genderunit.setTypeface(this.typefaceManager.getLight());
+       // this.tv_search_bmr.setTypeface(this.typefaceManager.getBold());
         if (VERSION.SDK_INT >= 21) {
             getWindow().addFlags(67108864);
         }
