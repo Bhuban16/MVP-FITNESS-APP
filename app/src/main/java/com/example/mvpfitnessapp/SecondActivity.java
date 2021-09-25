@@ -17,8 +17,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.mvpfitnessapp.daily_water.Daily_WaterIntake_Calculator;
-import com.example.mvpfitnessapp.lean_body_mass.Lean_Body_Mass_Calculator;
 import com.example.mvpfitnessapp.ui.tracker;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -47,6 +45,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
     private ImageView reminder;
     private ImageView water;
     private ImageView lean_body_mass;
+    private ImageView bmi;
 
 
     @Override
@@ -79,8 +78,9 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         Imgworkout = findViewById(R.id.imgworkout);
         track = findViewById(R.id.track);
         reminder = findViewById(R.id.reminder);
-        water = findViewById(R.id.water);
-        lean_body_mass = findViewById(R.id.lean_body_mass);
+
+
+        bmi = findViewById(R.id.bmi);
 
         final DatabaseReference databaseReference = firebaseDatabase.getReference("User Info").child(firebaseAuth.getUid());
 
@@ -120,19 +120,14 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
                 startActivity(new Intent(SecondActivity.this, Reminder.class));
             }
         });
-        water.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this, Daily_WaterIntake_Calculator.class));
-            }
-        });
-        lean_body_mass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this, Lean_Body_Mass_Calculator.class));
-            }
-        });
 
+
+        bmi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this, Calculator.class));
+            }
+        });
     }
 
 

@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_color">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="218dp"
+        android:background="@drawable/ima">
+
+    </RelativeLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardviewone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/banner"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="-20dp"
+        android:orientation="horizontal"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="20dip"
+        tools:ignore="UnknownIdInLayout">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="598dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:id="@+id/lin1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:layout_marginTop="35dp"
+                        android:weightSum="2">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/bmi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/gray"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="10dip"
+                            app:cardMaxElevation="20dp"
+                            app:strokeColor="@color/colorSkyBlue"
+                            app:strokeWidth="1dp">
+
+
+                            <RelativeLayout
+                                android:id="@+id/rel_two"
+                                android:layout_width="match_parent"
+                                android:layout_height="119dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/relative"
+                                    android:layout_width="164dp"
+                                    android:layout_height="92dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginRight="10dp">
+
+                                    <ImageView
+                                        android:id="@+id/imag_1"
+                                        android:layout_width="102dp"
+                                        android:layout_height="66dp"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginStart="21dp"
+                                        android:layout_marginTop="14dp"
+                                        android:layout_marginEnd="23dp"
+                                        android:layout_marginRight="23dp"
+                                        android:layout_marginBottom="12dp"
+                                        android:background="@drawable/img_body_mass"
+                                        android:backgroundTint="@color/colorSkyBlue"
+                                        android:padding="4dp" />
+
+
+                                </RelativeLayout>
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_marginTop="95dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:singleLine="true"
+                                    android:text="Body Mass Index"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp"
+                                    android:typeface="serif" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/fat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/gray"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="10dip"
+                            app:cardMaxElevation="20dp"
+                            app:strokeColor="@color/colorSkyBlue"
+                            app:strokeWidth="1dp">
+
+                            <RelativeLayout
+                                android:id="@+id/rel_three"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+
+                                <RelativeLayout
+                                    android:id="@+id/relative1"
+                                    android:layout_width="176dp"
+                                    android:layout_height="88dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginRight="10dp">
+
+                                    <ImageView
+                                        android:id="@+id/imag_2"
+                                        android:layout_width="104dp"
+                                        android:layout_height="61dp"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginStart="31dp"
+                                        android:layout_marginTop="14dp"
+                                        android:layout_marginEnd="31dp"
+                                        android:layout_marginRight="31dp"
+                                        android:layout_marginBottom="13dp"
+                                        android:background="@drawable/img_body_fat"
+                                        android:backgroundTint="@color/colorSkyBlue" />
+
+
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:id="@+id/txt_excer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginBottom="7dp"
+                                    android:singleLine="true"
+                                    android:text="Body Fat"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp"
+                                    android:typeface="serif" />
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="146dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lin2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/calorie"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/gray"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="10dip"
+                            app:cardMaxElevation="20dp"
+                            app:strokeColor="@color/colorSkyBlue"
+                            app:strokeWidth="1dp">
+
+
+                            <RelativeLayout
+                                android:id="@+id/rel_two1"
+                                android:layout_width="match_parent"
+                                android:layout_height="119dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/relative11111"
+                                    android:layout_width="164dp"
+                                    android:layout_height="92dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginRight="10dp">
+
+                                    <ImageView
+                                        android:id="@+id/imag_11"
+                                        android:layout_width="102dp"
+                                        android:layout_height="66dp"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginStart="23dp"
+                                        android:layout_marginTop="14dp"
+                                        android:layout_marginEnd="21dp"
+                                        android:layout_marginRight="21dp"
+                                        android:layout_marginBottom="12dp"
+                                        android:background="@drawable/img_daily_calorie_intake"
+                                        android:backgroundTint="@color/colorSkyBlue"
+                                        android:padding="4dp"
+                                        app:cardElevation="20dip" />
+
+
+                                </RelativeLayout>
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_marginTop="95dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:singleLine="true"
+                                    android:text="Daily Calories Intake"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp"
+                                    android:typeface="serif" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/water"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/gray"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="10dip"
+                            app:cardMaxElevation="20dp"
+                            app:strokeColor="@color/colorSkyBlue"
+                            app:strokeWidth="1dp">
+
+                            <RelativeLayout
+                                android:id="@+id/rel_three1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+
+                                <RelativeLayout
+                                    android:id="@+id/relative11"
+                                    android:layout_width="176dp"
+                                    android:layout_height="88dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginRight="10dp">
+
+                                    <ImageView
+                                        android:id="@+id/imag_21"
+                                        android:layout_width="104dp"
+                                        android:layout_height="61dp"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginStart="31dp"
+                                        android:layout_marginTop="13dp"
+                                        android:layout_marginEnd="31dp"
+                                        android:layout_marginRight="31dp"
+                                        android:layout_marginBottom="14dp"
+                                        android:background="@drawable/img_daily_water_intake"
+                                        android:backgroundTint="@color/colorSkyBlue" />
+
+
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:id="@+id/txt_excer1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_marginBottom="15dp"
+                                    android:singleLine="true"
+                                    android:text="Daily Water Intake"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp"
+                                    android:typeface="serif" />
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="146dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lin21"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/weight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/gray"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="10dip"
+                            app:cardMaxElevation="20dp"
+                            app:strokeColor="@color/colorSkyBlue"
+                            app:strokeWidth="1dp">
+
+
+                            <RelativeLayout
+                                android:id="@+id/rel_two11"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <RelativeLayout
+                                    android:id="@+id/relative1111"
+                                    android:layout_width="164dp"
+                                    android:layout_height="92dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginRight="10dp">
+
+                                    <ImageView
+                                        android:id="@+id/imag_111"
+                                        android:layout_width="102dp"
+                                        android:layout_height="66dp"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginStart="22dp"
+                                        android:layout_marginTop="14dp"
+                                        android:layout_marginEnd="22dp"
+                                        android:layout_marginRight="22dp"
+                                        android:layout_marginBottom="12dp"
+                                        android:background="@drawable/img_ideal_body_weight"
+                                        android:backgroundTint="@color/colorSkyBlue"
+                                        android:padding="4dp" />
+
+
+                                </RelativeLayout>
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_marginTop="95dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:singleLine="true"
+                                    android:text="Ideal Body Weight"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp"
+                                    android:typeface="serif" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/lean"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/gray"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="10dip"
+                            app:cardMaxElevation="20dp"
+                            app:strokeColor="@color/colorSkyBlue"
+                            app:strokeWidth="1dp">
+
+                            <RelativeLayout
+                                android:id="@+id/rel_three11"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+
+                                <RelativeLayout
+                                    android:id="@+id/relative111"
+                                    android:layout_width="176dp"
+                                    android:layout_height="88dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginRight="10dp">
+
+                                    <ImageView
+                                        android:id="@+id/imag_211"
+                                        android:layout_width="104dp"
+                                        android:layout_height="61dp"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginStart="32dp"
+                                        android:layout_marginTop="14dp"
+                                        android:layout_marginEnd="30dp"
+                                        android:layout_marginRight="30dp"
+                                        android:layout_marginBottom="13dp"
+                                        android:background="@drawable/img_lean_body_mass"
+                                        android:backgroundTint="@color/colorSkyBlue" />
+
+
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:id="@+id/txt_excer11"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_marginBottom="15dp"
+                                    android:singleLine="true"
+                                    android:text="Lean Body Weight"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp"
+                                    android:typeface="serif" />
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
+
+
+
+
+
+

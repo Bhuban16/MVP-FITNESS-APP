@@ -4,26 +4,27 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="com.android.alarm.permission.SET_ALARM">
-    </uses-permission>
-    <uses-permission android:name="android.permission.VIBRATE">
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"></uses-permission>
+    <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
 
-    </uses-permission>
     <application
+        android:name=".service.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-        android:name="com.example.mvpfitnessapp.service.App">
-
-        <activity android:name=".Reminder"
-                  android:exported="true" />
-
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".Calculator"
+            android:exported="true"
+         />
+        <activity
+            android:name=".Reminder"
+            android:exported="true" />
         <activity
             android:name=".Fullscreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -31,26 +32,52 @@
             android:theme="@style/Theme.Design.NoActionBar">
 
         </activity>
-
         <activity
             android:name=".daily_water.Daily_WaterIntake_Calculator"
             android:exported="true" />
         <activity
             android:name=".daily_water.Daily_WaterIntake_Result"
             android:exported="true" />
-
         <activity
             android:name=".lean_body_mass.Lean_Body_Mass_Calculator"
             android:exported="true" />
         <activity
             android:name=".lean_body_mass.Lean_Body_Mass_Result"
             android:exported="true" />
+        <activity
+            android:name=".bmi.BMI_Calculator"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".bmi.BMI_Result"
+            android:exported="true" />
+        <activity
+            android:name=".body_fat.Bodyfat_Calculator"
+            android:exported="true" />
+        <activity
+            android:name=".body_fat.Body_Fat_Chart"
+            android:exported="true" />
+        <activity
+            android:name=".body_fat.Bodyfat_Result"
+            android:exported="true" />
+        <activity android:name=".calories_intake.Daily_Calories_Intake_Calculator"
+            android:exported="true" />
+        <activity android:name=".calories_intake.Daily_Calories_Intake_Chart"
+            android:exported="true"/>
+        <activity android:name=".calories_intake.Daily_Calories_Intake_Result"
+            android:exported="true"/>
+        <activity android:name=".ideal_body_weight.Ideal_Body_Weight_Calculator"
+            android:exported="true"/>
+        <activity android:name=".ideal_body_weight.Ideal_Body_Weight_Result"
+            android:exported="true"/>
 
 
         <activity
+            android:name=".bmi.BMI_Chart"
+            android:exported="true" />
+        <activity
             android:name=".UserShowVideo"
             android:exported="true" />
-
         <activity
             android:name=".ShowVideo"
             android:exported="true" />
@@ -69,12 +96,7 @@
         <activity
             android:name=".AdminActivity"
             android:exported="true" />
-
-        <activity android:name=".ui.tracker">
-
-        </activity>
-
-
+        <activity android:name=".ui.tracker"></activity>
         <activity
             android:name=".Feedback"
             android:exported="true" />
@@ -88,16 +110,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".AddReminderActivity"
+        <activity
+            android:name=".AddReminderActivity"
             android:label="@string/title_activity_add_reminder"
             android:parentActivityName=".Reminder"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Reminder"
-                />
+                android:value=".Reminder" />
         </activity>
         <activity android:name=".SecondActivity" />
         <activity android:name=".RegistrationActivity" />
@@ -114,14 +136,13 @@
         <service
             android:name=".reminder.ReminderAlarmService"
             android:exported="false" />
+        <service android:name=".service.StepDetectorService" />
 
-       <service android:name=".service.StepDetectorService"/>
-
-        <receiver android:name=".reminder.ReminderAlarmService"
+        <receiver
+            android:name=".reminder.ReminderAlarmService"
             android:enabled="true">
 
         </receiver>
-
     </application>
 
 </manifest>

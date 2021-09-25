@@ -87,6 +87,7 @@
 
             </ImageView>
 
+
             <ImageView
                 android:id="@+id/reminder"
                 android:layout_width="153dp"
@@ -103,30 +104,15 @@
             </ImageView>
 
             <ImageView
-                android:id="@+id/water"
+                android:id="@+id/bmi"
                 android:layout_width="153dp"
                 android:layout_height="131dp"
-                android:layout_marginTop="364dp"
-                android:background="@drawable/img_daily_water_intake1"
+                android:layout_marginTop="356dp"
+                android:background="@drawable/img_body_mass"
                 android:backgroundTint="@color/black"
                 android:backgroundTintMode="multiply"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.879"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-            </ImageView>
-
-            <ImageView
-                android:id="@+id/lean_body_mass"
-                android:layout_width="153dp"
-                android:layout_height="131dp"
-                android:layout_marginTop="512dp"
-                android:background="@drawable/img_lean_body_mass"
-                android:backgroundTint="@color/black"
-                android:backgroundTintMode="multiply"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.131"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
