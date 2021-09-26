@@ -69,8 +69,15 @@
         <activity android:name=".ideal_body_weight.Ideal_Body_Weight_Calculator"
             android:exported="true"/>
         <activity android:name=".ideal_body_weight.Ideal_Body_Weight_Result"
+
             android:exported="true"/>
 
+        <activity android:name=".sugar.Sugar_calculator"
+            android:exported="true" />
+        <activity android:name=".sugar.Sugar_Chart"
+            android:exported="true"/>
+        <activity android:name=".sugar.Sugar_Result"
+            android:exported="true"/>
 
         <activity
             android:name=".bmi.BMI_Chart"

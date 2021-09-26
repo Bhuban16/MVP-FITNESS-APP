@@ -13,6 +13,7 @@ import com.example.mvpfitnessapp.calories_intake.Daily_Calories_Intake_Calculato
 import com.example.mvpfitnessapp.daily_water.Daily_WaterIntake_Calculator;
 import com.example.mvpfitnessapp.ideal_body_weight.Ideal_Body_Weight_Calculator;
 import com.example.mvpfitnessapp.lean_body_mass.Lean_Body_Mass_Calculator;
+import com.example.mvpfitnessapp.sugar.Sugar_calculator;
 
 public class Calculator extends AppCompatActivity {
 
@@ -22,6 +23,7 @@ public class Calculator extends AppCompatActivity {
     private CardView calorie;
     private CardView lean;
     private CardView water;
+    private CardView sugar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class Calculator extends AppCompatActivity {
         water = findViewById(R.id.water);
         calorie= findViewById(R.id.calorie);
         lean= findViewById(R.id.lean);
+        sugar = findViewById(R.id.sugar);
 
         bmi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +72,12 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Calculator.this, Lean_Body_Mass_Calculator.class));
+            }
+        });
+        sugar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Calculator.this, Sugar_calculator.class));
             }
         });
     }
