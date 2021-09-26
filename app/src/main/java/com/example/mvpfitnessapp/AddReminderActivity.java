@@ -35,9 +35,7 @@ import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
 import java.util.Calendar;
 
-/**
- * Created by delaroy on 10/26/17.
- */
+
 
 public class AddReminderActivity extends AppCompatActivity implements
         TimePickerDialog.OnTimeSetListener,
@@ -494,7 +492,7 @@ public class AddReminderActivity extends AppCompatActivity implements
             // Pass in null for the selection and selection args because the mCurrentreminderUri
             // content URI already identifies the reminder that we want.
             int rowsDeleted = getContentResolver().delete(mCurrentReminderUri, null, null);
-
+            new AlarmScheduler().cancelAlarm(getApplicationContext(), mCurrentReminderUri);
             // Show a toast message depending on whether or not the delete was successful.
             if (rowsDeleted == 0) {
                 // If no rows were deleted, then there was an error with the delete.

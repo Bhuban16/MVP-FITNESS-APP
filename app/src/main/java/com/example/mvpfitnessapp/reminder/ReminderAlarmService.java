@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.provider.Settings;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.TaskStackBuilder;
@@ -17,9 +18,6 @@ import com.example.mvpfitnessapp.AddReminderActivity;
 import com.example.mvpfitnessapp.R;
 import com.example.mvpfitnessapp.data.AlarmReminderContract;
 
-/**
- * Created by delaroy on 9/22/17.
- */
 
 public class ReminderAlarmService extends IntentService {
     private static final String TAG = ReminderAlarmService.class.getSimpleName();
@@ -52,9 +50,7 @@ public class ReminderAlarmService extends IntentService {
                 .getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
 
         //Grab the task description
-        if(uri != null){
-            cursor = getContentResolver().query(uri, null, null, null, null);
-        }
+        Cursor cursor = getContentResolver().query(uri, null, null, null, null);
 
         String description = "";
         try {
@@ -83,6 +79,8 @@ public class ReminderAlarmService extends IntentService {
                 .setContentText(description)
                 .setSmallIcon(R.drawable.ic_add_alert_black_24dp)
                 .setContentIntent(operation)
+                .setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 })
+                .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
 
                 .setAutoCancel(true)
                 .build();

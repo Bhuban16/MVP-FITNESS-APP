@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -40,12 +41,12 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
     private TextView profileName;
     private TextView feedback;
     private TextView contactus;
-    private ImageView Imgworkout;
-    private ImageView track;
-    private ImageView reminder;
-    private ImageView water;
+    private CardView bmi;
+    private CardView step;
+    private CardView reminder;
+    private CardView calculate;
     private ImageView lean_body_mass;
-    private ImageView bmi;
+
 
 
     @Override
@@ -75,8 +76,8 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         profileName = findViewById(R.id.tvProfileName);
         feedback = findViewById(R.id.feedback);
         contactus = findViewById(R.id.contactus);
-        Imgworkout = findViewById(R.id.imgworkout);
-        track = findViewById(R.id.track);
+        calculate = findViewById(R.id.calculate);
+        step = findViewById(R.id.step);
         reminder = findViewById(R.id.reminder);
 
 
@@ -100,14 +101,14 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
             }
         });
 
-        Imgworkout.setOnClickListener(new View.OnClickListener() {
+        bmi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SecondActivity.this, UserShowVideo.class));
             }
         });
 
-        track.setOnClickListener(new View.OnClickListener() {
+        step.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SecondActivity.this, tracker.class));
@@ -122,7 +123,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         });
 
 
-        bmi.setOnClickListener(new View.OnClickListener() {
+        calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SecondActivity.this, Calculator.class));

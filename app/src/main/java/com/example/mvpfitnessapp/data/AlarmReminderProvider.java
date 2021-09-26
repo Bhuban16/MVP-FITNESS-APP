@@ -12,9 +12,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-/**
- * Created by delaroy on 10/25/17.
- */
+
 
 public class AlarmReminderProvider extends ContentProvider {
 

@@ -3,9 +3,7 @@ package com.example.mvpfitnessapp.reminder;
 import android.app.AlarmManager;
 import android.content.Context;
 
-/**
- * Created by delaroy on 9/22/17.
- */
+
 
 public class AlarmManagerProvider {
     private static final String TAG = AlarmManagerProvider.class.getSimpleName();
