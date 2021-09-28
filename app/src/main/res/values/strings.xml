@@ -157,6 +157,7 @@
     <string name="mmol_a">mm/ol/L</string>
     <string name="Enter_Blood_sugar_value">Enter Blood sugar value</string>
     <string name="Blood_Sugar">Your Blood Sugar Level is :</string>
+    <string name="reset"><u>Reset</u></string>
 
 
 </resources>
