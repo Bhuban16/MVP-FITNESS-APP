@@ -110,7 +110,7 @@
                     android:drawableRight="@mipmap/down"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="mg"
+                    android:text="@string/mg"
                     android:textColor="@color/black"
                     android:textSize="14dp" />
 

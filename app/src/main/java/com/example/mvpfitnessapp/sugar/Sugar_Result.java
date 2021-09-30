@@ -23,6 +23,7 @@ public class Sugar_Result extends Activity {
     ImageView iv_close;
     TextView tv_ans_bloodsugar;
     TextView tv_bloodsugar_chart;
+    TextView tv_sugar_unit;
 
 
 
@@ -35,8 +36,10 @@ public class Sugar_Result extends Activity {
         super.onCreate(bundle);
         setContentView(R.layout.popup_sugar);
 
-
+        this.tv_ans_bloodsugar = (TextView) findViewById(R.id.tv_ans_bloodsugar);
+        this.tv_bloodsugar_chart = (TextView) findViewById(R.id.tv_bloodsugar_chart);
         this.iv_close = (ImageView) findViewById(R.id.iv_close);
+        this.tv_sugar_unit = (TextView) findViewById(R.id.tv_sugar_unit);
         this.extras = getIntent().getExtras();
         this.final_bloodsugar_val = Double.valueOf(this.extras.getDouble("final_bloodsugar_val"));
         if (VERSION.SDK_INT >= 21) {
@@ -54,37 +57,33 @@ public class Sugar_Result extends Activity {
             StringBuilder sb2 = new StringBuilder();
             StringBuilder sb3 = new StringBuilder();
             sb3.append(getString(R.string.Blood_Sugar));
-            sb3.append(" : %.2f");
+            sb3.append("  %.2f");
             sb2.append(String.format(sb3.toString(), new Object[]{this.final_bloodsugar_val}));
             sb2.append(" ");
-            sb2.append(getString(R.string.mmol_a));
-            textView2.setText(sb2.toString());
-        }
-        this.tv_bloodsugar_chart.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                int random = ((int) (Math.random() * 2.0d)) + 1;
-                PrintStream printStream = System.out;
-                StringBuilder sb = new StringBuilder();
-                sb.append("random_number==>");
-                sb.append(random);
-                printStream.println(sb.toString());
-                if (random == 2) {
+
+            textView2.setText(sb2.toString());}
+
+            this.tv_bloodsugar_chart.setOnClickListener(new OnClickListener() {
+                public void onClick(View view) {
+                    int random = ((int) (Math.random() * 2.0d)) + 1;
+                    PrintStream printStream = System.out;
+                    StringBuilder sb = new StringBuilder();
+                    sb.append("random_number==>");
+                    sb.append(random);
+                    printStream.println(sb.toString());
+                    if (random == 2) {
+                        Sugar_Result.this.startActivity(new Intent(Sugar_Result.this, Sugar_Chart.class));
+                        return;
+                    }
                     Sugar_Result.this.startActivity(new Intent(Sugar_Result.this, Sugar_Chart.class));
-                    return;
                 }
-                Sugar_Result.this.startActivity(new Intent(Sugar_Result.this, Sugar_Chart.class));
-            }
-        });
-        this.iv_close.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                Sugar_Result.this.onBackPressed();
-            }
-        });
+            });
+            this.iv_close.setOnClickListener(new OnClickListener() {
+                public void onClick(View view) {
+                    Sugar_Result.this.onBackPressed();
+                }
+            });
+        }
+
+
     }
-
-
-
-
-
-
-}

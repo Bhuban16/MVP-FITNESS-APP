@@ -578,6 +578,7 @@
                             android:layout_marginRight="15dp"
                             android:layout_marginBottom="30dp"
                             android:layout_weight="1"
+                            android:visibility="invisible"
                             app:cardBackgroundColor="@color/gray"
                             app:cardCornerRadius="20dp"
                             app:cardElevation="10dip"

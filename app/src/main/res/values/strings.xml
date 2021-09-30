@@ -154,6 +154,7 @@
     <string name="Your_ideal_body_weight_range_is">Your ideal body weight range is :</string>
     <string name="mg">mg/dl to mmol/l</string>
     <string name="mmol">mmol/l to mg/dl</string>
+    <string name="mgdl">md/dl</string>
     <string name="mmol_a">mm/ol/L</string>
     <string name="Enter_Blood_sugar_value">Enter Blood sugar value</string>
     <string name="Blood_Sugar">Your Blood Sugar Level is :</string>
