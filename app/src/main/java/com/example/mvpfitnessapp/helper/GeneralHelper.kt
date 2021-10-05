@@ -9,11 +9,15 @@ import android.content.Intent
 import androidx.core.app.NotificationCompat
 import com.example.mvpfitnessapp.R
 import com.example.mvpfitnessapp.ui.tracker
+import com.google.common.io.CharStreams.toString
+import com.google.common.primitives.UnsignedLongs.toString
+import java.lang.invoke.MethodHandleInfo.toString
 
 
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.Arrays.toString
 
 class GeneralHelper {
     companion object{
@@ -23,7 +27,7 @@ class GeneralHelper {
             return df.format(date)
         }
 
-        fun updateNotification(context: Context, service: Service, step: Int){
+        fun updateNotification(context: Context, service: Service, step: Int ,){
             val NOTIFICATION_ID = 7837
             var notiBuilder: Notification.Builder = Notification.Builder(context)
             var notiManager: NotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -32,6 +36,7 @@ class GeneralHelper {
             var notification = NotificationCompat.Builder(context, "CHANNEL_ID")
                 .setContentTitle("Step Counter")
                 .setContentText(step.toString())
+
                 .setTicker(step.toString())
                 .setPriority(NotificationManager.IMPORTANCE_MIN)
                 .setCategory(Notification.CATEGORY_SERVICE)

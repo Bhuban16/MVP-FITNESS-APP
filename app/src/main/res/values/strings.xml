@@ -159,6 +159,10 @@
     <string name="Enter_Blood_sugar_value">Enter Blood sugar value</string>
     <string name="Blood_Sugar">Your Blood Sugar Level is :</string>
     <string name="reset"><u>Reset</u></string>
-
-
+    <string name="report">Report</string>
+    <string-array name="numbers">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string name="rt">if (this.genderValue .equals("Female")) {</string>
 </resources>

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Report">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="16dp"
+
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:background="@color/colorSkyBlue" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/lin1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="85dp"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardElevation="10dip"
+                        app:cardMaxElevation="20dp"
+                        app:cardBackgroundColor="@color/gray">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="Daily Water Intake :">
+
+                                </TextView>
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/showwater"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="30dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black">
+
+                            </TextView>
+
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="170dp"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardElevation="10dip"
+                        app:cardMaxElevation="20dp"
+                        app:cardBackgroundColor="@color/gray">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text=" Calories per day :\n\n Calories to maintain current weight ">
+
+                                </TextView>
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/showcalories"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="60dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black">
+
+                            </TextView>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="100dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                   android:text=" Calories to gain one pound per week "
+
+                                   >
+
+                                </TextView>
+                            </RelativeLayout>
+                          <RelativeLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="30dp"
+                              android:layout_marginTop="130dp">
+
+                              <TextView
+                                  android:id="@+id/showGaincalories"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="match_parent"
+                                  android:textAlignment="center"
+                                  android:textColor="@color/black">
+
+                              </TextView>
+                          </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="170dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text=" Calories to loss one pound per week "
+
+                                    >
+
+                                </TextView>
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="200dp">
+
+                                <TextView
+                                    android:id="@+id/showLosscalories"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black">
+
+                                </TextView>
+                            </RelativeLayout>
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin13"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="435dp"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardElevation="10dip"
+                        app:cardMaxElevation="20dp"
+                        app:cardBackgroundColor="@color/gray">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text=" Ideal Body Weight :">
+
+                                </TextView>
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/showIdeal"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="30dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black">
+
+                            </TextView>
+
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lin134"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="540dp"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardElevation="10dip"
+                        app:cardMaxElevation="20dp"
+                        app:cardBackgroundColor="@color/gray">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text=" BMI :">
+
+                                </TextView>
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/showbmi"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="30dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black">
+
+                            </TextView>
+
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin1345"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="650dp"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardElevation="10dip"
+                        app:cardMaxElevation="20dp"
+                        app:cardBackgroundColor="@color/gray">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text=" Weight :">
+
+                                </TextView>
+
+                                <ImageView
+                                    android:id="@+id/setWeight"
+                                    android:layout_width="65dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginStart="337dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginRight="10dp"
+
+                                    android:src="@drawable/ic_baseline_add_24">
+
+                                </ImageView>
+
+
+                            </RelativeLayout>
+
+
+
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

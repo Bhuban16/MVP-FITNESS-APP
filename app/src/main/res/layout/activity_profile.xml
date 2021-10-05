@@ -9,28 +9,28 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="644dp"
-        android:layout_marginEnd="284dp"
+        android:layout_width="151dp"
+        android:layout_height="136dp"
+        android:layout_marginTop="652dp"
+        android:layout_marginEnd="308dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ellipse1" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="288dp"
-        android:layout_marginTop="644dp"
+        android:layout_width="157dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="308dp"
+        android:layout_marginTop="652dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ellipse1" />
 
     <Button
         android:id="@+id/btnChangePassword"
-        android:layout_width="187dp"
-        android:layout_height="48dp"
+        android:layout_width="125dp"
+        android:layout_height="44dp"
         android:background="@drawable/rectangle_2"
         android:backgroundTint="#FFFFFF"
         android:text="change password"
@@ -38,10 +38,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnProfileUpdate"
-        app:layout_constraintVertical_bias="0.07" />
+        app:layout_constraintVertical_bias="0.428" />
 
     <ImageView
         android:id="@+id/ivProfilePic"
@@ -52,7 +51,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153"
+        app:layout_constraintVertical_bias="0.055"
         app:srcCompat="@drawable/group_2" />
 
     <TextView
@@ -95,17 +94,16 @@
 
     <Button
         android:id="@+id/btnProfileUpdate"
-        android:layout_width="186dp"
-        android:layout_height="50dp"
+        android:layout_width="127dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="88dp"
         android:background="@drawable/rectangle_2"
         android:backgroundTint="#FFFFFF"
         android:text="Edit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvProfileEmail"
-        app:layout_constraintVertical_bias="0.178" />
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvProfilePhoneNumber"
@@ -124,5 +122,92 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvProfileName"
         app:layout_constraintVertical_bias="0.457" />
+
+    <TextView
+        android:id="@+id/tvProfileAge"
+        android:layout_width="173dp"
+        android:layout_height="43dp"
+        android:background="@drawable/rectangle_2"
+        android:drawableStart="@drawable/ic_baseline_cake_24"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="Age:"
+        android:textColor="#020202"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnProfileUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvProfileEmail"
+        app:layout_constraintVertical_bias="0.106">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvProfileWeight"
+        android:layout_width="173dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="63dp"
+        android:background="@drawable/rectangle_2"
+        android:drawableStart="@drawable/img_ideal_body_weight"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/dark"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="Weight:"
+        android:textColor="#020202"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnProfileUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toEndOf="@+id/tvProfileAge"
+        app:layout_constraintTop_toTopOf="@+id/tvProfileEmail"
+        app:layout_constraintVertical_bias="0.0">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvProfileHeight"
+        android:layout_width="269dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rectangle_2"
+        android:drawableStart="@drawable/ic_baseline_height_24"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="Height:"
+        android:textColor="#020202"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnProfileUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvProfileAge"
+        app:layout_constraintVertical_bias="0.183">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvProfileGender"
+        android:layout_width="268dp"
+        android:layout_height="44dp"
+        android:background="@drawable/rectangle_2"
+        android:drawableStart="@drawable/ic_baseline_height_24"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="Gender:"
+        android:textColor="#020202"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnProfileUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvProfileWeight"
+        app:layout_constraintVertical_bias="0.787">
+
+    </TextView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

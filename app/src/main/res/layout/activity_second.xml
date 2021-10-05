@@ -34,8 +34,8 @@
                 android:id="@+id/toolbar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:background="#00008577"
+
+
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -49,22 +49,107 @@
                 android:id="@+id/relativeLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp">
 
                 <LinearLayout
-                    android:id="@+id/lin1"
+                    android:id="@+id/lin1111"
                     android:layout_width="match_parent"
-                    android:layout_height="151dp"
-
-                     android:layout_marginTop="120dp"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                     android:background="@color/transperent"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="60dp"
                     app:layout_constraintBottom_toTopOf="@+id/lin11"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.444"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/toolbar"
-                    app:layout_constraintVertical_bias="0.9"
-                   >
+                    app:layout_constraintVertical_bias="0.9"/>
+
+                     <LinearLayout
+                    android:id="@+id/lin1"
+                    android:layout_width="match_parent"
+                    android:layout_height="151dp"
+                    android:layout_marginTop="-50dp"
+                    android:background="@color/transperent"
+                    app:layout_constraintBottom_toTopOf="@+id/lin11"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.444"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    app:layout_constraintVertical_bias="0.9">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/report"
+                        android:layout_width="match_parent"
+                        android:layout_height="136dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginBottom="20dp"
+
+                        android:layout_weight="1"
+
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="10dip"
+                        app:cardMaxElevation="20dp"
+                        app:strokeColor="@color/colorSkyBlue"
+                        app:strokeWidth="1dp">
+
+                        <ImageView
+                            android:id="@+id/imag_12"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:alpha="0.75"
+                            android:background="@drawable/ima"
+                            android:padding="4dp" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/rel_two22"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="68dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_gravity="center"
+
+                                android:layout_marginTop="47dp"
+                                android:layout_marginBottom="21dp"
+                                android:backgroundTint="#FFFCFC"
+                                android:breakStrategy="high_quality"
+                                android:drawableTint="#7C3737"
+
+                                android:singleLine="true"
+                                android:text="Report"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="35dp"
+                                android:textStyle="bold"
+                                android:typeface="serif" />
+
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+              </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lin1234"
+                    android:layout_width="match_parent"
+                    android:layout_height="151dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/transperent"
+                    app:layout_constraintBottom_toTopOf="@+id/lin11"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.444"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    app:layout_constraintVertical_bias="0.9">
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/bmi"
@@ -151,7 +236,7 @@
                         app:cardCornerRadius="20dp"
                         app:cardElevation="10dip"
                         app:cardMaxElevation="20dp"
-                        app:strokeColor="@color/colorSkyBlue"
+                        app:strokeColor="#30106b"
                         app:strokeWidth="1dp">
 
                         <ImageView
@@ -202,9 +287,9 @@
                     android:id="@+id/lin111"
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
-                    android:layout_marginBottom="50dp"
-
                     android:layout_marginTop="20dp"
+
+                    android:layout_marginBottom="50dp"
                     app:layout_constraintEnd_toStartOf="@+id/lin1111"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -340,8 +425,6 @@
 
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
-
-
 
 
             </LinearLayout>

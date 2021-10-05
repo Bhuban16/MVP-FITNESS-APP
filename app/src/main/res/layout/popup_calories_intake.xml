@@ -75,21 +75,27 @@
 
     <TextView
         android:id="@+id/tv_calories_chart"
-        android:layout_width="393dp"
-        android:layout_height="49dp"
-        android:layout_below="@+id/tv_burn_cal"
+        android:layout_width="173dp"
+        android:layout_height="55dp"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="119dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="93dp"
+        android:layout_marginTop="430dp"
+        android:layout_marginEnd="119dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="211dp"
+        android:layout_marginBottom="247dp"
         android:background="@drawable/rounded_corner_button"
+        android:backgroundTint="@color/white"
         android:gravity="center"
         android:padding="5dp"
         android:text="@string/View_Chart"
         android:textColor="@color/white"
         android:textSize="14dp"
-        android:visibility="visible" />
+         />
 
 
 </RelativeLayout>

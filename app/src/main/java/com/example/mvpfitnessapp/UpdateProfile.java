@@ -9,9 +9,11 @@ import android.provider.MediaStore;
 import android.util.DisplayMetrics;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -35,7 +37,7 @@ import java.io.IOException;
 
 public class UpdateProfile extends AppCompatActivity {
 
-    private EditText newUserName, newUserPhoneNumber, newUserEmail;
+    private EditText newUserName, newUserPhoneNumber, newUserEmail , newUserWeight, newUserHeight,newUserAge;
     private Button save;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
@@ -44,6 +46,7 @@ public class UpdateProfile extends AppCompatActivity {
     Uri imagePath;
     private StorageReference storageReference;
     private FirebaseStorage firebaseStorage;
+    private Spinner userGenderUpdate;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -65,11 +68,19 @@ public class UpdateProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_profile);
 
+        userGenderUpdate = (Spinner) findViewById(R.id.etGenderUpdate);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.numbers, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        userGenderUpdate.setAdapter(adapter);
+
         newUserName = findViewById(R.id.etNameUpdate);
         newUserPhoneNumber = findViewById(R.id.etPhoneNumberUpdate);
         newUserEmail = findViewById(R.id.etEmailUpdate);
         save = findViewById(R.id.btnSave);
         updateProfilePic = findViewById(R.id.ivProfileUpdate);
+        newUserHeight = findViewById(R.id.etheightUpdate);
+        newUserAge = findViewById(R.id.etageUpdate);
+        newUserWeight = findViewById(R.id.etWeightUpdate);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -114,7 +125,13 @@ public class UpdateProfile extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
+
+
+                newUserAge.setText(userProfile.getUserAge());
                 newUserName.setText(userProfile.getUserName());
+                 newUserHeight.setText(userProfile.getUserHeight());
+                newUserWeight.setText(userProfile.getUserWeight());
+
                 newUserPhoneNumber.setText(userProfile.getUserPhoneNumber());
                 newUserEmail.setText(userProfile.getUserEmail());
             }
@@ -133,8 +150,11 @@ public class UpdateProfile extends AppCompatActivity {
                 String name = newUserName.getText().toString();
                 String number = newUserPhoneNumber.getText().toString();
                 String email = newUserEmail.getText().toString();
-
-                UserProfile userProfile = new UserProfile(email, name, number);
+                String gender =  userGenderUpdate.getSelectedItem().toString();
+                String age = newUserAge.getText().toString();
+                String weight = newUserWeight.getText().toString();
+                String height = newUserHeight.getText().toString();
+                UserProfile userProfile = new UserProfile(email, name, number, age, gender, weight, height);
 
                 databaseReference.setValue(userProfile);
 
@@ -162,6 +182,10 @@ public class UpdateProfile extends AppCompatActivity {
         String name = newUserName.getText().toString();
         String number = newUserPhoneNumber.getText().toString();
         String email = newUserEmail.getText().toString();
+        String weight = newUserWeight.getText().toString();
+        String height = newUserHeight.getText().toString();
+        String age = newUserAge.getText().toString();
+
 
         if(name.isEmpty()) {
             Toast.makeText(this, "Name can't be empty.", Toast.LENGTH_SHORT).show();
@@ -169,6 +193,12 @@ public class UpdateProfile extends AppCompatActivity {
             Toast.makeText(this, "Phone number can't be empty.", Toast.LENGTH_SHORT).show();
         }else if(email.isEmpty()){
             Toast.makeText(this, "Email can't be empty.", Toast.LENGTH_SHORT).show();
+        }else if(weight.isEmpty()){
+            Toast.makeText(this, "Weight can't be empty.", Toast.LENGTH_SHORT).show();
+        }else if(height.isEmpty()){
+            Toast.makeText(this, "Height can't be empty.", Toast.LENGTH_SHORT).show();
+        }else if(age.isEmpty()){
+            Toast.makeText(this, "Age can't be empty.", Toast.LENGTH_SHORT).show();
         }else {
             result = true;
         }

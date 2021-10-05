@@ -42,59 +42,57 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.387" />
+        app:layout_constraintVertical_bias="0.244" />
 
     <EditText
         android:id="@+id/etUserEmail"
         android:layout_width="344dp"
         android:layout_height="53dp"
         android:background="@drawable/rectangle_2"
-        android:ems="10"
         android:drawableStart="@drawable/ic_baseline_email_24"
         android:drawablePadding="10dp"
-        android:paddingLeft="10dp"
+        android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etUserName"
-        app:layout_constraintVertical_bias="0.056" />
+        app:layout_constraintVertical_bias="0.03" />
 
     <EditText
         android:id="@+id/etUserPassword"
         android:layout_width="344dp"
         android:layout_height="53dp"
         android:background="@drawable/rectangle_2"
-        android:ems="10"
         android:drawableStart="@drawable/ic_baseline_lock_24"
         android:drawablePadding="10dp"
-        android:paddingLeft="10dp"
+        android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etUserEmail"
-        app:layout_constraintVertical_bias="0.097" />
+        app:layout_constraintVertical_bias="0.038" />
 
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="117dp"
         android:layout_height="54dp"
+        android:layout_marginBottom="72dp"
         android:background="@drawable/rectangle_2"
         android:text="Sign up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUserPassword"
-        app:layout_constraintVertical_bias="0.512" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvUserLogin"
@@ -117,7 +115,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.128"
+        app:layout_constraintVertical_bias="0.026"
         app:srcCompat="@drawable/group_2" />
 
     <EditText
@@ -125,19 +123,108 @@
         android:layout_width="344dp"
         android:layout_height="53dp"
         android:background="@drawable/rectangle_2"
-        android:ems="10"
         android:drawableStart="@drawable/ic_baseline_local_phone_24"
         android:drawablePadding="10dp"
-        android:paddingLeft="10dp"
+        android:ems="10"
         android:hint="Phone Number"
         android:inputType="number"
+        android:paddingLeft="10dp"
         app:layout_constraintBottom_toTopOf="@+id/btnRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etUserPassword"
-        app:layout_constraintVertical_bias="0.415" />
+        app:layout_constraintVertical_bias="0.09" />
+
+    <EditText
+        android:id="@+id/etWeight"
+        android:layout_width="165dp"
+        android:layout_height="41dp"
+        android:background="@drawable/rectangle_2"
+        android:drawableStart="@drawable/img_ideal_body_weight"
+         android:drawableTint="@color/dark"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Weight (Kg)"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPhoneNumber"
+        app:layout_constraintVertical_bias="0.514" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="165dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="-20dp"
+
+        android:layout_marginRight="15dp"
+
+        android:layout_marginBottom="87dp"
+        android:background="@drawable/rectangle_2"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etWeight"
+        app:layout_constraintTop_toBottomOf="@+id/etPhoneNumber">
 
 
+        <Spinner
+            android:id="@+id/etGender"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+
+            android:drawablePadding="10dp"
+            android:dropDownSelector="@color/white"
+
+
+            android:paddingLeft="10dp"
+
+            android:spinnerMode="dropdown"
+            android:tooltipText="@string/Age"
+
+            tools:layout_editor_absoluteX="219dp"
+            tools:layout_editor_absoluteY="461dp" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/etage"
+        android:layout_width="165dp"
+        android:layout_height="41dp"
+        android:background="@drawable/rectangle_2"
+        android:drawableStart="@drawable/ic_baseline_cake_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/Age"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPhoneNumber"
+        app:layout_constraintVertical_bias="0.114" />
+
+    <EditText
+        android:id="@+id/etheight"
+        android:layout_width="165dp"
+        android:layout_height="41dp"
+        android:background="@drawable/rectangle_2"
+        android:drawableStart="@drawable/ic_baseline_height_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Height (cm)"
+        android:inputType="number"
+
+        android:paddingLeft="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintStart_toEndOf="@+id/etWeight"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.17" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,8 +7,8 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"></uses-permission>
-    <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name=".service.App"
@@ -19,9 +19,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".Report"
+            android:exported="true" />
+        <activity
             android:name=".Calculator"
-            android:exported="true"
-         />
+            android:exported="true" />
         <activity
             android:name=".Reminder"
             android:exported="true" />
@@ -29,9 +31,7 @@
             android:name=".Fullscreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
-            android:theme="@style/Theme.Design.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.Design.NoActionBar"></activity>
         <activity
             android:name=".daily_water.Daily_WaterIntake_Calculator"
             android:exported="true" />
@@ -47,7 +47,7 @@
         <activity
             android:name=".bmi.BMI_Calculator"
             android:launchMode="singleTop"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".bmi.BMI_Result"
             android:exported="true" />
@@ -60,25 +60,30 @@
         <activity
             android:name=".body_fat.Bodyfat_Result"
             android:exported="true" />
-        <activity android:name=".calories_intake.Daily_Calories_Intake_Calculator"
+        <activity
+            android:name=".calories_intake.Daily_Calories_Intake_Calculator"
             android:exported="true" />
-        <activity android:name=".calories_intake.Daily_Calories_Intake_Chart"
-            android:exported="true"/>
-        <activity android:name=".calories_intake.Daily_Calories_Intake_Result"
-            android:exported="true"/>
-        <activity android:name=".ideal_body_weight.Ideal_Body_Weight_Calculator"
-            android:exported="true"/>
-        <activity android:name=".ideal_body_weight.Ideal_Body_Weight_Result"
-
-            android:exported="true"/>
-
-        <activity android:name=".sugar.Sugar_calculator"
+        <activity
+            android:name=".calories_intake.Daily_Calories_Intake_Chart"
             android:exported="true" />
-        <activity android:name=".sugar.Sugar_Chart"
-            android:exported="true"/>
-        <activity android:name=".sugar.Sugar_Result"
-            android:exported="true"/>
-
+        <activity
+            android:name=".calories_intake.Daily_Calories_Intake_Result"
+            android:exported="true" />
+        <activity
+            android:name=".ideal_body_weight.Ideal_Body_Weight_Calculator"
+            android:exported="true" />
+        <activity
+            android:name=".ideal_body_weight.Ideal_Body_Weight_Result"
+            android:exported="true" />
+        <activity
+            android:name=".sugar.Sugar_calculator"
+            android:exported="true" />
+        <activity
+            android:name=".sugar.Sugar_Chart"
+            android:exported="true" />
+        <activity
+            android:name=".sugar.Sugar_Result"
+            android:exported="true" />
         <activity
             android:name=".bmi.BMI_Chart"
             android:exported="true" />
@@ -103,7 +108,7 @@
         <activity
             android:name=".AdminActivity"
             android:exported="true" />
-        <activity android:name=".ui.tracker"></activity>
+        <activity android:name=".ui.tracker" />
         <activity
             android:name=".Feedback"
             android:exported="true" />
@@ -147,9 +152,7 @@
 
         <receiver
             android:name=".reminder.ReminderAlarmService"
-            android:enabled="true">
-
-        </receiver>
+            android:enabled="true"></receiver>
     </application>
 
 </manifest>

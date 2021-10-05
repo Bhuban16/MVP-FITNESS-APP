@@ -27,71 +27,166 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ellipse1" />
 
+
     <ImageView
         android:id="@+id/ivProfileUpdate"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        app:srcCompat="@drawable/group_2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.156"/>
-
+        app:layout_constraintVertical_bias="0.041"
+        app:srcCompat="@drawable/group_2" />
 
     <EditText
         android:id="@+id/etNameUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:background="@drawable/rectangle_2"
         android:drawableStart="@drawable/ic_baseline_account_circle_24"
         android:drawablePadding="10dp"
-        android:paddingLeft="10dp"
+        android:ems="10"
         android:hint="Name"
-        android:background="@drawable/rectangle_2"
         android:inputType="textPersonName"
+        android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivProfileUpdate"
-        app:layout_constraintVertical_bias="0.138" />
+        app:layout_constraintVertical_bias="0.053" />
 
     <EditText
         android:id="@+id/etEmailUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:background="@drawable/rectangle_2"
         android:drawableStart="@drawable/ic_baseline_email_24"
         android:drawablePadding="10dp"
-        android:paddingLeft="10dp"
-        android:background="@drawable/rectangle_2"
+        android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPhoneNumberUpdate"
-        app:layout_constraintVertical_bias="0.164" />
+        app:layout_constraintVertical_bias="0.046" />
 
     <EditText
         android:id="@+id/etPhoneNumberUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Phone Number"
+        android:background="@drawable/rectangle_2"
         android:drawableStart="@drawable/ic_baseline_local_phone_24"
         android:drawablePadding="10dp"
-        android:paddingLeft="10dp"
-        android:background="@drawable/rectangle_2"
+        android:ems="10"
+        android:hint="Phone Number"
         android:inputType="phone"
+        android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNameUpdate"
-        app:layout_constraintVertical_bias="0.097" />
+        app:layout_constraintVertical_bias="0.032" />
+
+    <EditText
+        android:id="@+id/etWeightUpdate"
+        android:layout_width="145dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/rectangle_2"
+        android:drawableStart="@drawable/img_ideal_body_weight"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/dark"
+        android:ems="10"
+        android:hint="Weight"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etageUpdate"
+        app:layout_constraintVertical_bias="0.0">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/etageUpdate"
+        android:layout_width="145dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rectangle_2"
+        android:drawableStart="@drawable/ic_baseline_cake_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/Age"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/etWeightUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailUpdate"
+        app:layout_constraintVertical_bias="0.0">
+
+    </EditText>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="145dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="165dp"
+        android:background="@drawable/rectangle_2"
+        app:layout_constraintBottom_toTopOf="@+id/etheightUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailUpdate">
+
+
+        <Spinner
+            android:id="@+id/etGenderUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+
+            android:drawablePadding="10dp"
+            android:dropDownSelector="@color/white"
+
+
+            android:paddingLeft="10dp"
+
+            android:spinnerMode="dropdown"
+
+
+            tools:layout_editor_absoluteX="219dp"
+            tools:layout_editor_absoluteY="461dp" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/etheightUpdate"
+        android:layout_width="145dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/rectangle_2"
+        android:drawableStart="@drawable/ic_baseline_height_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Height"
+
+        android:inputType="number"
+        android:paddingLeft="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintStart_toEndOf="@+id/etWeightUpdate"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailUpdate"
+        app:layout_constraintVertical_bias="0.0">
+
+    </EditText>
 
     <Button
         android:id="@+id/btnSave"
@@ -106,7 +201,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmailUpdate"
-        app:layout_constraintVertical_bias="0.315" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.791" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

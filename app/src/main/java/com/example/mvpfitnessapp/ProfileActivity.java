@@ -35,11 +35,12 @@ import java.io.IOException;
 public class ProfileActivity extends AppCompatActivity {
 
     private ImageView profilePic;
-    private TextView profileName, profileEmail,profilePhoneNumber;
+    private TextView profileName, profileEmail,profilePhoneNumber , profileAge, profileWeight, profileHeight, profileGender;
     private Button profileUpdate, changePassword;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseStorage firebaseStorage;
+
 
     private static int PICK_IMAGE = 123;
     Uri imagePath;
@@ -64,6 +65,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        profileGender =  findViewById(R.id.tvProfileGender);
         profilePic = findViewById(R.id.ivProfilePic);
         profileName = findViewById(R.id.tvProfileName);
         profileEmail = findViewById(R.id.tvProfileEmail);
@@ -71,6 +73,11 @@ public class ProfileActivity extends AppCompatActivity {
         profileUpdate = findViewById(R.id.btnProfileUpdate);
         changePassword = findViewById(R.id.btnChangePassword);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        profileAge = findViewById(R.id.tvProfileAge);
+        profileHeight =  findViewById(R.id.tvProfileHeight);
+        profileWeight = findViewById(R.id.tvProfileWeight);
+
+
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app");
@@ -109,6 +116,10 @@ public class ProfileActivity extends AppCompatActivity {
                     profileName.setText("Name: " + userProfile.getUserName());
                     profilePhoneNumber.setText("Phone Number: " + userProfile.getUserPhoneNumber());
                     profileEmail.setText("Email: " + userProfile.getUserEmail());
+                    profileAge.setText("Age:" +  userProfile.getUserAge());
+                    profileHeight.setText("Height:"+ userProfile.getUserHeight());
+                profileWeight.setText("Weight:"+ userProfile.getUserWeight());
+                profileGender.setText("Gender:" +userProfile.getUserGender());
                 //}
             }
 
