@@ -7,8 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".SecondAdminActivity"
     android:background="#B5643AAF"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    android:fitsSystemWindows="true">
+    //tools:openDrawer="start">
 
 
     <com.google.android.material.navigation.NavigationView
@@ -63,7 +63,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/main" />
 
-
+            <Button
+                android:id="@+id/btnBhuban"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:text="Sunni"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/main" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
