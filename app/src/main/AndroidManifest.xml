@@ -19,6 +19,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".UploadAdmin"
+            android:exported="true" />
+        <activity
+            android:name=".NutrientAdmin"
+            android:exported="true" />
+        <activity
             android:name=".Report"
             android:exported="true" />
         <activity
@@ -31,7 +37,7 @@
             android:name=".Fullscreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
-            android:theme="@style/Theme.Design.NoActionBar"></activity>
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".daily_water.Daily_WaterIntake_Calculator"
             android:exported="true" />
@@ -152,7 +158,7 @@
 
         <receiver
             android:name=".reminder.ReminderAlarmService"
-            android:enabled="true"></receiver>
+            android:enabled="true" />
     </application>
 
 </manifest>
