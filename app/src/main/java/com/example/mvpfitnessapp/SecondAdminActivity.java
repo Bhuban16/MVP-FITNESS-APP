@@ -24,6 +24,7 @@ public class SecondAdminActivity extends AppCompatActivity implements Navigation
     Toolbar toolbar;
     Menu menu;
     private Button Upload;
+    private Button Bhuban;
 
 
     @Override
@@ -35,7 +36,7 @@ public class SecondAdminActivity extends AppCompatActivity implements Navigation
         navigationView = findViewById(R.id.nav_view);
         Toolbar toolbar = findViewById(R.id.toolbar);
         Upload = findViewById(R.id.btnUpload);
-
+        Bhuban = findViewById(R.id.btnBhuban);
         setSupportActionBar(toolbar);
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -50,7 +51,12 @@ public class SecondAdminActivity extends AppCompatActivity implements Navigation
                 startActivity(new Intent(SecondAdminActivity.this, Upload.class));
             }
         });
-
+        Bhuban.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondAdminActivity.this, NutrientAdmin.class));
+            }
+        });
     }
 
 

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,6 +46,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
     private CardView calculate;
     private ImageView lean_body_mass;
     private TextView showcalories, showwater, showbmi ,showGaincalories , showLosscalories , showIdeal;
+    private Button button;
 
 
 
@@ -85,6 +87,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         showLosscalories = findViewById(R.id.showLosscalories);
         showIdeal = findViewById(R.id.showIdeal);
         bmi = findViewById(R.id.bmi);
+        button = findViewById(R.id.Button);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app");
@@ -139,6 +142,12 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SecondActivity.this, Report.class));
+            }
+        });
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this, NutrientUser.class));
             }
         });
     }
