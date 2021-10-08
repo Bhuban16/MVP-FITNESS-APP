@@ -1,12 +1,18 @@
 package com.example.mvpfitnessapp;
 
+import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -17,6 +23,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
+
 public class Report extends AppCompatActivity {
 
     private Toolbar mToolbar;
@@ -24,8 +32,9 @@ public class Report extends AppCompatActivity {
     private TextView showcalories, showwater, showbmi ,showGaincalories , showLosscalories , showIdeal;
     private FirebaseDatabase firebaseDatabase;
     private ImageView setWeight;
-
-
+    private EditText AddWeight;
+    private Button datepicker;
+    private DatePickerDialog datePickerDialog;
 
 
     @Override
@@ -45,6 +54,7 @@ public class Report extends AppCompatActivity {
         setWeight = findViewById(R.id.setWeight);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app");
+
 
 
         final DatabaseReference databaseReference = firebaseDatabase.getReference("User Info").child(firebaseAuth.getUid());
@@ -183,16 +193,104 @@ public class Report extends AppCompatActivity {
             }
         });
 
-setWeight.setOnClickListener(new View.OnClickListener() {
+    setWeight.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        openDialog();
+        AlertDialog.Builder builder = new AlertDialog.Builder(Report.this);
+
+        View view = getLayoutInflater().inflate(R.layout.layout_dialog, null);
+        builder.setView(view)
+                .setTitle("Weight")
+                .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .setPositiveButton("Add", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+        AddWeight = view.findViewById(R.id.AddWeight);
+        initDatePicker();
+        datepicker = view.findViewById(R.id.datepicker);
+        datepicker.setText(getTodaysDate());
+     builder.setView(view);
+     AlertDialog dialog = builder.create();
+     dialog.show();
     }
 });
     }
-    public void openDialog(){
+    private void initDatePicker()
+    {
+        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+           public void onDateSet(DatePicker view, int year, int month, int day) {
+                month = month +1;
+               String date = makeDateString(day,month,year);
+               datepicker.setText(date);
 
+
+            }
+        };
+
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+       int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this,android.R.style.Theme_Holo_Light);
+
+        datePickerDialog =new DatePickerDialog(Report.this,dateSetListener,year,month,day);
     }
+
+    private String makeDateString(int day, int month ,int year){
+        return getMonthFragment(month) + " " +day+" "+ year;
+    }
+    private String getTodaysDate(){
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+       month= month+1;
+       int day = cal.get(Calendar.DAY_OF_MONTH);
+       return makeDateString(day,month,year);
+   }
+   private String getMonthFragment(int month){
+      if(month == 1)
+           return "JAN";
+       if(month == 2)
+            return "FEB";
+      if(month == 3)
+          return "MAR";
+      if(month == 4)
+         return "APR";
+       if(month == 5)
+            return "MAY";
+       if(month == 6)
+            return "JUN";
+       if(month == 7)
+           return "JUL";
+       if(month == 8)
+          return "AUG";
+       if(month == 9)
+            return "SEP";
+        if(month == 10)
+          return "OCT";
+       if(month == 11)
+           return "NOV";
+
+        if(month == 12)
+           return "DEC";
+
+        return "JAN";
+    }
+
+    public void openDatePicker(View view){
+        datePickerDialog.show();
+    }
+
+
     public int calculateMaleDiff(int weightMenIdeal, int MaleIdeal ) {
 
         if (weightMenIdeal > MaleIdeal) {
@@ -299,3 +397,5 @@ setWeight.setOnClickListener(new View.OnClickListener() {
         }
     }
 }
+
+
