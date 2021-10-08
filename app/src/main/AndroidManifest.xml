@@ -22,6 +22,12 @@
             android:name=".NutrientUser"
             android:exported="true" />
         <activity
+            android:name=".MemberNutrient"
+            android:exported="true" />
+        <activity
+            android:name=".ViewHolderNutrient"
+            android:exported="true" />
+        <activity
             android:name=".UploadAdmin"
             android:exported="true" />
         <activity

@@ -21,23 +21,8 @@ public class ViewHolderNutrient extends RecyclerView.ViewHolder {
 
     view = itemView;
 
-    itemView.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            mclicklistener.onItemClick(view,getAdapterPosition());
         }
-    });
 
-    itemView.setOnLongClickListener(new View.OnLongClickListener() {
-        @Override
-        public boolean onLongClick(View view) {
-            mclicklistener.onItemLongClick(view,getAdapterPosition());
-            return false;
-        }
-    });
-
-
-    }
 
     public void setdetails(Context context,String mName,String mlmageuri){
 
@@ -49,13 +34,4 @@ public class ViewHolderNutrient extends RecyclerView.ViewHolder {
 
     }
 
-    private ViewHolderNutrient.Clicklistener mclicklistener;
-
-    public interface Clicklistener{
-        void onItemClick(View view,int position);
-        void onItemLongClick(View view,int position);
-    }
-    public void setOnClickListener(ViewHolderNutrient.Clicklistener clicklistener){
-        mclicklistener = clicklistener;
-    }
 }

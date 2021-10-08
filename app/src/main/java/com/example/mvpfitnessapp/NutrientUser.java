@@ -32,7 +32,7 @@ public class NutrientUser extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app");
         reference = firebaseDatabase.getReference("Image");
 
 
@@ -47,21 +47,20 @@ public class NutrientUser extends AppCompatActivity {
                         .setQuery(reference,MemberNutrient.class)
                         .build();
         FirebaseRecyclerAdapter<MemberNutrient,ViewHolderNutrient>firebaseRecyclerAdapter =
-                new FirebaseRecyclerAdapter<MemberNutrient, ViewHolderNutrient>(options)
-
-                {
+                new FirebaseRecyclerAdapter<MemberNutrient, ViewHolderNutrient>(options) {
                     @Override
                     protected void onBindViewHolder(@NonNull ViewHolderNutrient holder, int position, @NonNull MemberNutrient model) {
                         holder.setdetails(getApplicationContext(), model.getMName(), model.getMlmageuri());
 
 
                     }
+
                     @NonNull
                     @Override
                     public ViewHolderNutrient onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
                         View view = LayoutInflater.from(parent.getContext())
-                                .inflate(R.layout.image,parent, false);
+                        .inflate(R.layout.image,parent, false);
 
 
                         return new ViewHolderNutrient(view);
