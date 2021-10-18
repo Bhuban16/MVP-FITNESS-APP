@@ -29,18 +29,25 @@ public class Report extends AppCompatActivity {
 
     private Toolbar mToolbar;
     private FirebaseAuth firebaseAuth;
-    private TextView showcalories, showwater, showbmi ,showGaincalories , showLosscalories , showIdeal;
+    private TextView showcalories, showwater, showbmi ,showGaincalories , showLosscalories , showIdeal , UpWeight;
     private FirebaseDatabase firebaseDatabase;
     private ImageView setWeight;
     private EditText AddWeight;
     private Button datepicker;
     private DatePickerDialog datePickerDialog;
+    String date;
+    UploadWeight weightTrack;
+    UserProfile updateWeight;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        weightTrack = new UploadWeight();
+        updateWeight = new UserProfile();
         setContentView(R.layout.activity_report);
+        UpWeight = findViewById(R.id.weightUp);
+        AddWeight = findViewById(R.id.AddWeight);
         showbmi = findViewById(R.id.showbmi);
         showcalories = findViewById(R.id.showcalories);
         showwater = findViewById(R.id.showwater);
@@ -54,6 +61,7 @@ public class Report extends AppCompatActivity {
         setWeight = findViewById(R.id.setWeight);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app");
+
 
 
 
@@ -211,7 +219,28 @@ public class Report extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
+                       String message1 = datepicker.getText().toString();
+                       String message2 = AddWeight.getText().toString();
+                        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app");
+                        DatabaseReference myRef = firebaseDatabase.getReference("Weight Track").child(firebaseAuth.getUid());
+                        weightTrack.setWeightDate(message1);
+                        weightTrack.setTrackWeight(message2);
+
+                        String i = myRef.push().getKey();
+
+                        myRef.child(i).setValue(weightTrack);
+                        Toast.makeText(Report.this, "Upload Successful", Toast.LENGTH_SHORT).show();
+
+                        DatabaseReference myRef2 = firebaseDatabase.getReference("User Info").child(firebaseAuth.getUid());
+
+
+                       myRef2.child("userWeight").setValue( message2);
+
+
+                       UpWeight.setText(message2);
+
                     }
+
                 });
         AddWeight = view.findViewById(R.id.AddWeight);
         initDatePicker();
@@ -223,13 +252,13 @@ public class Report extends AppCompatActivity {
     }
 });
     }
-    private void initDatePicker()
+    public void initDatePicker()
     {
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
            public void onDateSet(DatePicker view, int year, int month, int day) {
                 month = month +1;
-               String date = makeDateString(day,month,year);
+               date = makeDateString(day,month,year);
                datepicker.setText(date);
 
 
@@ -243,6 +272,7 @@ public class Report extends AppCompatActivity {
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this,android.R.style.Theme_Holo_Light);
 
         datePickerDialog =new DatePickerDialog(Report.this,dateSetListener,year,month,day);
+
     }
 
     private String makeDateString(int day, int month ,int year){
@@ -396,6 +426,7 @@ public class Report extends AppCompatActivity {
             return "Obese";
         }
     }
+
 }
 
 

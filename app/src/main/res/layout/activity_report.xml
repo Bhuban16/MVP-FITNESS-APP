@@ -335,7 +335,15 @@
 
                             </RelativeLayout>
 
+                             <TextView
+                                 android:id="@+id/weightUp"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="50dp"
+                                 android:layout_marginTop="30dp"
+                                 android:textAlignment="center"
+                                 android:textColor="@color/black"  >
 
+                             </TextView>
 
 
                         </RelativeLayout>

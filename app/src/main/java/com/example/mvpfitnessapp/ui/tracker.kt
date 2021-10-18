@@ -3,6 +3,7 @@ package com.example.mvpfitnessapp.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 
 import com.example.mvpfitnessapp.R
 import com.example.mvpfitnessapp.SecondActivity
@@ -60,7 +61,7 @@ class tracker : AppCompatActivity(), stepsCallback {
             upStep!!.setUserDate(getDateToday())
 
             myRef.push().key?.let { it1 -> myRef.child(it1).setValue(upStep) }
-
+            Toast.makeText(this, "Upload Successful", Toast.LENGTH_SHORT).show()
             PrefsHelper.putString("TodayDate" , "")
             PrefsHelper.putInt("Steps" , 0)
             PrefsHelper.putInt("FSteps" , 0)
