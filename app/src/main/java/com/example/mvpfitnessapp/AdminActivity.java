@@ -26,8 +26,8 @@ public class AdminActivity extends AppCompatActivity {
     AName =(EditText) findViewById(R.id.etAdminName);
         APassword =(EditText) findViewById(R.id.etAdminPassword);
         ALogin = (Button) findViewById(R.id.btnAdminLogin);
-        credentials.setUsername("Admin1");
-        credentials.setUserpassword("123456");
+        credentials.setUsername("A");
+        credentials.setUserpassword("1");
 
         ALogin.setOnClickListener(new View.OnClickListener() {
             @Override

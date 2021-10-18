@@ -10,6 +10,7 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.os.IBinder
 import android.util.Log
+import android.widget.Button
 import android.widget.Toast
 import com.example.mvpfitnessapp.callback.stepsCallback
 import com.example.mvpfitnessapp.helper.GeneralHelper
@@ -19,15 +20,15 @@ import kotlin.math.roundToInt
 
 class StepDetectorService : Service(), SensorEventListener {
 
+
     companion object {
         lateinit var callback: stepsCallback
     }
 
+
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-
-        val sensorManager: SensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+         val sensorManager: SensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         val countSensor: Sensor? = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
-
         if(countSensor != null){
             Toast.makeText(this, "Step Detecting Start", Toast.LENGTH_SHORT).show()
             sensorManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_FASTEST)
@@ -40,6 +41,8 @@ class StepDetectorService : Service(), SensorEventListener {
         }
 
         return START_STICKY
+
+
     }
 
     override fun onBind(p0: Intent?): IBinder? {
@@ -62,6 +65,7 @@ class StepDetectorService : Service(), SensorEventListener {
         }
 
     }
+
 
     override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
         Log.d("SERVICE", p0.toString())

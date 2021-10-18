@@ -19,7 +19,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".NutrientUser"
+            android:name=".userImagesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".StepHistory"
+            android:exported="true" />
+        <activity
+            android:name=".NutrientFull"
+            android:exported="true" />
+        <activity
+            android:name=".ImagesActivity"
             android:exported="true" />
         <activity
             android:name=".MemberNutrient"

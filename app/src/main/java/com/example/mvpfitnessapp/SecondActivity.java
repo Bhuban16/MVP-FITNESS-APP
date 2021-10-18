@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,10 +42,10 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
     private CardView step;
     private CardView reminder;
     private CardView report;
-    private CardView calculate;
+    private CardView calculate , nutrient;
     private ImageView lean_body_mass;
     private TextView showcalories, showwater, showbmi ,showGaincalories , showLosscalories , showIdeal;
-    private Button button;
+    private CardView button;
 
 
 
@@ -70,7 +69,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         navigationView.setCheckedItem(R.id.nav_home);
 
 
-
+        nutrient = findViewById(R.id.Nutrient);
         firebaseAuth = FirebaseAuth.getInstance();
         profileMenu = findViewById(R.id.profileMenu);
         report = findViewById(R.id.report);
@@ -108,6 +107,18 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
             }
         });
 
+        nutrient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this, userImagesActivity.class));
+            }
+        });
+       button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this, StepHistory.class));
+            }
+        });
 
         bmi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,12 +155,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
                 startActivity(new Intent(SecondActivity.this, Report.class));
             }
         });
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this, NutrientUser.class));
-            }
-        });
+
     }
 
 

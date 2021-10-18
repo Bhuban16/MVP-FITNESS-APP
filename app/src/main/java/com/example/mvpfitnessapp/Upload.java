@@ -148,6 +148,7 @@ public class Upload extends AppCompatActivity {
                                 member.setVideourl(downloadUrl.toString());
                                 member.setSearch(search);
                                 String i = databaseReference.push().getKey();
+
                                 databaseReference.child(i).setValue(member);
 
                             }else {

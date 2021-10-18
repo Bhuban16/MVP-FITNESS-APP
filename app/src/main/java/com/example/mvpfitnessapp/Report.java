@@ -200,7 +200,7 @@ public class Report extends AppCompatActivity {
 
         View view = getLayoutInflater().inflate(R.layout.layout_dialog, null);
         builder.setView(view)
-                .setTitle("Weight")
+                .setTitle("Update Weight")
                 .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
