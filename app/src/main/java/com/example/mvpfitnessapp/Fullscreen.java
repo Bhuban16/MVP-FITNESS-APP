@@ -6,11 +6,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -27,7 +25,7 @@ public class Fullscreen extends AppCompatActivity {
 
     private SimpleExoPlayer player;
     private PlayerView playerView;
-    TextView textView;
+    TextView textView , description;
     boolean fullscreen = false;
     ImageView fullscreenButton;
     private String url;
@@ -49,16 +47,17 @@ public class Fullscreen extends AppCompatActivity {
 
         playerView = findViewById(R.id.exoplayer_fullscreen);
         textView = findViewById(R.id.tv_fullscreen);
-
+        description=findViewById(R.id.description);
 
         fullscreenButton = playerView.findViewById(R.id.exoplayer_fullscreen_icon);
 
         Intent intent = getIntent();
         url = intent.getExtras().getString("ur");
         String title = intent.getExtras().getString("nam");
-
-
+        String Description = intent.getExtras().getString("des");
+        description.setText(Description);
         textView.setText(title);
+
 
         fullscreenButton.setOnClickListener(new View.OnClickListener() {
             @Override

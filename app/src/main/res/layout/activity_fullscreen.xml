@@ -13,10 +13,10 @@
         android:id="@+id/exoplayer_fullscreen"
         android:layout_width="match_parent"
         android:layout_height="230dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
 
-        android:layout_marginEnd="3dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="3dp"
         app:controller_layout_id="@layout/exoplayer_custom_controls"
         app:resize_mode="fill"
@@ -27,10 +27,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#CC000000"
-            android:text="name"
+            android:text="name \n"
             android:textColor="@android:color/white"
             android:textSize="15sp" />
+
     </com.google.android.exoplayer2.ui.PlayerView>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/exoplayer_fullscreen"
+        android:layout_marginTop="25dp">
+
+    </TextView>
 
 </RelativeLayout>
 

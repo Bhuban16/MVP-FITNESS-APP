@@ -2,6 +2,7 @@ package com.example.mvpfitnessapp;
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,7 +32,7 @@ public class Report extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private TextView showcalories, showwater, showbmi ,showGaincalories , showLosscalories , showIdeal , UpWeight;
     private FirebaseDatabase firebaseDatabase;
-    private ImageView setWeight;
+    private ImageView setWeight , ViewWeight;
     private EditText AddWeight;
     private Button datepicker;
     private DatePickerDialog datePickerDialog;
@@ -43,9 +44,10 @@ public class Report extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_report);
         weightTrack = new UploadWeight();
         updateWeight = new UserProfile();
-        setContentView(R.layout.activity_report);
+        ViewWeight = findViewById(R.id.ViewWeight);
         UpWeight = findViewById(R.id.weightUp);
         AddWeight = findViewById(R.id.AddWeight);
         showbmi = findViewById(R.id.showbmi);
@@ -75,7 +77,8 @@ public class Report extends AppCompatActivity {
                 String age = dataSnapshot.child("userAge").getValue().toString();
                 String weight = dataSnapshot.child("userWeight").getValue().toString();
                 String height = dataSnapshot.child("userHeight").getValue().toString();
-
+                UpWeight.setText(String.valueOf( weight + " Kg"));
+                
                 int weightCal = Integer.parseInt(weight) * 10;
                 int heightCal = Integer.parseInt(height) * 25 / 4;
                 int ageCal = Integer.parseInt(age) * 5;
@@ -201,6 +204,13 @@ public class Report extends AppCompatActivity {
             }
         });
 
+    ViewWeight.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            startActivity(new Intent(Report.this, ViewWeight.class));
+        }
+    });
+
     setWeight.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
@@ -237,7 +247,7 @@ public class Report extends AppCompatActivity {
                        myRef2.child("userWeight").setValue( message2);
 
 
-                       UpWeight.setText(message2);
+
 
                     }
 

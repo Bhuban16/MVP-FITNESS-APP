@@ -71,6 +71,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
                 @Override
                 public void onClick(View v) {
+
                     if (mListener != null) {
                         int position = holder.getAdapterPosition();
                         if (position != RecyclerView.NO_POSITION) {
@@ -130,6 +131,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
         @Override
         public void onClick(View v) {
+
 
             if (mListener != null) {
                 int position = getAdapterPosition();

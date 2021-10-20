@@ -33,7 +33,7 @@ public class ShowVideo extends AppCompatActivity {
     DatabaseReference databaseReference;
     RecyclerView recyclerView;
     FirebaseDatabase database;
-    String name,url;
+    String name,url,des;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,10 +128,13 @@ public class ShowVideo extends AppCompatActivity {
                             public void onItemClick(View view, int position) {
                                 name = getItem(position).getName();
                                 url = getItem(position).getVideourl();
+                                des = getItem(position).getDescription();
                                 Intent intent = new Intent(ShowVideo.this,Fullscreen.class);
                                 intent.putExtra("nam",name);
                                 intent.putExtra("ur",url);
+                                intent.putExtra("des",des);
                                 startActivity(intent);
+
 
                             }
 

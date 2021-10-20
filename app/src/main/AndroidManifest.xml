@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".ViewWeight"
+            android:exported="true" />
+        <activity
             android:name=".userImagesActivity"
             android:exported="true" />
         <activity
