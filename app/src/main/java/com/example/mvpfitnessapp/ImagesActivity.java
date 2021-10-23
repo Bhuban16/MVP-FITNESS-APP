@@ -101,7 +101,28 @@ public class ImagesActivity extends AppCompatActivity implements ImageAdapter.On
         }
         @Override
         public void onWhatEverClick(int position) {
-            Toast.makeText(this, "Whatever click at position: " + position, Toast.LENGTH_SHORT).show();
+            UploadAdmin uploadCurrent = mUploads.get(position);
+            name = uploadCurrent.getmName();
+            url = uploadCurrent.getmImageuri();
+            desc = uploadCurrent.getmDesc();
+            name2 = uploadCurrent.getmName2();
+            url2 = uploadCurrent.getmImageuri2();
+            desc2 = uploadCurrent.getmDesc2();
+            name3 = uploadCurrent.getmName3();
+            url3 = uploadCurrent.getmImageuri3();
+            desc3 = uploadCurrent.getmDesc3();
+            Intent intent = new Intent(ImagesActivity.this,NutrientFullAdmin.class);
+            intent.putExtra("nam1",name);
+            intent.putExtra("ur1",url);
+            intent.putExtra("nam2",name2);
+            intent.putExtra("ur2",url2);
+            intent.putExtra("nam3",name3);
+            intent.putExtra("ur3",url3);
+            intent.putExtra("desc1",desc);
+            intent.putExtra("desc2",desc2);
+            intent.putExtra("desc3",desc3);
+            startActivity(intent);
+
         }
 
         @Override
@@ -122,6 +143,7 @@ public class ImagesActivity extends AppCompatActivity implements ImageAdapter.On
                     final String selectedKey = selectedItem.getKey();
                     StorageReference imageRef = mStorage.getReferenceFromUrl(selectedItem.getmImageuri());
                     imageRef.delete().
+
 
                             addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override

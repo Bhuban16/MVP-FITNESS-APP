@@ -1,8 +1,11 @@
 package com.example.mvpfitnessapp;
 
+import com.google.firebase.database.Exclude;
+
 public class UploadWeight {
     private String weightDate;
     private String trackWeight;
+    private String mKey;
 
     public UploadWeight() {
     }
@@ -21,5 +24,14 @@ public class UploadWeight {
 
     public void setTrackWeight(String trackWeight) {
         this.trackWeight = trackWeight;
+    }
+
+    @Exclude
+    public String getKey() {
+        return mKey;
+    }
+    @Exclude
+    public void setKey(String key) {
+        mKey = key;
     }
 }

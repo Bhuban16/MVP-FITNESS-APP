@@ -98,7 +98,18 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
 
             });
+            ((ImageViewHolder)holder).edit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
+                    if (mListener != null) {
+                        int position = holder.getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            mListener.onWhatEverClick(position);
+                        }
+                    }
+                }
+            });
         }
 
     @Override

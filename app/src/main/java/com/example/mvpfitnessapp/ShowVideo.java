@@ -33,7 +33,8 @@ public class ShowVideo extends AppCompatActivity {
     DatabaseReference databaseReference;
     RecyclerView recyclerView;
     FirebaseDatabase database;
-    String name,url,des;
+    String name,url,des , timer , set;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,9 +75,15 @@ public class ShowVideo extends AppCompatActivity {
                             public void onItemClick(View view, int position) {
                                 name = getItem(position).getName();
                                 url = getItem(position).getVideourl();
+                                des = getItem(position).getDescription();
+                                timer= getItem(position).getTimer();
+                                set = getItem(position).getWorkoutSet();
                                 Intent intent = new Intent(ShowVideo.this,Fullscreen.class);
                                 intent.putExtra("nam",name);
                                 intent.putExtra("ur",url);
+                                intent.putExtra("des",des);
+                                intent.putExtra("time",timer);
+                                intent.putExtra("set",set);
                                 startActivity(intent);
 
                             }
@@ -129,10 +136,14 @@ public class ShowVideo extends AppCompatActivity {
                                 name = getItem(position).getName();
                                 url = getItem(position).getVideourl();
                                 des = getItem(position).getDescription();
+                                timer= getItem(position).getTimer();
+                                set = getItem(position).getWorkoutSet();
                                 Intent intent = new Intent(ShowVideo.this,Fullscreen.class);
                                 intent.putExtra("nam",name);
                                 intent.putExtra("ur",url);
                                 intent.putExtra("des",des);
+                                intent.putExtra("time",timer);
+                                intent.putExtra("set",set);
                                 startActivity(intent);
 
 
@@ -145,6 +156,8 @@ public class ShowVideo extends AppCompatActivity {
 
                             }
                         });
+
+
                     }
 
 

@@ -8,10 +8,21 @@
         android:id="@+id/AddWeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="110dp"
         android:textColor="@color/black">
 
     </EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Please use current date to update your new report and weight."
+        android:textAlignment="center"
+        android:textSize="14sp"
+        >
+
+    </TextView>
 
     <Button
         android:id="@+id/datepicker"
@@ -24,7 +35,7 @@
         android:text="Jan 01 2020"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="10dp">
+        android:textSize="13dp">
 
     </Button>
 

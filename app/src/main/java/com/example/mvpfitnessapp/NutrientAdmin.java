@@ -165,7 +165,7 @@ public class NutrientAdmin extends AppCompatActivity {
 
     }
      private void UploadFile(){
-        if (mImageUri != null || mImageUri2 !=null || mImageUri3 != null ) {
+        if (mImageUri != null || mImageUri2 !=null|| mImageUri3!=null || mEditText !=null || mEditText2 != null || mEditText3 !=null || Desc != null || Desc2 != null || Desc3 !=null ) {
             StorageReference filerefernce = mStoragerefernce.child(System.currentTimeMillis()
                     + "." + getFileExt(mImageUri)  );
             StorageReference filerefernce2 = mStoragerefernce.child(System.currentTimeMillis() + "." + getFileExt(mImageUri2));
@@ -229,8 +229,9 @@ public class NutrientAdmin extends AppCompatActivity {
                                 }
                             });
 
-        }else {
-            Toast.makeText(NutrientAdmin.this,"No file Selected", Toast.LENGTH_SHORT).show();
+        }
+        else  {
+            Toast.makeText(NutrientAdmin.this,"Please fill all the details", Toast.LENGTH_SHORT).show();
         }
      }
 }

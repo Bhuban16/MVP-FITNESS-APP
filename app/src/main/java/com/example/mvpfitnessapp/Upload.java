@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.MediaController;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
@@ -43,7 +44,7 @@ public class Upload extends AppCompatActivity {
     ProgressBar progressBar;
     Member member;
     UploadTask uploadTask;
-
+    TextView WorkoutSet , WorkoutTimer ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +59,8 @@ public class Upload extends AppCompatActivity {
         button = findViewById(R.id.button_upload_main);
         videoView = findViewById(R.id.videoview_main);
         progressBar = findViewById(R.id.progressBar_main);
-
+        WorkoutSet = findViewById(R.id.set);
+        WorkoutTimer = findViewById(R.id.setTimer);
         mediaController = new MediaController(this);
         videoView.setMediaController(mediaController);
         mediaController.setAnchorView(videoView);
@@ -120,9 +122,11 @@ public class Upload extends AppCompatActivity {
         String videoName = editText.getText().toString();
         String Description = description.getText().toString();
         String search = editText.getText().toString().toLowerCase();
+        String Timer = WorkoutTimer.getText().toString();
+        String Set = WorkoutSet.getText().toString();
 
 
-        if (videoUri != null || !TextUtils.isEmpty(videoName) || !TextUtils.isEmpty(Description)) {
+        if (videoUri != null || !TextUtils.isEmpty(videoName) || !TextUtils.isEmpty(Description) || !TextUtils.isEmpty(Timer) || !TextUtils.isEmpty(Set)) {
             progressBar.setVisibility(View.VISIBLE);
             final StorageReference reference = storageReference.child(System.currentTimeMillis() + "." + getExt(videoUri));
             uploadTask = reference.putFile(videoUri);
@@ -147,6 +151,8 @@ public class Upload extends AppCompatActivity {
                                 member.setDescription(Description);
                                 member.setVideourl(downloadUrl.toString());
                                 member.setSearch(search);
+                                member.setTimer(Timer);
+                                member.setWorkoutSet(Set);
                                 String i = databaseReference.push().getKey();
 
                                 databaseReference.child(i).setValue(member);

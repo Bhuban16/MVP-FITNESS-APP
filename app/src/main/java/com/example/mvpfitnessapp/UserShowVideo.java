@@ -1,5 +1,6 @@
 package com.example.mvpfitnessapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -26,6 +27,7 @@ public class UserShowVideo extends AppCompatActivity {
     DatabaseReference databaseReference;
     RecyclerView recyclerView;
     FirebaseDatabase database;
+    String name,url,des , timer , set;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +63,32 @@ public class UserShowVideo extends AppCompatActivity {
                     protected void onBindViewHolder(@NonNull UserViewHolder holder, int position, @NonNull Member model) {
 
                         holder.setExoPlayer(getApplication(),model.getName(),model.getVideourl(), model.getDescription());
+                        holder.setOnClicklistener(new UserViewHolder.Clicklistener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                name = getItem(position).getName();
+                                url = getItem(position).getVideourl();
+                                des = getItem(position).getDescription();
+                                timer= getItem(position).getTimer();
+                                set = getItem(position).getWorkoutSet();
+                                Intent intent = new Intent(UserShowVideo.this,UserFullscreen.class);
+                                intent.putExtra("nam",name);
+                                intent.putExtra("ur",url);
+                                intent.putExtra("des",des);
+                                intent.putExtra("time",timer);
+                                intent.putExtra("set",set);
+                                startActivity(intent);
 
+
+                            }
+
+                            @Override
+                            public void onItemLongClick(View view, int position) {
+
+                            }
+
+
+                        });
                     }
 
                     @NonNull
@@ -96,7 +123,32 @@ public class UserShowVideo extends AppCompatActivity {
                     protected void onBindViewHolder(@NonNull UserViewHolder holder, int position, @NonNull Member model) {
 
                         holder.setExoPlayer(getApplication(),model.getName(),model.getVideourl(), model.getDescription());
+                        holder.setOnClicklistener(new UserViewHolder.Clicklistener() {
+                        @Override
+                        public void onItemClick(View view, int position) {
+                            name = getItem(position).getName();
+                            url = getItem(position).getVideourl();
+                            des = getItem(position).getDescription();
+                            timer= getItem(position).getTimer();
+                            set = getItem(position).getWorkoutSet();
+                            Intent intent = new Intent(UserShowVideo.this,UserFullscreen.class);
+                            intent.putExtra("nam",name);
+                            intent.putExtra("ur",url);
+                            intent.putExtra("des",des);
+                            intent.putExtra("time",timer);
+                            intent.putExtra("set",set);
+                            startActivity(intent);
 
+
+                        }
+
+                            @Override
+                            public void onItemLongClick(View view, int position) {
+
+                            }
+
+
+                        });
                     }
 
                     @NonNull

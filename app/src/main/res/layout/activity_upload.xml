@@ -11,8 +11,10 @@
     <VideoView
         android:id="@+id/videoview_main"
         android:layout_width="wrap_content"
-        android:layout_height="190dp"
-        android:layout_margin="10dp"
+        android:layout_height="170dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="0dp"
         android:backgroundTint="@android:color/black"
          />
 
@@ -35,7 +37,30 @@
 
     </EditText>
 
+    <EditText
+        android:id="@+id/setTimer"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_height="wrap_content"
+        android:hint="Set Timer"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:textSize="15dp">
 
+    </EditText>
+    <EditText
+        android:id="@+id/set"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_height="wrap_content"
+        android:hint="Workout Set"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:textSize="15dp">
+
+    </EditText>
     <TextView
 
         android:layout_width="167dp"
@@ -68,7 +93,7 @@
         android:id="@+id/progressBar_main"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="263dp"
-        android:layout_height="12dp"
+        android:layout_height="15dp"
         android:indeterminate="true"
         android:indeterminateTint="@android:color/holo_orange_dark"
         android:visibility="invisible" />

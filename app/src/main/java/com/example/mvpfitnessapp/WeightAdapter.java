@@ -9,8 +9,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class WeightAdapter extends RecyclerView.ViewHolder {
 
+
     public WeightAdapter(@NonNull View itemView){
         super(itemView);
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                mClickListener.onItemClick(view,getAdapterPosition());
+
+            }
+        });
     }
     public void setExoPlayer (Application application, String weightDate , String trackWeight ){
 
@@ -22,5 +31,17 @@ public class WeightAdapter extends RecyclerView.ViewHolder {
         text2.setText("Weight : "+trackWeight);
 
 
+    }
+
+    private WeightAdapter.Clicklistener mClickListener;
+
+
+
+    public interface Clicklistener {
+        void onItemClick(View view, int position);
+       }
+
+    public void  setOnClicklistener(WeightAdapter.Clicklistener clicklistener){
+        mClickListener = clicklistener;
     }
 }

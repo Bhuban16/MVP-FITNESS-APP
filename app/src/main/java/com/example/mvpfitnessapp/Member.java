@@ -6,6 +6,8 @@ public class Member {
     private String Videourl;
     private String search;
     private String description;
+    private String workoutSet;
+    private String timer;
 
     public Member() {
     }
@@ -40,5 +42,21 @@ public class Member {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getWorkoutSet() {
+        return workoutSet;
+    }
+
+    public void setWorkoutSet(String workoutSet) {
+        this.workoutSet = workoutSet;
+    }
+
+    public String getTimer() {
+        return timer;
+    }
+
+    public void setTimer(String timer) {
+        this.timer = timer;
     }
 }

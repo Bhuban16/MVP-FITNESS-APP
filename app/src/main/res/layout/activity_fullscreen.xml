@@ -8,41 +8,106 @@
     tools:context=".Fullscreen"
     tools:ignore="MissingClass">
 
-
-    <com.google.android.exoplayer2.ui.PlayerView
-        android:id="@+id/exoplayer_fullscreen"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="match_parent"
 
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="3dp"
-        app:controller_layout_id="@layout/exoplayer_custom_controls"
-        app:resize_mode="fill"
-        app:use_controller="true">
+        >
 
-        <TextView
-            android:id="@+id/tv_fullscreen"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#CC000000"
-            android:text="name \n"
-            android:textColor="@android:color/white"
-            android:textSize="15sp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    </com.google.android.exoplayer2.ui.PlayerView>
+            <VideoView
+                android:id="@+id/exoplayer_fullscreen"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="3dp"
+                android:backgroundTint="@color/black"
+                app:resize_mode="fill"
+                app:use_controller="true">
 
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_below="@+id/exoplayer_fullscreen"
-        android:layout_marginTop="25dp">
 
-    </TextView>
+            </VideoView>
 
+            <EditText
+                android:id="@+id/tv_fullscreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="name \n"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/exoplayer_fullscreen"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="10dp">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/exoplayer_fullscreen"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="10dp">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/time0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:backgroundTint="@color/white"
+                android:textSize="30sp">
+
+            </EditText>
+
+
+            <Button
+                android:id="@+id/update"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="Save">
+
+            </Button>
+
+            <Button
+                android:id="@+id/updatevideo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="choose video">
+
+            </Button>
+
+            <ProgressBar
+                android:id="@+id/prog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:visibility="invisible">
+
+            </ProgressBar>
+
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>
 

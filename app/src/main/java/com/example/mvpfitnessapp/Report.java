@@ -78,7 +78,7 @@ public class Report extends AppCompatActivity {
                 String weight = dataSnapshot.child("userWeight").getValue().toString();
                 String height = dataSnapshot.child("userHeight").getValue().toString();
                 UpWeight.setText(String.valueOf( weight + " Kg"));
-                
+
                 int weightCal = Integer.parseInt(weight) * 10;
                 int heightCal = Integer.parseInt(height) * 25 / 4;
                 int ageCal = Integer.parseInt(age) * 5;
@@ -241,12 +241,16 @@ public class Report extends AppCompatActivity {
                         myRef.child(i).setValue(weightTrack);
                         Toast.makeText(Report.this, "Upload Successful", Toast.LENGTH_SHORT).show();
 
+
+
+
                         DatabaseReference myRef2 = firebaseDatabase.getReference("User Info").child(firebaseAuth.getUid());
 
 
-                       myRef2.child("userWeight").setValue( message2);
+                         if(message1.equals(getTodaysDate())) {
+                             myRef2.child("userWeight").setValue(message2);
 
-
+                         }
 
 
                     }
@@ -282,6 +286,7 @@ public class Report extends AppCompatActivity {
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this,android.R.style.Theme_Holo_Light);
 
         datePickerDialog =new DatePickerDialog(Report.this,dateSetListener,year,month,day);
+        datePickerDialog.getDatePicker().setMaxDate(cal.getTimeInMillis());
 
     }
 
