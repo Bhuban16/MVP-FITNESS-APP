@@ -39,7 +39,7 @@ public class NutrientFullAdmin extends AppCompatActivity {
     private ProgressBar mProgressbar;
     private Uri mImageUri, mImageUri2, mImageUri3, mImage, mImage2, mImage3, mImageN;
     Uri image, image2, image3;
-    private String urlI, urlI2, urlI3;
+    private String urlI, urlI2, urlI3 , child;
     private StorageTask mUploadTask;
     private StorageTask mUploadTask1;
     private StorageTask mUploadTask2;
@@ -83,7 +83,7 @@ public class NutrientFullAdmin extends AppCompatActivity {
         title = intent.getExtras().getString("nam1");
         String title2 = intent.getExtras().getString("nam2");
         String title3 = intent.getExtras().getString("nam3");
-
+        child = intent.getExtras().getString("child");
         Desc.setText(description);
         Desc2.setText(description2);
         Desc3.setText(description3);
@@ -97,9 +97,9 @@ public class NutrientFullAdmin extends AppCompatActivity {
         Picasso.get().load(mImage3).fit().into(mImageView3);
 
         mStoragerefernce = FirebaseStorage.getInstance().getReference("Images");
-        mDatabaserefernce = FirebaseDatabase.getInstance().getReference("Image");
 
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image");
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image").child(child).child("Menu");
         Query query2 = databaseReference.orderByChild("mName").equalTo(title);
 
         query2.addValueEventListener(new ValueEventListener() {
@@ -259,7 +259,7 @@ public class NutrientFullAdmin extends AppCompatActivity {
                                                                                         ;
 
                                                                                     Uri downloadUrl3 = urlTask.getResult();
-                                                                                    DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image");
+                                                                                    DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image").child(child).child("Menu");
                                                                                     Query query = databaseReference.orderByChild("mName").equalTo(title);
 
                                                                                     String url = downloadUrl.toString();
@@ -342,7 +342,7 @@ public class NutrientFullAdmin extends AppCompatActivity {
 
                                                             Uri downloadUrl2 = urlTask.getResult();
 
-                                                            DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image");
+                                                            DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image").child(child).child("Menu");
                                                             Query query = databaseReference.orderByChild("mName").equalTo(title);
 
                                                             String url = downloadUrl.toString();
@@ -424,7 +424,7 @@ public class NutrientFullAdmin extends AppCompatActivity {
                                                                                         ;
 
                                                                                     Uri downloadUrl3 = urlTask.getResult();
-                                                                                    DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image");
+                                                                                    DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image").child(child).child("Menu");
                                                                                     Query query = databaseReference.orderByChild("mName").equalTo(title);
 
                                                                                     String url = downloadUrl.toString();
@@ -493,7 +493,7 @@ public class NutrientFullAdmin extends AppCompatActivity {
                                                                                         ;
 
                                                                                     Uri downloadUrl3 = urlTask.getResult();
-                                                                                    DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image");
+                                                                                    DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image").child(child).child("Menu");
                                                                                     Query query = databaseReference.orderByChild("mName").equalTo(title);
 
 
@@ -558,7 +558,7 @@ public class NutrientFullAdmin extends AppCompatActivity {
                                     Uri downloadUrl = urlTask.getResult();
 
 
-                                                                                    DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image");
+                                                                                    DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image").child(child).child("Menu");
                                                                                     Query query = databaseReference.orderByChild("mName").equalTo(title);
 
                                                                                     String url = downloadUrl.toString();
@@ -618,7 +618,7 @@ public class NutrientFullAdmin extends AppCompatActivity {
                                     Uri downloadUrl2 = urlTask.getResult();
 
 
-                                    DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image");
+                                    DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image").child(child).child("Menu");
                                     Query query = databaseReference.orderByChild("mName").equalTo(title);
 
                                     String url2 = downloadUrl2.toString();
@@ -676,7 +676,7 @@ public class NutrientFullAdmin extends AppCompatActivity {
                                     Uri downloadUrl3 = urlTask.getResult();
 
 
-                                    DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image");
+                                    DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image").child(child).child("Menu");
                                     Query query = databaseReference.orderByChild("mName").equalTo(title);
 
                                     String url3 = downloadUrl3.toString();
@@ -714,7 +714,7 @@ public class NutrientFullAdmin extends AppCompatActivity {
         }
 
         else{
-            DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image");
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Image").child(child).child("Menu");
             Query query = databaseReference.orderByChild("mName").equalTo(title);
 
             query.addListenerForSingleValueEvent(new ValueEventListener() {

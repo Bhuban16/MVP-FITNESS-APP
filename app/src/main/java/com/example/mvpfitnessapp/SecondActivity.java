@@ -45,7 +45,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
     private CardView calculate , nutrient;
     private ImageView lean_body_mass;
     private TextView showcalories, showwater, showbmi ,showGaincalories , showLosscalories , showIdeal;
-    private CardView button;
+    private CardView button , workouthistory;
 
 
 
@@ -68,7 +68,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_home);
 
-
+         workouthistory = findViewById(R.id.workouthistory);
         nutrient = findViewById(R.id.Nutrient);
         firebaseAuth = FirebaseAuth.getInstance();
         profileMenu = findViewById(R.id.profileMenu);
@@ -110,7 +110,13 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         nutrient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this, userImagesActivity.class));
+                startActivity(new Intent(SecondActivity.this, userCategoryActivities.class));
+            }
+        });
+        workouthistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this, workoutHistory.class));
             }
         });
        button.setOnClickListener(new View.OnClickListener() {

@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".UserFullscreen"
-    tools:ignore="MissingClass">
+    tools:ignore="MissingClass"
+    android:background="#333333">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -32,6 +33,7 @@
                 app:use_controller="true">
 
                 <TextView
+                    android:layout_marginBottom="20dp"
                     android:id="@+id/tv_fullscreen1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -81,9 +83,11 @@
             </TextView>
             <Button
                 android:id="@+id/Pause1"
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:background="#656565"
                 android:layout_marginBottom="20dp"
                 android:layout_gravity="center"
                 android:text="Start">
@@ -96,6 +100,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:textColor="@color/white"
+                android:background="#656565"
                 android:text="Continue Workout">
 
             </Button>
@@ -105,6 +111,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:textColor="@color/white"
+                android:background="#656565"
                 android:text="Finish Workout">
 
             </Button>

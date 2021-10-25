@@ -24,7 +24,7 @@ public class SecondAdminActivity extends AppCompatActivity implements Navigation
     Toolbar toolbar;
     Menu menu;
     private Button Upload;
-    private Button Bhuban;
+    private Button Bhuban , category;
 
 
     @Override
@@ -42,7 +42,7 @@ public class SecondAdminActivity extends AppCompatActivity implements Navigation
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
+        category = findViewById(R.id.category);
         navigationView.setCheckedItem(R.id.nav_home1);
 
         Upload.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +55,12 @@ public class SecondAdminActivity extends AppCompatActivity implements Navigation
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SecondAdminActivity.this, NutrientAdmin.class));
+            }
+        });
+        category.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondAdminActivity.this,UploadCategory.class));
             }
         });
     }

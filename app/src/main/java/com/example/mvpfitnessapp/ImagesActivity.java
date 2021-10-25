@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -27,7 +28,7 @@ import java.util.List;
 public class ImagesActivity extends AppCompatActivity implements ImageAdapter.OnItemClickListener {
     private RecyclerView mRecyclerView;
     private ImageAdapter mAdapter;
-    String name , url , desc;
+    String name , url , desc , child;
     String name2 , url2 , desc2;
     String name3 , url3 , desc3;
     private ProgressBar mProgressCircle;
@@ -35,24 +36,37 @@ public class ImagesActivity extends AppCompatActivity implements ImageAdapter.On
     private ValueEventListener mDBListener;
     private DatabaseReference mDatabaseRef;
     private List<UploadAdmin> mUploads;
+    private Button upload;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_images);
-
+        upload = findViewById(R.id.upload);
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        Intent intent = getIntent();
         mProgressCircle = findViewById(R.id.progress_circle);
 
+         child = intent.getExtras().getString("child");
         mUploads = new ArrayList<>();
         mAdapter = new ImageAdapter(ImagesActivity.this, mUploads);
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("Image");
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("Image").child(child).child("Menu");
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(ImagesActivity.this);
+
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(ImagesActivity.this,NutrientAdmin.class);
+                intent.putExtra("nam1",child);
+                startActivity(intent);
+            }
+        });
+
         mDBListener = mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -87,6 +101,7 @@ public class ImagesActivity extends AppCompatActivity implements ImageAdapter.On
             url3 = uploadCurrent.getmImageuri3();
             desc3 = uploadCurrent.getmDesc3();
             Intent intent = new Intent(ImagesActivity.this,NutrientFull.class);
+            intent.putExtra("child",child);
             intent.putExtra("nam1",name);
             intent.putExtra("ur1",url);
             intent.putExtra("nam2",name2);
@@ -111,7 +126,9 @@ public class ImagesActivity extends AppCompatActivity implements ImageAdapter.On
             name3 = uploadCurrent.getmName3();
             url3 = uploadCurrent.getmImageuri3();
             desc3 = uploadCurrent.getmDesc3();
+
             Intent intent = new Intent(ImagesActivity.this,NutrientFullAdmin.class);
+            intent.putExtra("child",child);
             intent.putExtra("nam1",name);
             intent.putExtra("ur1",url);
             intent.putExtra("nam2",name2);

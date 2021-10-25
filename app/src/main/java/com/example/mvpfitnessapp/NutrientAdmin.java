@@ -63,9 +63,11 @@ public class NutrientAdmin extends AppCompatActivity {
         Desc3 = findViewById(R.id.desc3);
         mProgressbar = findViewById(R.id.progress_bar);
         mImageView = findViewById(R.id.image_view);
+        Intent intent = getIntent();
+        String title = intent.getExtras().getString("nam1");
         mTextViewUploads= findViewById(R.id.text_view_show_uploads);
         mStoragerefernce = FirebaseStorage.getInstance().getReference("Images");
-        mDatabaserefernce = FirebaseDatabase.getInstance().getReference("Image");
+        mDatabaserefernce = FirebaseDatabase.getInstance().getReference("Image").child(title).child("Menu");
 
         mButtonChoose.setOnClickListener(new View.OnClickListener() {
             @Override
