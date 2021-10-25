@@ -72,7 +72,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/main" />
+                app:layout_constraintTop_toBottomOf="@+id/main"
+                android:visibility="gone"/>
             <Button
                 android:id="@+id/category"
                 android:layout_width="wrap_content"
