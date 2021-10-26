@@ -5,11 +5,9 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    android:background="#DDDDDD"
-=======
-    android:background="#666362"
->>>>>>> 81844a2bbd98535438a58e650880d44d753776a3
+    android:background="#bec9cf"
+
+
     tools:context=".MainActivity"
     android:fitsSystemWindows="true">
     //tools:openDrawer="start">
@@ -22,7 +20,7 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/header"
         app:menu="@menu/menu" />
-    #B5643AA
+
 
 
     <ScrollView
@@ -57,13 +55,34 @@
                 android:orientation="vertical"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="0dp">
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/image_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    app:sliderAnimationDuration="600"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderIndicatorAnimationDuration="600"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="15dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="3dp"
+                    app:sliderIndicatorRadius="2dp"
+                    app:sliderIndicatorSelectedColor="#5A5A5A"
+                    app:sliderIndicatorUnselectedColor="#FFF"
+                    app:sliderScrollTimeInSec="2"
+                    app:sliderStartAutoCycle="true"/>
+
                 <LinearLayout
                     android:id="@+id/lin111111"
                     android:layout_width="match_parent"
                     android:layout_height="151dp"
                     android:orientation="horizontal"
                     android:background="@color/transperent"
-                    android:layout_marginTop="120dp"
+                    android:layout_marginTop="40dp"
                     android:layout_marginBottom="20dp"
                     app:layout_constraintBottom_toTopOf="@+id/lin11"
                     app:layout_constraintEnd_toEndOf="parent"

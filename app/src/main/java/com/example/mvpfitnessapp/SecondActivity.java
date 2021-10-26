@@ -1,4 +1,5 @@
 package com.example.mvpfitnessapp;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -24,6 +25,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
 
 public class SecondActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -46,7 +50,12 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
     private ImageView lean_body_mass;
     private TextView showcalories, showwater, showbmi, showGaincalories, showLosscalories, showIdeal;
     private CardView button, workouthistory;
-
+    SliderView sliderView;
+    int[] images = {R.drawable.slide1,
+            R.drawable.slider3,
+            R.drawable.slider2,
+            R.drawable.img_reminder,
+           };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +65,14 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        sliderView = findViewById(R.id.image_slider);
 
+        SliderAdapter sliderAdapter = new SliderAdapter(images);
+
+        sliderView.setSliderAdapter(sliderAdapter);
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
+        sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
+        sliderView.startAutoCycle();
         setSupportActionBar(toolbar);
 
         navigationView.bringToFront();
