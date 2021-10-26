@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="2dp"
+    app:cardCornerRadius="3dp"
+
+    android:layout_marginTop="4dp"
     app:cardBackgroundColor="#DDDDDD"
     app:cardUseCompatPadding="true"
     >
@@ -20,6 +22,7 @@
             android:id="@+id/tv_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="Name"
             android:textColor="@android:color/black"
             android:textSize="20dp"
