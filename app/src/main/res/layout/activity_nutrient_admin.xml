@@ -135,11 +135,11 @@
                 app:layout_constraintVertical_bias="0.769" />
 
             <Button
-                android:id="@+id/Choose_image_btn3"
+                android:id="@+id/Choose_image_btn2"
                 android:layout_width="168dp"
                 android:layout_height="52dp"
                 android:layout_gravity="center"
-                android:text="Choose Image 3"
+                android:text="Choose Image 2"
                 android:layout_marginTop="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -149,12 +149,12 @@
                 app:layout_constraintVertical_bias="0.733" />
 
             <Button
-                android:id="@+id/Choose_image_btn2"
+                android:id="@+id/Choose_image_btn3"
                 android:layout_width="168dp"
                 android:layout_height="52dp"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                android:text="Choose Image 2"
+                android:text="Choose Image 3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -183,7 +183,7 @@
                 android:layout_height="52dp"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                android:text="Upload Image"
+                android:text="Upload Nutrient"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.508"

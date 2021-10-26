@@ -67,7 +67,7 @@
                 android:layout_height="52dp"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                android:text="Show Uploads"
+                android:text="Show Uploads Category"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
 
