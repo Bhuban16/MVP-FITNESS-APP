@@ -28,9 +28,83 @@
         </menu>
         </item>
 
+    <item android:title="Step Tracker">
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/steptr"
+                    android:icon="@drawable/runnn"
+                    android:iconTint="@color/black"
+                    android:title="Step Tracking"/>
 
 
+                <item
+                    android:id="@+id/his"
+                    android:icon="@drawable/ic_baseline_history_24"
+                    android:title="Step History"/>
+            </group>
+        </menu>
+    </item>
 
+    <item android:title="Workout">
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/Workout"
+                    android:icon="@drawable/ic_baseline_fitness_center_24"
+                    android:iconTint="@color/black"
+                    android:title="Workout"/>
+
+
+                <item
+                    android:id="@+id/hiswork"
+                    android:icon="@drawable/ic_baseline_history_24"
+                    android:title="Workout History"/>
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Nutrient">
+
+        <menu>
+    <group>
+    <item
+        android:id="@+id/Nutrient"
+        android:icon="@drawable/ic_baseline_food_bank_24"
+        android:iconTint="@color/black"
+        android:title="Nutrient"/>
+    </group>
+        </menu>
+    </item>
+
+    <item android:title="Calculate">
+
+        <menu>
+            <group>
+
+    <item
+        android:id="@+id/calcula"
+        android:icon="@drawable/ic_baseline_calculate_24"
+        android:title="Calculate"/>
+
+        </group>
+</menu>
+    </item>
+
+    <item android:title="Report">
+
+        <menu>
+    <group>
+
+    <item
+        android:id="@+id/repo"
+        android:icon="@drawable/ic_baseline_assignment_24"
+        android:title="Report"/>
+    </group>
+        </menu>
+    </item>
 
         <item android:title="Communication">
 

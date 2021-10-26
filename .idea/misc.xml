@@ -24,6 +24,7 @@
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/drawable/side_nav_bar.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_add_reminder.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_admin.xml" value="0.1796875" />
+        <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_admin_upload_category.xml" value="0.165625" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_bmi_calculator.xml" value="0.22" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_bmi_chart.xml" value="0.1796875" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_bmi_result.xml" value="0.22" />
@@ -31,6 +32,8 @@
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_calculator.xml" value="0.1796875" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_category_activities.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_category_edit.xml" value="0.1796875" />
+        <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_category_video.xml" value="0.1796875" />
+        <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_category_video_edit.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_contact_us.xml" value="0.22" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_feedback.xml" value="0.22" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_fullscreen.xml" value="0.22" />
@@ -48,7 +51,7 @@
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_reminder.xml" value="0.1" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_report.xml" value="0.22" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_rounded_corner.xml" value="0.1358695652173913" />
-        <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_second.xml" value="0.29767040552200175" />
+        <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_second.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_second_admin.xml" value="0.22" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_showvideo.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_step_history.xml" value="0.22" />
@@ -58,12 +61,14 @@
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_upload.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_upload_category.xml" value="0.165625" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_user_category_activities.xml" value="0.1796875" />
-        <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_user_fullscreen.xml" value="0.1796875" />
+        <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_user_category_video.xml" value="0.1796875" />
+        <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_user_fullscreen.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_user_images.xml" value="0.165625" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_user_show_video.xml" value="0.1796875" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_view_weight.xml" value="0.1796875" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_weight_history.xml" value="0.1796875" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/activity_workout.xml" value="0.165625" />
+        <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/admin_category_video.xml" value="0.1796875" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/alarm_items.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/app_bar_main.xml" value="0.1796875" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/bloodpressure_calculator.xml" value="0.3333333333333333" />
@@ -73,6 +78,7 @@
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/calories_intake_calculator.xml" value="0.22" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/calories_intake_chart.xml" value="0.23469387755102042" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/category_item.xml" value="0.1796875" />
+        <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/category_video.xml" value="0.1796875" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/content_main.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/exoplayer_custom_controls.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/gaaje/OneDrive/Desktop/MVP FITNESS/app/src/main/res/layout/header.xml" value="0.16666666666666666" />

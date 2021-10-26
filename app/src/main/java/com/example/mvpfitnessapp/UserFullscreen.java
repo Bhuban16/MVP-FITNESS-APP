@@ -139,6 +139,7 @@ public class UserFullscreen extends AppCompatActivity {
                 myRef2.child(i).setValue(workoutHistory);
 
                 Toast.makeText(UserFullscreen.this, "Data saved", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(UserFullscreen.this,UserShowVideo.class));
 
 
             }
@@ -328,7 +329,7 @@ public class UserFullscreen extends AppCompatActivity {
     }
 
     private String getDateToday() {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
         String today = dateFormat.format(date);
         return today;

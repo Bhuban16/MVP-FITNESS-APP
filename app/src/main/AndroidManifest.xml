@@ -19,6 +19,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".userCategoryVideoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CategoryVideoEdit"
+            android:exported="true" />
+        <activity
+            android:name=".AdminUploadCategory"
+            android:exported="true" />
+        <activity
+            android:name=".CategoryVideoActivity"
+            android:exported="true" />
+        <activity
             android:name=".userCategoryActivities"
             android:exported="true" />
         <activity

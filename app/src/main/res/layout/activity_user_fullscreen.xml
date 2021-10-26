@@ -14,6 +14,7 @@
         android:layout_height="match_parent"
 
         >
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -33,10 +34,10 @@
                 app:use_controller="true">
 
                 <TextView
-                    android:layout_marginBottom="20dp"
                     android:id="@+id/tv_fullscreen1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
                     android:background="#CC000000"
                     android:text="name \n"
                     android:textColor="@android:color/white"
@@ -54,12 +55,13 @@
                 android:layout_marginRight="10dp">
 
             </TextView>
+
             <TextView
                 android:id="@+id/set1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_below="@+id/exoplayer_fullscreen"
+                android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginRight="10dp">
@@ -67,42 +69,46 @@
             </TextView>
 
             <TextView
+                android:id="@+id/timer11"
                 android:layout_width="wrap_content"
                 android:layout_height="260dp"
-                android:id="@+id/timer11"
-                android:layout_marginTop="20sp"
                 android:layout_marginLeft="40dp"
+                android:layout_marginTop="20sp"
                 android:layout_marginRight="40dp"
                 android:background="@drawable/clock"
                 android:backgroundTint="@color/white"
                 android:gravity="center"
-                android:visibility="gone"
                 android:text="@string/_00_00"
-                android:textSize="60sp">
+                android:textSize="60sp"
+                android:visibility="gone">
 
             </TextView>
+
             <Button
                 android:id="@+id/Pause1"
-                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="#656565"
-                android:layout_marginBottom="20dp"
                 android:layout_gravity="center"
-                android:text="Start">
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="#656565"
+                android:text="Start"
+                android:textColor="@color/white">
 
             </Button>
+
             <Button
                 android:id="@+id/Continue1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                android:gravity="center"
-                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
                 android:background="#656565"
-                android:text="Continue Workout">
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="Continue Workout"
+                android:textColor="@color/white">
 
             </Button>
 
@@ -111,13 +117,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:textColor="@color/white"
                 android:background="#656565"
-                android:text="Finish Workout">
+                android:text="Finish Workout"
+                android:textColor="@color/white">
 
             </Button>
-
-
 
 
         </LinearLayout>

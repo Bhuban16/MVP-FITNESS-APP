@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -33,24 +34,34 @@ public class ShowVideo extends AppCompatActivity {
     DatabaseReference databaseReference;
     RecyclerView recyclerView;
     FirebaseDatabase database;
-    String name,url,des , timer , set;
+    String name,url,des , timer , set , child;
+    Button upload;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showvideo);
-
+        Intent intent = getIntent();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
+        child = intent.getExtras().getString("child");
+          upload  = findViewById(R.id.upload);
         recyclerView = findViewById(R.id.recyclerview_ShowVideo);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
        database= FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app");
 
-        databaseReference = database.getReference("video");
+        databaseReference = database.getReference("video").child(child).child("Menu");
+
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ShowVideo.this,Upload.class);
+                intent.putExtra("child",child);
+                startActivity(intent);
+            }
+        });
 
     }
     private void firebaseSearch(String searchtext){
@@ -79,6 +90,8 @@ public class ShowVideo extends AppCompatActivity {
                                 timer= getItem(position).getTimer();
                                 set = getItem(position).getWorkoutSet();
                                 Intent intent = new Intent(ShowVideo.this,Fullscreen.class);
+
+                                intent.putExtra("child",child);
                                 intent.putExtra("nam",name);
                                 intent.putExtra("ur",url);
                                 intent.putExtra("des",des);
@@ -139,6 +152,7 @@ public class ShowVideo extends AppCompatActivity {
                                 timer= getItem(position).getTimer();
                                 set = getItem(position).getWorkoutSet();
                                 Intent intent = new Intent(ShowVideo.this,Fullscreen.class);
+                                intent.putExtra("child",child);
                                 intent.putExtra("nam",name);
                                 intent.putExtra("ur",url);
                                 intent.putExtra("des",des);

@@ -42,11 +42,10 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
     private CardView step;
     private CardView reminder;
     private CardView report;
-    private CardView calculate , nutrient;
+    private CardView calculate, nutrient;
     private ImageView lean_body_mass;
-    private TextView showcalories, showwater, showbmi ,showGaincalories , showLosscalories , showIdeal;
-    private CardView button , workouthistory;
-
+    private TextView showcalories, showwater, showbmi, showGaincalories, showLosscalories, showIdeal;
+    private CardView button, workouthistory;
 
 
     @Override
@@ -68,7 +67,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_home);
 
-         workouthistory = findViewById(R.id.workouthistory);
+        workouthistory = findViewById(R.id.workouthistory);
         nutrient = findViewById(R.id.Nutrient);
         firebaseAuth = FirebaseAuth.getInstance();
         profileMenu = findViewById(R.id.profileMenu);
@@ -119,7 +118,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
                 startActivity(new Intent(SecondActivity.this, workoutHistory.class));
             }
         });
-       button.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SecondActivity.this, StepHistory.class));
@@ -129,7 +128,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         bmi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this, UserShowVideo.class));
+                startActivity(new Intent(SecondActivity.this, userCategoryVideoActivity.class));
             }
         });
 
@@ -155,7 +154,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
             }
         });
 
-       report.setOnClickListener(new View.OnClickListener() {
+        report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SecondActivity.this, Report.class));
@@ -165,94 +164,93 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
     }
 
 
-    public int calculateMaleDiff(int weightMenIdeal, int MaleIdeal ) {
+    public int calculateMaleDiff(int weightMenIdeal, int MaleIdeal) {
 
         if (weightMenIdeal > MaleIdeal) {
             return (int) (weightMenIdeal - MaleIdeal);
-        }else {
+        } else {
             return (int) (MaleIdeal - weightMenIdeal);
         }
     }
 
-    public int calculateMinMaleDiff(int weightMenIdeal, int MaleMinIdeal ) {
+    public int calculateMinMaleDiff(int weightMenIdeal, int MaleMinIdeal) {
 
         if (weightMenIdeal > MaleMinIdeal) {
             return (int) (weightMenIdeal - MaleMinIdeal);
-        }else {
+        } else {
             return (int) (MaleMinIdeal - weightMenIdeal);
         }
     }
 
-    public int calculateMinFemaleDiff(int weightMenIdeal, int FemaleMinIdeal ) {
+    public int calculateMinFemaleDiff(int weightMenIdeal, int FemaleMinIdeal) {
 
         if (weightMenIdeal > FemaleMinIdeal) {
             return (int) (weightMenIdeal - FemaleMinIdeal);
-        }else {
+        } else {
             return (int) (FemaleMinIdeal - weightMenIdeal);
         }
     }
 
-    public int calculateFemaleDiff(int weightMenIdeal, int FemaleIdeal ) {
+    public int calculateFemaleDiff(int weightMenIdeal, int FemaleIdeal) {
 
         if (weightMenIdeal > FemaleIdeal) {
             return (int) (weightMenIdeal - FemaleIdeal);
-        }else {
+        } else {
             return (int) (FemaleIdeal - weightMenIdeal);
         }
     }
 
 
-
-
-    public int calculateIdealMale(int heightMenIdeal ){
-        return (int) (50 +(( 91 * heightMenIdeal )/100));
+    public int calculateIdealMale(int heightMenIdeal) {
+        return (int) (50 + ((91 * heightMenIdeal) / 100));
     }
 
-    public int calculateIdealMinMale(int heightMenIdeal ){
-        return (int) (56 +(( 141 * heightMenIdeal )/254));
+    public int calculateIdealMinMale(int heightMenIdeal) {
+        return (int) (56 + ((141 * heightMenIdeal) / 254));
     }
 
-    public int calculateIdealFemale(int heightMenIdeal ){
-        return (int) (46+(( 91 * heightMenIdeal )/100));
+    public int calculateIdealFemale(int heightMenIdeal) {
+        return (int) (46 + ((91 * heightMenIdeal) / 100));
     }
-    public int calculateIdealMinFemale(int heightMenIdeal ){
-        return (int) (53+(( 27 * heightMenIdeal )/50));
+
+    public int calculateIdealMinFemale(int heightMenIdeal) {
+        return (int) (53 + ((27 * heightMenIdeal) / 50));
     }
 
 
-    public int calculateWater(int waterint){
-        return (int) (waterint / 3 );
-   }
+    public int calculateWater(int waterint) {
+        return (int) (waterint / 3);
+    }
 
     public float calculateBMI(float weightValue, float heightValue) {
         return (float) (weightValue / (heightValue * heightValue));
     }
 
-    public int calculateCalMale( int weightCal,int heightCal , int ageCal) {
+    public int calculateCalMale(int weightCal, int heightCal, int ageCal) {
 
-            return (int) (weightCal + heightCal - ageCal + 210 );
+        return (int) (weightCal + heightCal - ageCal + 210);
 
     }
 
-    public int calculateMaleGain(int weightCal,int heightCal , int ageCal) {
-        return (int) (weightCal + heightCal - ageCal + 810 );
+    public int calculateMaleGain(int weightCal, int heightCal, int ageCal) {
+        return (int) (weightCal + heightCal - ageCal + 810);
     }
 
-    public int calculateFemaleGain(int weightCal,int heightCal , int ageCal) {
-        return (int) (weightCal + heightCal - ageCal +580 );
+    public int calculateFemaleGain(int weightCal, int heightCal, int ageCal) {
+        return (int) (weightCal + heightCal - ageCal + 580);
     }
 
-    public int calculateMaleLoss(int weightCal,int heightCal , int ageCal) {
-        return (int) (weightCal + heightCal - ageCal - 410 );
+    public int calculateMaleLoss(int weightCal, int heightCal, int ageCal) {
+        return (int) (weightCal + heightCal - ageCal - 410);
     }
 
-    public int calculateFemaleLoss(int weightCal,int heightCal , int ageCal) {
-        return (int) (weightCal + heightCal - ageCal - 480 );
+    public int calculateFemaleLoss(int weightCal, int heightCal, int ageCal) {
+        return (int) (weightCal + heightCal - ageCal - 480);
     }
 
-    public int calculateCalFemale( int weightCal,int heightCal , int ageCal) {
+    public int calculateCalFemale(int weightCal, int heightCal, int ageCal) {
 
-        return (int) (weightCal + heightCal - ageCal - 20 );
+        return (int) (weightCal + heightCal - ageCal - 20);
 
     }
 
@@ -265,60 +263,79 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         } else if (bmi >= 18.5 && bmi <= 24.9) {
             return "Normal Weight";
         } else if (bmi >= 25 && bmi <= 29.9) {
-          return "Overweight";
-      } else {
+            return "Overweight";
+        } else {
             return "Obese";
-       }
+        }
     }
 
-        @Override
-        public void onBackPressed () {
-            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                drawerLayout.closeDrawer(GravityCompat.START);
-            } else {
-                super.onBackPressed();
-            }
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
         }
+    }
 
-        private void Logout () {
-            firebaseAuth.signOut();
-            finish();
-            startActivity(new Intent(SecondActivity.this, MainActivity.class));
-        }
+    private void Logout() {
+        firebaseAuth.signOut();
+        finish();
+        startActivity(new Intent(SecondActivity.this, MainActivity.class));
+    }
 
 
-        @Override
-        public boolean onNavigationItemSelected (@NonNull MenuItem menuItem){
-            switch (menuItem.getItemId()) {
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
 
-                case R.id.nav_home:
-                    break;
+            case R.id.nav_home:
+                break;
 
-                case R.id.profileMenu:
-                    Intent intent = new Intent(SecondActivity.this, ProfileActivity.class);
-                    startActivity(intent);
-                    break;
+            case R.id.profileMenu:
+                Intent intent = new Intent(SecondActivity.this, ProfileActivity.class);
+                startActivity(intent);
+                break;
 
-                case R.id.logoutMenu: {
-                    Logout();
-                    break;
-                }
-
-                case R.id.contactus: {
-                    startActivity(new Intent(SecondActivity.this, ContactUs.class));
-                    break;
-                }
-
-                case R.id.feedback: {
-                    startActivity(new Intent(SecondActivity.this, Feedback.class));
-                    break;
-                }
+            case R.id.logoutMenu: {
+                Logout();
+                break;
             }
+
+            case R.id.contactus:
+                startActivity(new Intent(SecondActivity.this, ContactUs.class));
+                break;
+
+
+            case R.id.feedback:
+                startActivity(new Intent(SecondActivity.this, Feedback.class));
+                break;
+
+            case R.id.steptr:
+                startActivity(new Intent(SecondActivity.this, tracker.class));
+                break;
+            case R.id.his:
+                startActivity(new Intent(SecondActivity.this, StepHistory.class));
+                break;
+            case R.id.Workout:
+                startActivity(new Intent(SecondActivity.this, userCategoryVideoActivity.class));
+                break;
+            case R.id.Nutrient:
+                startActivity(new Intent(SecondActivity.this, userImagesActivity.class));
+                break;
+            case R.id.calcula:
+                startActivity(new Intent(SecondActivity.this, Calculator.class));
+                break;
+            case R.id.repo:
+                startActivity(new Intent(SecondActivity.this, Report.class));
+                break;
+        }
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
         }
 
     }
+
 
 
 

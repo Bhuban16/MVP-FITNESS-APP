@@ -27,23 +27,23 @@ public class UserShowVideo extends AppCompatActivity {
     DatabaseReference databaseReference;
     RecyclerView recyclerView;
     FirebaseDatabase database;
-    String name,url,des , timer , set;
+    String name,url,des , timer , set , child;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_show_video);
-
+        Intent intent = getIntent();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        child = intent.getExtras().getString("child");
         recyclerView = findViewById(R.id.recyclerview_ShowVideo);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         database= FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app");
 
-        databaseReference = database.getReference("video");
+        databaseReference = database.getReference("video").child(child).child("Menu");
 
     }
     private void firebaseSearch(String searchtext){

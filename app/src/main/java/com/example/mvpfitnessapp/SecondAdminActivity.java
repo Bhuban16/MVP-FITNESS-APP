@@ -48,7 +48,7 @@ public class SecondAdminActivity extends AppCompatActivity implements Navigation
         Upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SecondAdminActivity.this, Upload.class));
+                startActivity(new Intent(SecondAdminActivity.this,AdminUploadCategory.class));
             }
         });
         Bhuban.setOnClickListener(new View.OnClickListener() {

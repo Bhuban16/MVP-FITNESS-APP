@@ -45,15 +45,17 @@ public class Upload extends AppCompatActivity {
     Member member;
     UploadTask uploadTask;
     TextView WorkoutSet , WorkoutTimer ;
+    String child;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload);
-
+        Intent intent = getIntent();
+        child = intent.getExtras().getString("child");
         member = new Member();
         storageReference = FirebaseStorage.getInstance().getReference("Video");
-        databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("video");
+        databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("video").child(child).child("Menu");
         description = findViewById(R.id.et_video_description);
         editText = findViewById(R.id.et_video_name);
         button = findViewById(R.id.button_upload_main);

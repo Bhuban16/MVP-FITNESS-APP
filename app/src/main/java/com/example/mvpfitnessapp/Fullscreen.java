@@ -71,7 +71,7 @@ public class Fullscreen extends AppCompatActivity {
     MediaController mediaController;
     StorageReference storageReference;
     DatabaseReference databaseReference;
-    String title;
+    String title , child;
     ProgressBar mProgress;
 
     @Override
@@ -82,13 +82,14 @@ public class Fullscreen extends AppCompatActivity {
         workoutHistory = new UploadWorkoutHistory();
         //ActionBar actionBar = getSupportActionBar();
         //actionBar.setTitle("Fullscreen");
-
+        Intent intent = getIntent();
+        child = intent.getExtras().getString("child");
         //actionBar.setDisplayHomeAsUpEnabled(true);
         //actionBar.setDisplayShowHomeEnabled(true);
        choose =findViewById(R.id.updatevideo);
 
         storageReference = FirebaseStorage.getInstance().getReference("Video");
-        databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("video");
+        databaseReference = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("video").child(child).child("Menu");
         mProgress = findViewById(R.id.prog);
          time = findViewById( R.id.time0);
         set = findViewById(R.id.set);
@@ -98,7 +99,7 @@ public class Fullscreen extends AppCompatActivity {
         save = findViewById(R.id.update);
         fullscreenButton = playerView.findViewById(R.id.exoplayer_fullscreen_icon);
         UploadTask uploadTask;
-        Intent intent = getIntent();
+
        url = intent.getExtras().getString("ur");
 
         title = intent.getExtras().getString("nam");
@@ -220,18 +221,7 @@ save.setOnClickListener(new View.OnClickListener() {
         }
     }
 
-    @Override
-    public void onBackPressed() {
-       super.onBackPressed();
 
-       player.stop();
-        releasePlayer();
-
-        final Intent intent = new Intent();
-        setResult(RESULT_OK,intent);
-        finish();
-
-    }
 
     private  void UploadVideo() {
         String videoName = textView.getText().toString();
