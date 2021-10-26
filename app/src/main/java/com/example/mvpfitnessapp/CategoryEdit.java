@@ -105,7 +105,9 @@ public class CategoryEdit extends AppCompatActivity {
 
     }
     private void UploadFile(){
-        if (mImageUri != null   ) {
+        if (mImageUri != null ) {
+            DatabaseReference Databaserefernce = FirebaseDatabase.getInstance().getReference("Image");
+            Query query = Databaserefernce.orderByChild("mChild").equalTo(child);
             StorageReference filerefernce = mStoragerefernce.child(System.currentTimeMillis()
                     + "." + getFileExt(mImageUri)  );
             mUploadTask =
@@ -124,11 +126,11 @@ public class CategoryEdit extends AppCompatActivity {
                                     while (!urlTask.isSuccessful()) ;
 
                                     Uri downloadUrl = urlTask.getResult();
-                                   query2.addListenerForSingleValueEvent(new ValueEventListener() {
+                                   query.addListenerForSingleValueEvent(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                                             for (DataSnapshot ds : snapshot.getChildren()) {
-                                                ds.getRef().child("mBanner").setValue(downloadUrl);
+                                                ds.getRef().child("mBanner").setValue(downloadUrl.toString());
                                                 String Title = mEditText.getText().toString();
                                                 ds.getRef().child("mTitle").setValue(Title);
 

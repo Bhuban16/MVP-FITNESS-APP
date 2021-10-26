@@ -73,9 +73,9 @@ public class CategoryVideoActivity extends AppCompatActivity implements Category
        UploadCategoryVideo uploadCurrent = mUploads.get(position);
         name = uploadCurrent.getmTitle();
         url = uploadCurrent.getmBanner();
-        String child = uploadCurrent.getmChild();
+       Child = uploadCurrent.getmChild();
         Intent intent = new Intent(CategoryVideoActivity.this,ShowVideo.class);
-        intent.putExtra("child",child);
+        intent.putExtra("child",Child);
         intent.putExtra("nam1",name);
         intent.putExtra("ur1",url);
         startActivity(intent);

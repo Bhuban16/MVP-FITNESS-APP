@@ -127,7 +127,7 @@ public class CategoryVideoEdit extends AppCompatActivity {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                                             for (DataSnapshot ds : snapshot.getChildren()) {
-                                                ds.getRef().child("mBanner").setValue(downloadUrl);
+                                                ds.getRef().child("mBanner").setValue(downloadUrl.toString());
                                                 String Title = mEditText.getText().toString();
                                                 ds.getRef().child("mTitle").setValue(Title);
 
@@ -175,7 +175,7 @@ public class CategoryVideoEdit extends AppCompatActivity {
                     }
                     Toast.makeText(CategoryVideoEdit.this, "Data saved", Toast.LENGTH_SHORT).show();
                     mProgressbar.setVisibility(View.INVISIBLE);
-                    startActivity(new Intent(CategoryVideoEdit.this,CategoryActivities.class ));
+                    startActivity(new Intent(CategoryVideoEdit.this,CategoryVideoActivity.class ));
                     finish();
                 }
 

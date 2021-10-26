@@ -212,6 +212,14 @@ save.setOnClickListener(new View.OnClickListener() {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Intent intent = new Intent(this,ShowVideo.class);
+        intent.putExtra("child",child);
+
+    }
     private void releasePlayer(){
         if (player !=null){
              playwhenready = player.getPlayWhenReady();

@@ -34,7 +34,7 @@ public class ShowVideo extends AppCompatActivity {
     DatabaseReference databaseReference;
     RecyclerView recyclerView;
     FirebaseDatabase database;
-    String name,url,des , timer , set , child;
+    String name, url, des, timer, set, child;
     Button upload;
 
 
@@ -46,24 +46,84 @@ public class ShowVideo extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         child = intent.getExtras().getString("child");
-          upload  = findViewById(R.id.upload);
+        upload = findViewById(R.id.upload);
         recyclerView = findViewById(R.id.recyclerview_ShowVideo);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-       database= FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app");
+        database = FirebaseDatabase.getInstance("https://mvp-fitness-default-rtdb.asia-southeast1.firebasedatabase.app");
 
         databaseReference = database.getReference("video").child(child).child("Menu");
 
         upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ShowVideo.this,Upload.class);
-                intent.putExtra("child",child);
+                Intent intent = new Intent(ShowVideo.this, Upload.class);
+                intent.putExtra("child", child);
                 startActivity(intent);
             }
         });
 
+
+        FirebaseRecyclerOptions<Member> options =
+                new FirebaseRecyclerOptions.Builder<Member>()
+                        .setQuery(databaseReference, Member.class)
+                        .build();
+
+        FirebaseRecyclerAdapter<Member, ViewHolder> firebaseRecyclerAdapter =
+                new FirebaseRecyclerAdapter<Member, ViewHolder>(options) {
+                    @Override
+                    protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Member model) {
+
+                        holder.setExoPlayer(getApplication(), model.getName(), model.getVideourl(), model.getDescription());
+
+                        holder.setOnClicklistener(new ViewHolder.Clicklistener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                name = getItem(position).getName();
+                                url = getItem(position).getVideourl();
+                                des = getItem(position).getDescription();
+                                timer = getItem(position).getTimer();
+                                set = getItem(position).getWorkoutSet();
+                                Intent intent = new Intent(ShowVideo.this, Fullscreen.class);
+                                intent.putExtra("child", child);
+                                intent.putExtra("nam", name);
+                                intent.putExtra("ur", url);
+                                intent.putExtra("des", des);
+                                intent.putExtra("time", timer);
+                                intent.putExtra("set", set);
+                                startActivity(intent);
+
+
+                            }
+
+                            @Override
+                            public void onItemLongClick(View view, int position) {
+                                name = getItem(position).getName();
+                                showDeleteDialog(name);
+
+                            }
+                        });
+
+
+                    }
+
+
+                    @NonNull
+                    @Override
+                    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                        View view = LayoutInflater.from(parent.getContext())
+                                .inflate(R.layout.row, parent, false);
+                        return new ViewHolder(view);
+                    }
+
+
+                };
+        firebaseRecyclerAdapter.startListening();
+        recyclerView.setAdapter(firebaseRecyclerAdapter);
     }
+
+
+
     private void firebaseSearch(String searchtext){
 
         String query = searchtext.toLowerCase();
@@ -121,71 +181,6 @@ public class ShowVideo extends AppCompatActivity {
 
 
                 };
-        firebaseRecyclerAdapter.startListening();
-        recyclerView.setAdapter(firebaseRecyclerAdapter);
-    }
-
-
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        FirebaseRecyclerOptions<Member> options =
-                new FirebaseRecyclerOptions.Builder<Member>()
-                        .setQuery(databaseReference,Member.class)
-                        .build();
-
-        FirebaseRecyclerAdapter<Member, ViewHolder> firebaseRecyclerAdapter =
-                new FirebaseRecyclerAdapter<Member, ViewHolder>(options) {
-                    @Override
-                    protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Member model) {
-
-                        holder.setExoPlayer(getApplication(),model.getName(),model.getVideourl(),model.getDescription());
-
-                        holder.setOnClicklistener(new ViewHolder.Clicklistener() {
-                            @Override
-                            public void onItemClick(View view, int position) {
-                                name = getItem(position).getName();
-                                url = getItem(position).getVideourl();
-                                des = getItem(position).getDescription();
-                                timer= getItem(position).getTimer();
-                                set = getItem(position).getWorkoutSet();
-                                Intent intent = new Intent(ShowVideo.this,Fullscreen.class);
-                                intent.putExtra("child",child);
-                                intent.putExtra("nam",name);
-                                intent.putExtra("ur",url);
-                                intent.putExtra("des",des);
-                                intent.putExtra("time",timer);
-                                intent.putExtra("set",set);
-                                startActivity(intent);
-
-
-                            }
-
-                            @Override
-                            public void onItemLongClick(View view, int position) {
-                                name = getItem(position).getName();
-                                showDeleteDialog(name);
-
-                            }
-                        });
-
-
-                    }
-
-
-                    @NonNull
-                    @Override
-                    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                        View view = LayoutInflater.from(parent.getContext())
-                                .inflate(R.layout.row,parent, false);
-                        return new ViewHolder(view);
-                    }
-
-
-
-        };
         firebaseRecyclerAdapter.startListening();
         recyclerView.setAdapter(firebaseRecyclerAdapter);
     }

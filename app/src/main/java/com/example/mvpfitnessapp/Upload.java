@@ -115,8 +115,22 @@ public class Upload extends AppCompatActivity {
 
     public void ShowVideo (View view){
         Intent intent = new Intent(Upload.this, ShowVideo.class);
+        intent.putExtra("child",child);
         startActivity(intent);
+
     }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Intent intent = new Intent(this,ShowVideo.class);
+        intent.putExtra("child",child);
+
+    }
+
+
 
 
 
