@@ -24,7 +24,7 @@ public class SecondAdminActivity extends AppCompatActivity implements Navigation
     Toolbar toolbar;
     Menu menu;
     private Button Upload;
-    private Button  category , Account;
+    private Button  category , Account , workout , nutrient;
 
 
     @Override
@@ -37,6 +37,8 @@ public class SecondAdminActivity extends AppCompatActivity implements Navigation
         Toolbar toolbar = findViewById(R.id.toolbar);
         Upload = findViewById(R.id.btnUpload);
        Account = findViewById(R.id.Account);
+       workout = findViewById(R.id.showworkout);
+       nutrient = findViewById(R.id.showNutrient);
         setSupportActionBar(toolbar);
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -51,7 +53,18 @@ public class SecondAdminActivity extends AppCompatActivity implements Navigation
                 startActivity(new Intent(SecondAdminActivity.this,AdminUploadCategory.class));
             }
         });
-     
+        workout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondAdminActivity.this,CategoryVideoActivity.class));
+            }
+        });
+       nutrient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondAdminActivity.this,CategoryActivities.class));
+            }
+        });
         category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

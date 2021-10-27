@@ -136,7 +136,8 @@ save.setOnClickListener(new View.OnClickListener() {
     public void onClick(View v) {
         UploadVideo();
         mProgress.setVisibility(View.VISIBLE);
-
+        Intent intent = new Intent(Fullscreen.this,ShowVideo.class);
+        intent.putExtra("child",child);
     }
 });
 
@@ -274,7 +275,6 @@ save.setOnClickListener(new View.OnClickListener() {
                                        }
                                        Toast.makeText(Fullscreen.this, "Data saved", Toast.LENGTH_SHORT).show();
                                        mProgress.setVisibility(View.INVISIBLE);
-                                       startActivity(new Intent(Fullscreen.this,ShowVideo.class ));
                                        finish();
                                    }
 
@@ -303,7 +303,6 @@ save.setOnClickListener(new View.OnClickListener() {
                                 }
                                 Toast.makeText(Fullscreen.this, "Data saved", Toast.LENGTH_SHORT).show();
                                 mProgress.setVisibility(View.INVISIBLE);
-                                startActivity(new Intent(Fullscreen.this,ShowVideo.class ));
                                 finish();
                             }
 
