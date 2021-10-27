@@ -111,8 +111,8 @@ public class Fullscreen extends AppCompatActivity {
         playerView.setVideoURI(videoUr);
         description.setText(Description);
         textView.setText(title);
-        time.setText(Timer);
-        set.setText(Set);
+        time.setText("Time : "+Timer);
+        set.setText("Set : "+Set);
         mediaController = new MediaController(this);
         playerView.setMediaController(mediaController);
         mediaController.setAnchorView(playerView);
