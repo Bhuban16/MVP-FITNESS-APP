@@ -138,19 +138,19 @@
 
     <EditText
         android:id="@+id/etWeight"
-        android:layout_width="165dp"
+        android:layout_width="150dp"
         android:layout_height="41dp"
         android:background="@drawable/rectangle_2"
         android:drawableStart="@drawable/img_ideal_body_weight"
-         android:drawableTint="@color/dark"
         android:drawablePadding="10dp"
+        android:drawableTint="@color/dark"
         android:ems="10"
-        android:hint="Weight (Kg)"
+        android:hint="Weight"
         android:inputType="number"
-        android:paddingLeft="10dp"
+        android:paddingLeft="5dp"
         app:layout_constraintBottom_toTopOf="@+id/btnRegister"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintEnd_toStartOf="@+id/etheight"
+        app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPhoneNumber"
         app:layout_constraintVertical_bias="0.514" />
@@ -161,7 +161,8 @@
         android:layout_height="41dp"
         android:layout_marginTop="-20dp"
 
-        android:layout_marginRight="15dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="20dp"
 
         android:layout_marginBottom="87dp"
         android:background="@drawable/rectangle_2"
@@ -183,6 +184,7 @@
 
             android:paddingLeft="10dp"
 
+
             android:spinnerMode="dropdown"
             android:tooltipText="@string/Age"
 
@@ -192,7 +194,7 @@
 
     <EditText
         android:id="@+id/etage"
-        android:layout_width="165dp"
+        android:layout_width="150dp"
         android:layout_height="41dp"
         android:background="@drawable/rectangle_2"
         android:drawableStart="@drawable/ic_baseline_cake_24"
@@ -200,31 +202,29 @@
         android:ems="10"
         android:hint="@string/Age"
         android:inputType="number"
-        android:paddingLeft="10dp"
         app:layout_constraintBottom_toTopOf="@+id/btnRegister"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintEnd_toStartOf="@+id/relativeLayout"
+        app:layout_constraintHorizontal_bias="0.414"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPhoneNumber"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintVertical_bias="0.121" />
 
     <EditText
         android:id="@+id/etheight"
-        android:layout_width="165dp"
-        android:layout_height="41dp"
+        android:layout_width="153dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/rectangle_2"
         android:drawableStart="@drawable/ic_baseline_height_24"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Height (cm)"
-        android:inputType="number"
 
+        android:inputType="number"
         android:paddingLeft="5dp"
         app:layout_constraintBottom_toTopOf="@+id/btnRegister"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.34"
-        app:layout_constraintStart_toEndOf="@+id/etWeight"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        app:layout_constraintVertical_bias="0.17" />
+        app:layout_constraintVertical_bias="0.18" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
