@@ -121,7 +121,7 @@
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/fat"
+                            android:id="@+id/sugar"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="10dp"
@@ -133,7 +133,8 @@
                             app:cardElevation="10dip"
                             app:cardMaxElevation="20dp"
                             app:strokeColor="@color/colorSkyBlue"
-                            app:strokeWidth="1dp">
+                            app:strokeWidth="1dp"
+                           >
 
                             <RelativeLayout
                                 android:id="@+id/rel_three"
@@ -163,7 +164,7 @@
                                         android:layout_marginEnd="31dp"
                                         android:layout_marginRight="31dp"
                                         android:layout_marginBottom="13dp"
-                                        android:background="@drawable/img_body_fat"
+                                        android:background="@drawable/img_blood_sugar"
                                         android:backgroundTint="@color/colorSkyBlue" />
 
 
@@ -178,7 +179,7 @@
                                     android:layout_marginTop="15dp"
                                     android:layout_marginBottom="7dp"
                                     android:singleLine="true"
-                                    android:text="Body Fat"
+                                    android:text="Blood Sugar"
                                     android:textAlignment="center"
                                     android:textColor="@color/black"
                                     android:textSize="12dp"
@@ -503,72 +504,7 @@
                         android:orientation="horizontal"
                         android:weightSum="2">
 
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/sugar"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
 
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_marginBottom="30dp"
-                            android:layout_weight="1"
-                            app:cardBackgroundColor="@color/gray"
-                            app:cardCornerRadius="20dp"
-                            app:cardElevation="10dip"
-                            app:cardMaxElevation="20dp"
-                            app:strokeColor="@color/colorSkyBlue"
-                            app:strokeWidth="1dp">
-
-
-                            <RelativeLayout
-                                android:id="@+id/rel_two111"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <RelativeLayout
-                                    android:id="@+id/relative111111"
-                                    android:layout_width="164dp"
-                                    android:layout_height="92dp"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_marginTop="5dp"
-                                    android:layout_marginRight="10dp">
-
-                                    <ImageView
-                                        android:id="@+id/imag_1111"
-                                        android:layout_width="102dp"
-                                        android:layout_height="66dp"
-                                        android:layout_alignParentStart="true"
-                                        android:layout_alignParentTop="true"
-                                        android:layout_alignParentEnd="true"
-                                        android:layout_alignParentRight="true"
-                                        android:layout_alignParentBottom="true"
-                                        android:layout_marginStart="22dp"
-                                        android:layout_marginTop="14dp"
-                                        android:layout_marginEnd="22dp"
-                                        android:layout_marginRight="22dp"
-                                        android:layout_marginBottom="12dp"
-                                        android:background="@drawable/img_blood_sugar"
-                                        android:backgroundTint="@color/colorSkyBlue"
-                                        android:padding="4dp" />
-
-
-                                </RelativeLayout>
-
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-
-                                    android:layout_marginTop="95dp"
-                                    android:layout_marginBottom="5dp"
-                                    android:singleLine="true"
-                                    android:text="Blood Sugar"
-                                    android:textAlignment="center"
-                                    android:textColor="@color/black"
-                                    android:textSize="12dp"
-                                    android:typeface="serif" />
-                            </RelativeLayout>
-                        </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/lean1"

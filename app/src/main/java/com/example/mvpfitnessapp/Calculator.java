@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.example.mvpfitnessapp.bmi.BMI_Calculator;
-import com.example.mvpfitnessapp.body_fat.Bodyfat_Calculator;
 import com.example.mvpfitnessapp.calories_intake.Daily_Calories_Intake_Calculator;
 import com.example.mvpfitnessapp.daily_water.Daily_WaterIntake_Calculator;
 import com.example.mvpfitnessapp.ideal_body_weight.Ideal_Body_Weight_Calculator;
@@ -31,7 +30,7 @@ public class Calculator extends AppCompatActivity {
         setContentView(R.layout.home_page);
 
         bmi = findViewById(R.id.bmi);
-        fat = findViewById(R.id.fat);
+
         weight = findViewById(R.id.weight);
         water = findViewById(R.id.water);
         calorie= findViewById(R.id.calorie);
@@ -44,12 +43,7 @@ public class Calculator extends AppCompatActivity {
                 startActivity(new Intent(Calculator.this, BMI_Calculator.class));
             }
         });
-        fat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Calculator.this, Bodyfat_Calculator.class));
-            }
-        });
+       
         weight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
