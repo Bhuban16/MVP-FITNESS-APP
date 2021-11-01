@@ -47,9 +47,9 @@ public class ImagesActivity extends AppCompatActivity implements ImageAdapter.On
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        Intent intent = getIntent();
-        mProgressCircle = findViewById(R.id.progress_circle);
 
+        mProgressCircle = findViewById(R.id.progress_circle);
+        Intent intent = getIntent();
          child = intent.getExtras().getString("child");
         mUploads = new ArrayList<>();
         mAdapter = new ImageAdapter(ImagesActivity.this, mUploads);
@@ -159,13 +159,15 @@ public class ImagesActivity extends AppCompatActivity implements ImageAdapter.On
                     UploadAdmin selectedItem = mUploads.get(position);
                     final String selectedKey = selectedItem.getKey();
                     StorageReference imageRef = mStorage.getReferenceFromUrl(selectedItem.getmImageuri());
+
+
                     imageRef.delete().
 
 
                             addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess (Void aVoid){
-                                    mDatabaseRef.child(selectedKey).removeValue();
+                                    mDatabaseRef.child(child).child("Menu").child(selectedKey).removeValue();
                                     Toast.makeText(ImagesActivity.this, "item deleted", Toast.LENGTH_SHORT).show();
                                 }
                             });

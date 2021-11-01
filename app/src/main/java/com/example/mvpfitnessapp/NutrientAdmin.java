@@ -36,7 +36,7 @@ public class NutrientAdmin extends AppCompatActivity {
     private ImageView mImageView , mImageView2 , mImageView3;
     private ProgressBar mProgressbar;
     private Uri mImageUri , mImageUri2, mImageUri3;
-
+     private  String title;
 
     private StorageTask mUploadTask;
     private StorageTask mUploadTask1;
@@ -64,7 +64,8 @@ public class NutrientAdmin extends AppCompatActivity {
         mProgressbar = findViewById(R.id.progress_bar);
         mImageView = findViewById(R.id.image_view);
         Intent intent = getIntent();
-        String title = intent.getExtras().getString("nam1");
+
+         title = intent.getExtras().getString("nam1");
         mTextViewUploads= findViewById(R.id.text_view_show_uploads);
         mStoragerefernce = FirebaseStorage.getInstance().getReference("Images");
         mDatabaserefernce = FirebaseDatabase.getInstance().getReference("Image").child(title).child("Menu");
@@ -217,6 +218,10 @@ public class NutrientAdmin extends AppCompatActivity {
                                     UploadAdmin upload = new UploadAdmin(mEditText.getText().toString().trim(), downloadUrl.toString(),mEditText2.getText().toString().trim(), downloadUrl2.toString(),mEditText3.getText().toString().trim(),downloadUrl3.toString(),Desc.getText().toString().trim(),Desc2.getText().toString().trim(),Desc3.getText().toString().trim());
                                     String uploadId = mDatabaserefernce.push().getKey();
                                     mDatabaserefernce.child(uploadId).setValue(upload);
+                                  mProgressbar.setVisibility(View.INVISIBLE);
+                                     Intent intent = new Intent(NutrientAdmin.this,ImagesActivity.class);
+                                          intent.putExtra("child",title);
+                                          startActivity(intent);
                                                         }
                                                     });
                                                         }

@@ -208,8 +208,8 @@ public class NutrientFullAdmin extends AppCompatActivity {
         String name2 = mEditText2.getText().toString();
         String name3 = mEditText3.getText().toString();
         String desc = Desc.getText().toString();
-        String desc2 = Desc.getText().toString();
-        String desc3 = Desc.getText().toString();
+        String desc2 = Desc2.getText().toString();
+        String desc3 = Desc3.getText().toString();
 
 
         if (mImageUri != null && mImageUri2 != null && mImageUri3 != null) {
@@ -282,8 +282,9 @@ public class NutrientFullAdmin extends AppCompatActivity {
                                                                                             }
                                                                                             Toast.makeText(NutrientFullAdmin.this, "Data saved", Toast.LENGTH_SHORT).show();
                                                                                             mProgressbar.setVisibility(View.INVISIBLE);
-                                                                                            startActivity(new Intent(NutrientFullAdmin.this,ImagesActivity.class ));
-                                                                                            finish();
+                                                                                            Intent intent = new Intent(NutrientFullAdmin.this,ImagesActivity.class);
+                                                                                            intent.putExtra("child",child);
+                                                                                            startActivity(intent);
                                                                                         }
 
                                                                                         @Override
@@ -365,8 +366,9 @@ public class NutrientFullAdmin extends AppCompatActivity {
                                                                     }
                                                                     Toast.makeText(NutrientFullAdmin.this, "Data saved", Toast.LENGTH_SHORT).show();
                                                                     mProgressbar.setVisibility(View.INVISIBLE);
-                                                                    startActivity(new Intent(NutrientFullAdmin.this,ImagesActivity.class ));
-                                                                    finish();
+                                                                    Intent intent = new Intent(NutrientFullAdmin.this,ImagesActivity.class);
+                                                                    intent.putExtra("child",child);
+                                                                    startActivity(intent);
                                                                 }
 
                                                                 @Override
@@ -447,8 +449,9 @@ public class NutrientFullAdmin extends AppCompatActivity {
                                                                                             }
                                                                                             Toast.makeText(NutrientFullAdmin.this, "Data saved", Toast.LENGTH_SHORT).show();
                                                                                             mProgressbar.setVisibility(View.INVISIBLE);
-                                                                                            startActivity(new Intent(NutrientFullAdmin.this,ImagesActivity.class ));
-                                                                                            finish();
+                                                                                            Intent intent = new Intent(NutrientFullAdmin.this,ImagesActivity.class);
+                                                                                            intent.putExtra("child",child);
+                                                                                            startActivity(intent);
                                                                                         }
 
                                                                                         @Override
@@ -516,8 +519,9 @@ public class NutrientFullAdmin extends AppCompatActivity {
                                                                                             }
                                                                                             Toast.makeText(NutrientFullAdmin.this, "Data saved", Toast.LENGTH_SHORT).show();
                                                                                             mProgressbar.setVisibility(View.INVISIBLE);
-                                                                                            startActivity(new Intent(NutrientFullAdmin.this,ImagesActivity.class ));
-                                                                                            finish();
+                                                                                            Intent intent = new Intent(NutrientFullAdmin.this,ImagesActivity.class);
+                                                                                            intent.putExtra("child",child);
+                                                                                            startActivity(intent);
                                                                                         }
 
                                                                                         @Override
@@ -579,8 +583,9 @@ public class NutrientFullAdmin extends AppCompatActivity {
                                                                                             }
                                                                                             Toast.makeText(NutrientFullAdmin.this, "Data saved", Toast.LENGTH_SHORT).show();
                                                                                             mProgressbar.setVisibility(View.INVISIBLE);
-                                                                                            startActivity(new Intent(NutrientFullAdmin.this,ImagesActivity.class ));
-                                                                                            finish();
+                                                                                            Intent intent = new Intent(NutrientFullAdmin.this,ImagesActivity.class);
+                                                                                            intent.putExtra("child",child);
+                                                                                            startActivity(intent);
                                                                                         }
 
                                                                                         @Override
@@ -639,8 +644,9 @@ public class NutrientFullAdmin extends AppCompatActivity {
                                             }
                                             Toast.makeText(NutrientFullAdmin.this, "Data saved", Toast.LENGTH_SHORT).show();
                                             mProgressbar.setVisibility(View.INVISIBLE);
-                                            startActivity(new Intent(NutrientFullAdmin.this,ImagesActivity.class ));
-                                            finish();
+                                            Intent intent = new Intent(NutrientFullAdmin.this,ImagesActivity.class);
+                                            intent.putExtra("child",child);
+                                            startActivity(intent);
                                         }
 
                                         @Override
@@ -697,8 +703,9 @@ public class NutrientFullAdmin extends AppCompatActivity {
                                             }
                                             Toast.makeText(NutrientFullAdmin.this, "Data saved", Toast.LENGTH_SHORT).show();
                                             mProgressbar.setVisibility(View.INVISIBLE);
-                                            startActivity(new Intent(NutrientFullAdmin.this,ImagesActivity.class ));
-                                            finish();
+                                            Intent intent = new Intent(NutrientFullAdmin.this,ImagesActivity.class);
+                                            intent.putExtra("child",child);
+                                            startActivity(intent);
                                         }
 
                                         @Override
@@ -731,8 +738,9 @@ public class NutrientFullAdmin extends AppCompatActivity {
                     }
                     Toast.makeText(NutrientFullAdmin.this, "Data saved", Toast.LENGTH_SHORT).show();
                     mProgressbar.setVisibility(View.INVISIBLE);
-                    startActivity(new Intent(NutrientFullAdmin.this,ImagesActivity.class ));
-                    finish();
+                    Intent intent = new Intent(NutrientFullAdmin.this,ImagesActivity.class);
+                    intent.putExtra("child",child);
+                    startActivity(intent);
                 }
 
                 @Override
